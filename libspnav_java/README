@@ -1,0 +1,11 @@
+The Java Bindings for libspnav are written and maintained by
+Michael Arndt <scriptkiller@gmx.de>, please contact me in case
+of questions or problems.
+
+To build the JAR SpaceNav.jar which contains the native library and
+the Java classes please edit the Makefile and supply a valid path
+for your Java SDK, then just type "make".
+
+In the directory example, there is an example that can be run with
+"make run".
+
