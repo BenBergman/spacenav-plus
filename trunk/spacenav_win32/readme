@@ -1,0 +1,85 @@
+AerionInput.NET Version 0.1
+by Christian Bayer, chrbayer@minet.uni-jena.de
+
+Free Input Layer for N-Degree-of-Freedom devices. Binary and API Compatible
+to the 3D-Connexion COM API.
+
+Dependencies:
+- .NET Framework 2.0 (perhaps works with other versions but untested)
+- HIDLibrary.NET http://sourceforge.net/projects/hidlibrary/
+
+Supports:
+- Aerion or Globefish (working), a 6-Degree-of-Freedom Device developed 
+  by the Bauhaus University Weimar (see http://www.uni-weimar.de/cms/medien/vr/research/hci/3d-desktop-interaction/globefish0.html)
+- 3DConnexion SpaceNavigator (tested and working, something with the axis mapping is still wrong)
+- 3DConnexion SpaceTraveler (will be tested)
+- 3DConnexion SpacePilot (untested)
+- 3DConnexion SpaceExplorer (untested)
+- possibly even more USB based 6-Degree-of-Freedom-Devices
+
+License:
+LGPL v2.1
+
+Installation (Binary):
+- install .NET Framework 2.0
+- use the install.bat file supplied with the binary distribution
+- install the Blender Plugin from http://mirror.blenderbuilds.com/plugins/3DxBlender-Windows.zip (included with new Blender versions?)
+- there is no possibility to install this library parallel to Closed-Source driver as it
+claims the same classes in the registry - so they are mutual exclusive if you want. The
+library installed last will be used - so if you install the Closed-Source driver after this
+one, the Closed-Source driver will be used.
+
+Compatibility:
+- Tested and running (including install.bat) on Windows 2000 and XP 32bit
+- Tested and running with manual install (admin-commandline and execution
+  of all commands in the bat file by hand) on Windows Vista
+- Tested and running with modified registry file on Windows XP 64bit
+- Tested and not running on Windows 98 SE because lack of Unicode support
+
+Compiling:
+- use VS 2005 to compile (with VS 2008 I could not make it work for some reason but could work for you)
+- import install/progid_device_register.reg to your registry
+
+Configuration:
+- use AerionInputConfig to change application specific profiles
+- a new Application supporting these profiles registers itself by calling LoadPreferencesName()
+the first time with an application specific string argument (e.g. "3DxBlender")
+- now you can choose this string form the field "application profile" in AerionInputConfig
+change the settings for this application
+
+Recommended settings for the axes and filter functions:
+- for use with Aerion and Blender:
+	- X/Y/Z translation/rotation scale: 1.0 
+	- translation X axis is inverted, so use -1.0
+	- translation/rotation threshold: 5
+	- filter function: square
+- for use with 3DConnexion SpaceNavigator PE and Blender:
+	- X/Y/Z translation/rotation scale: 0.2 
+	- translation/rotation threshold: 10
+	- filter function: cube
+
+- This Library has been tested with Blender 2.44 and the 3DConnexion GPL Blender plugin.
+Google Earth seems to be dependent on the running 3DxWare task or something so no avail.
+Google Sketchup and Maya 8.5 PLE is just the same.
+No other applications have been tested so far but feedback would be appreciated.
+
+This library comes in C# flavor which is somewhat uncommon for something like a driver.
+Using C# offered me one great advantage - the usage of the HIDLibrary.NET by 
+Roman Reichel which is a dependency of this library. When ported to C++, this library
+must be ported, too. Common libs like libusb-win32 or set-up libhid do not provide a 
+proper event interface (tell me if I am wrong! I will instantly begin to port it!)
+which I think is important here because polling the data will perhaps consume
+similar CPU utilization as the .NET Marshal here - Marshal there game does...
+
+So for more speed and less dependencies (.NET-Framework) this lib is targeted to be
+converted to VC++. Help for that is welcome ;)
+
+
+
+Known Bugs:
+- As an oddity the library is not binary compatible with the original driver for
+.NET components - because you cannot load this library with the type library importer classes
+as for example NASA WorldWind does (because there is nothing to import -
+this project is already .NET). So there are some issues with that I want to provide a example
+solution for (based on WorldWind most likely). 
+

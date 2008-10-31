@@ -1,0 +1,1178 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TDxInput</name>
+    </assembly>
+    <members>
+        <member name="T:TDxInput.AngleAxis">
+            <summary>
+            Provides rotational data in three dimensions
+            and an angle in arbitrary units (euclidean norm).
+            Implements the IAngleAxis interface which exposes its methods to COM.
+            Because of that the ClassInterfaceType must be "None", otherwise the CLR
+            provides another class interface (and does not use IAngleAxis).
+            The class is forced to use the same GUID as the original CoClass does
+            in order to be accessible by binary-only clients.
+            </summary>
+        </member>
+        <member name="T:TDxInput.IAngleAxis">
+            <summary>
+            COM interface exposing the methods of AngleAxis.
+            Forced to use the same GUID as the original driver interface does.
+            Provides both interface implementations (Dual), IDispatch and IUnknown
+            for early and late binding.
+            </summary>
+        </member>
+        <member name="P:TDxInput.IAngleAxis.X">
+            <summary>
+            Gets or sets the x component of the vector.
+            The DispId attribute states the vtable entry of the method.
+            param: In states that the argument will be passed to the structure.
+            </summary>
+        </member>
+        <member name="P:TDxInput.IAngleAxis.Y">
+            <summary>
+            Gets or sets the y component of the vector.
+            The DispId attribute states the vtable entry of the method.
+            param: In states that the argument will be passed to the structure.
+            </summary>
+        </member>
+        <member name="P:TDxInput.IAngleAxis.Z">
+            <summary>
+            Gets or sets the z component of the vector.
+            The DispId attribute states the vtable entry of the method.
+            param: In states that the argument will be passed to the structure.
+            </summary>
+        </member>
+        <member name="P:TDxInput.IAngleAxis.Angle">
+            <summary>
+            Gets or sets the angle of the vector (arbitrary units but euclidean norm).
+            The DispId attribute states the vtable entry of the method.
+            param: In states that the argument will be passed to the structure.
+            </summary>
+        </member>
+        <member name="M:TDxInput.AngleAxis.#ctor">
+            <summary>
+            AngleAxis constructor
+            </summary>
+        </member>
+        <member name="P:TDxInput.AngleAxis.X">
+            <summary>
+            Represents the X component of the rotation
+            </summary>
+        </member>
+        <member name="P:TDxInput.AngleAxis.Y">
+            <summary>
+            Represents the Y component of the rotation
+            </summary>
+        </member>
+        <member name="P:TDxInput.AngleAxis.Z">
+            <summary>
+            Represents the Z component of the rotation
+            </summary>
+        </member>
+        <member name="P:TDxInput.AngleAxis.Angle">
+            <summary>
+            Represents the angle of the rotation (euclidean length of the three
+            components). If set to 0.0 all three components are set to 0.0, too.
+            </summary>
+        </member>
+        <member name="T:TDxInput.functions">
+            <summary>
+            Enumeration of possible functions in order to save numeric values to
+            the config file (and not delegates..)
+            </summary>
+        </member>
+        <member name="T:TDxInput.Preferences">
+            <summary>
+            Represents a configuration profile on a per-application basis.
+            In order to load another profile just use the Setter of PreferencesName. If a
+            profile of this name exists it will be loaded, if not a new default profile of this
+            name will be created.
+            This class is an extension of the orginal API, there is no such class exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            So this is our implementation of the LoadPreferencesName() call of Device.
+            The documentation says nothing about that so we can only guess the real functionality.
+            This is our "educated" guess so ;)
+            </summary>
+        </member>
+        <member name="F:TDxInput.Preferences.path">
+            <summary>
+            Contains the exact path (with file name) to the XML config file.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Preferences.ConstructPath">
+            <summary>
+            Creates the path variable to the XML config file. Usually this is 
+            "C:\Documents and Settings\%username%\Application Data\AerionInput\config.xml".
+            If directories do not exist, they will be created.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Preferences.loadConfig">
+            <summary>
+            Loads the XML config file stored in "path" and parses the config data
+            to its local variables. If anything goes wrong, all fields will be initialized
+            with defaults. So if file is malformed, a new valid config file will be created.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Preferences.saveConfig">
+            <summary>
+            Writes all preferences into XML config file stored in "path".
+            Must be called explicitly in order to save values for the next session.
+            Overwrites any existing config file with the values in this object.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Preferences.#ctor">
+            <summary>
+            Calls ConstructPath() to have a valid path string
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.RotationFunction">
+            <summary>
+            Gets or Sets the filter function which shall be applied to the rotational input data.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.index">
+            <summary>
+            Gets or Sets the list index of the current profile.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.TranslationFunction">
+            <summary>
+            Gets or Sets the Translation Filter Function of the current profile.
+            Possible values: sin, cos, square, cube, none.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.PreferencesName">
+            <summary>
+            Gets or Sets the Name of the current profile.
+            When a name is set which is not in the list holding all known
+            profiles, it will be created.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.Count">
+            <summary>
+            Gets the count of stored profiles.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.XScaleFactor">
+            <summary>
+            Gets or Sets the scaling factor the Translation X value will be multiplied with.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.YScaleFactor">
+            <summary>
+            Gets or Sets the scaling factor the Translation Y value will be multiplied with.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.ZScaleFactor">
+            <summary>
+            Gets or Sets the scaling factor the Translation Z value will be multiplied with.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.XRotScaleFactor">
+            <summary>
+            Gets or Sets the scaling factor the Rotation X value will be multiplied with.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.YRotScaleFactor">
+            <summary>
+            Gets or Sets the scaling factor the Rotation Y value will be multiplied with.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.ZRotScaleFactor">
+            <summary>
+            Gets or Sets the scaling factor the Rotation Z value will be multiplied with.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.RotationThreshold">
+            <summary>
+            Gets or Sets the Rotation threshold value.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Preferences.TranslationThreshold">
+            <summary>
+            Gets or Sets the Translation threshold value.
+            </summary>
+        </member>
+        <member name="T:TDxInput.IKeyboard">
+            <summary>
+            COM interface exposing the methods of Keyboard.
+            Forced to use the same GUID as the original driver interface does.
+            Provides both interface implementations (Dual), IDispatch and IUnknown
+            for early and late binding.
+            </summary>
+        </member>
+        <member name="M:TDxInput.IKeyboard.GetKeyLabel(System.Int32)">
+            <summary>
+            Returns the Label of the supplied key, if any.
+            As usual in a COM environment the stings are of type BSTR,
+            so marshal strings that way.
+            "In" states that the argument will be passed to the structure.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="M:TDxInput.IKeyboard.GetKeyName(System.Int32)">
+            <summary>
+            Returns the Name of the supplied key, if any.
+            As usual in a COM environment the stings are of type BSTR,
+            so marshal strings that way.
+            "In" states that the argument will be passed to the structure.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="M:TDxInput.IKeyboard.IsKeyDown(System.Int32)">
+            <summary>
+            Returns true if the supplied key is pressed down at the time.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="M:TDxInput.IKeyboard.IsKeyUp(System.Int32)">
+            <summary>
+            Returns true if the supplied key is up at the time.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="P:TDxInput.IKeyboard.Keys">
+            <summary>
+            Returns number of keys the device offers.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="P:TDxInput.IKeyboard.ProgrammableKeys">
+            <summary>
+            Returns number of programmable keys the device offers.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="P:TDxInput.IKeyboard.Device">
+            <summary>
+            Returns an IDispatch pointer to the parent Device object
+            associated with the Sensor.
+            For COM interop compatibility, the object must be marshaled to
+            IDispatch. (See Blender Plugin)
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="T:TDxInput.TDxInfo">
+            <summary>
+            Provides information about the used Revision of the driver.
+            Implements the ITDxInfo interface which exposes its methods to COM.
+            Because of that the ClassInterfaceType must be "None", otherwise the CLR
+            provides another class interface (and does not use ITDxInfo).
+            The class is forced to use the same GUID as the original CoClass does
+            in order to be accessible by binary-only clients.
+            </summary>
+        </member>
+        <member name="T:TDxInput.ITDxInfo">
+            <summary>
+            COM interface exposing the methods of TDxInfo.
+            Forced to use the same GUID as the original driver interface does.
+            Provides both interface implementations (Dual), IDispatch and IUnknown
+            for early and late binding.
+            </summary>
+        </member>
+        <member name="M:TDxInput.ITDxInfo.RevisionNumber">
+            <summary>
+            Returns the revision number of the driver.
+            As usual in a COM environment the stings are of type BSTR,
+            so marshal strings that way.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="M:TDxInput.TDxInfo.RevisionNumber">
+            <summary>
+            Returns the revision number of the driver.
+            It is not implemented as a classic getter method in the
+            original driver but as a simple constant return function.
+            </summary>
+            <returns>constant string c_RevisionNumber</returns>
+        </member>
+        <member name="M:TDxInput.TDxInfo.#ctor">
+            <summary>
+            TDxInfo constructor
+            </summary>
+        </member>
+        <member name="T:TDxInput.ISensor">
+            <summary>
+            COM interface exposing the methods of Sensor.
+            Forced to use the same GUID as the original driver interface does.
+            Provides both interface implementations (Dual), IDispatch and IUnknown
+            for early and late binding.
+            </summary>
+        </member>
+        <member name="P:TDxInput.ISensor.Translation">
+            <summary>
+            Holds lengths of movement for all 3 axes.
+            For COM interop this must be marshaled explicitly to Interface.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="P:TDxInput.ISensor.Rotation">
+            <summary>
+            Holds angles for all 3 axes.
+            For COM interop this must be marshaled explicitly to Interface.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="P:TDxInput.ISensor.Device">
+            <summary>
+            Returns an IDispatch pointer to the parent Device object
+            associated with the Sensor.
+            For COM interop compatibility, the object must be marshaled to
+            IDispatch. (See Blender Plugin)
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="P:TDxInput.ISensor.Period">
+            <summary>
+            Holds the time frame the values of Translation and Rotation are scaled to.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="T:TDxInput.Vector3D">
+            <summary>
+            Provides translational data in three dimensions
+            and a length (euclidean norm).
+            Implements the IVector3D interface which exposes its methods to COM.
+            Because of that the ClassInterfaceType must be "None", otherwise the CLR
+            provides another class interface (and does not use IVector3D).
+            The class is forced to use the same GUID as the original CoClass does
+            in order to be accessible by binary-only clients.
+            </summary>
+        </member>
+        <member name="T:TDxInput.IVector3D">
+            <summary>
+            COM interface exposing the methods of Vector3D.
+            Forced to use the same GUID as the original driver interface does.
+            Provides both interface implementations (Dual), IDispatch and IUnknown
+            for early and late binding.
+            </summary>
+        </member>
+        <member name="P:TDxInput.IVector3D.X">
+            <summary>
+            Gets or sets the x component of the vector.
+            The DispId attribute states the vtable entry of the method.
+            param: In states that the argument will be passed to the structure.
+            </summary>
+        </member>
+        <member name="P:TDxInput.IVector3D.Y">
+            <summary>
+            Gets or sets the y component of the vector.
+            The DispId attribute states the vtable entry of the method.
+            param: In states that the argument will be passed to the structure.
+            </summary>
+        </member>
+        <member name="P:TDxInput.IVector3D.Z">
+            <summary>
+            Gets or sets the z component of the vector.
+            The DispId attribute states the vtable entry of the method.
+            param: In states that the argument will be passed to the structure.
+            </summary>
+        </member>
+        <member name="P:TDxInput.IVector3D.Length">
+            <summary>
+            Gets or sets the euclidean length of the vector.
+            The DispId attribute states the vtable entry of the method.
+            param: In states that the argument will be passed to the structure.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Vector3D.#ctor">
+            <summary>
+            Vector3D constructor
+            </summary>
+        </member>
+        <member name="P:TDxInput.Vector3D.X">
+            <summary>
+            Represents the X component of the translation.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Vector3D.Y">
+            <summary>
+            Represents the Y component of the translation.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Vector3D.Z">
+            <summary>
+            Represents the Z component of the translation.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Vector3D.Length">
+            <summary>
+            Represents the length of the translation (euclidean length of the
+            three components). If set to 0.0 all three components are set to 0.0,
+            if set to 1.0 the components are scaled to be a unit vector.
+            </summary>
+        </member>
+        <member name="T:TDxInput._IKeyboardEvents_KeyDownEventHandler">
+            <summary>
+            Delegate declaration for KeyDown event handler. Only states the return 
+            type of the event which is void for COM events and the signature of the event.
+            This is implicitly COM visible and needed for COM to determine the signature
+            of the event.
+            </summary>
+            <param name="keyCode">KeyCode of the button which is pressed down.</param> 
+        </member>
+        <member name="T:TDxInput._IKeyboardEvents_KeyUpEventHandler">
+            <summary>
+            Delegate declaration for KeyUp event handler. Only states the return 
+            type of the event which is void for COM events and the signature of the event.
+            This is implicitly COM visible and needed for COM to determine the signature
+            of the event.
+            </summary>
+            <param name="keyCode">KeyCode of the button which pulled up.</param>
+        </member>
+        <member name="T:TDxInput._IKeyboardEvents">
+            <summary>
+            COM Events publisher interface forced to use
+            the same GUID as the original driver interface does.
+            Must be IDispatch Interface for late binding, not standard dual.
+            </summary>
+        </member>
+        <member name="M:TDxInput._IKeyboardEvents.KeyDown(System.Int32)">
+            <summary>
+            The KeyDown event is fired whenever a key is pressed. The keyCode
+            argument contains the number of the key that fired.
+            </summary>
+            <param name="keyCode"></param>
+        </member>
+        <member name="M:TDxInput._IKeyboardEvents.KeyUp(System.Int32)">
+            <summary>
+            The KeyUp event is fired whenever a key is released. The keyCode
+            argument contains the number of the key that fired.
+            </summary>
+            <param name="keyCode"></param>
+        </member>
+        <member name="T:TDxInput.Sensor">
+            <summary>
+            Represents the motion sensor of the device. Encapsulates movements and
+            twists of the cap or ball of the device. Holds data in the AngleAxis
+            (for Rotation) and Vector3D (for Translation) members which are accessible
+            trough COM. Processes (accelerate and multiply with constant) raw Input
+            data. Fires SensorInput event whenever new Input is detected.
+            Implements the ISensor interface which exposes its methods to COM.
+            Because of that the ClassInterfaceType must be "None", otherwise the CLR
+            provides another class interface (and does not use IVector3D).
+            The class is forced to use the same GUID as the original CoClass does
+            in order to be accessible by binary-only clients.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Sensor.c_MaxValueTranslation">
+            <summary>
+            Maximum value for translation data used for scaling with filter function.
+            THIS MUST BE ADJUSTED IF ANY DEVICE SENDS HIGHER VALUES!!
+            At the time this value is far from optimal for 3DConnexion Devices but 
+            seems to work properly. These devices offer 11 bit precison, however setting
+            MaxValue to 2048 causes the sensor not to move. Will digg in that later.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Sensor.c_MaxValueRotation">
+            <summary>
+            Maximum value for translation data used for scaling with filter function.
+            THIS MUST BE ADJUSTED IF ANY DEVICE SENDS HIGHER VALUES!!
+            At the time this value is far from optimal for 3DConnexion Devices but 
+            seems to work properly. These devices offer 11 bit precison, however setting
+            MaxValue to 2048 causes the sensor not to move. Will digg in that later.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Sensor.c_Translation">
+            <summary>
+            Usage page for Translation Reports
+            </summary>
+        </member>
+        <member name="F:TDxInput.Sensor.c_Rotation">
+            <summary>
+            Usage page for Rotation Reports
+            </summary>
+        </member>
+        <member name="F:TDxInput.Sensor.m_IHidDevice">
+            <summary>
+            IHidDevice object of HidLibrary which raises events when Hid Reports
+            are recieved.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Sensor.IsDisposed">
+            <summary>
+            IDisposeable implementation help variable.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Sensor.m_HidDeviceEvents_HidDataReceivedEventHandler">
+            <summary>
+            HidDataReceived event handler member variable storing the function pointer
+            (delegate) to the method m_HidDevice will call back if a HidDataReceived
+            is detected.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Sensor.m_lock">
+            <summary>
+            Binary semaphore for locking event access.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Sensor.set_Function(TDxInput.functions)">
+            <summary>
+            Converts numeric function types to function pointers for filter processing.
+            Used to convert the enum type coming from the XML config to delegate.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Sensor.HidDataReceived(System.Object,HidLibrary.HidDataReceivedEventArgs)">
+            <summary>
+            Handles HidDataReceived events and processes incoming raw data from the
+            Device. Fills m_Translation and m_Rotation objects with the filtered and
+            scaled raw data. At the end fire SensorInput to notify clients.
+            </summary>
+            <param name="sender"></param>
+            <param name="p_HidDataReceivedEventArgs"></param>
+        </member>
+        <member name="M:TDxInput.Sensor.none(System.Double,System.Double)">
+            <summary>        
+            Null filter. Output = Input.
+            </summary>
+            <param name="p_x">input value</param>
+            <param name="p_max">maximum value the function is scaled to</param>
+            <returns></returns>
+        </member>
+        <member name="M:TDxInput.Sensor.sin(System.Double,System.Double)">
+            <summary>
+            Sinus filter. Output = sin(Input) [Shifted to origin]
+            </summary>
+            <param name="p_x">input value</param>
+            <param name="p_max">maximum value the function is scaled to</param>
+            <returns></returns>
+        </member>
+        <member name="M:TDxInput.Sensor.cube(System.Double,System.Double)">
+            <summary>
+            Cube filter. Output = Input*Input*Input [Shifted to origin]
+            </summary>
+            <param name="p_x">input value</param>
+            <param name="p_max">maximum value the function is scaled to</param>
+            <returns></returns>
+        </member>
+        <member name="M:TDxInput.Sensor.square(System.Double,System.Double)">
+            <summary>
+            Sqaure filter. Output = Input*Input [Shifted to origin]
+            </summary>
+            <param name="p_x">input value</param>
+            <param name="p_max">maximum value the function is scaled to</param>
+            <returns></returns>
+        </member>
+        <member name="M:TDxInput.Sensor.InitSensor(TDxInput.Device,HidLibrary.IHidDevice)">
+            <summary>
+            Binds the HidDataReceivedEvent to HidDataReceived() and sets parent
+            Device object.
+            This method is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="M:TDxInput.Sensor.DestroySensor">
+            <summary>
+            Unbinds the HidDataReceivedEvent from HidDataReceived().
+            This method is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="M:TDxInput.Sensor.#ctor">
+            <summary>
+            Constructor which inits the TranslationFunction and RotationFunction attributes.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Sensor.Finalize">
+            <summary>
+            Destructor supporting IDisposeable implementation.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Sensor.Dispose">
+            <summary>
+            Suppress garbage collection of this object, take care of it yourself.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Sensor.Dispose(System.Boolean)">
+            <summary>
+            Clean up managed and unmanged ressources by hand.
+            </summary>
+            <param name="Disposing"></param>
+        </member>
+        <member name="E:TDxInput.Sensor.m_SensorInput">
+            <summary>
+            Member variable storing registered event handlers for SensorInput event.
+            This is neccessary for a (hopefully) thread save event implementation. 
+            </summary>
+        </member>
+        <member name="E:TDxInput.Sensor.SensorInput">
+            <summary>
+            Overwritten add() and remove() handlers for SensorInput event which
+            makes registering event handlers respect our member variable m_SensorInput.
+            This is neccessary for a (hopefully) thread save event implementation.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.XScaleFactor">
+            <summary>
+            Gets or Sets the X translation scaling factor which is mulitiplied
+            with the raw input data from the Sensor before passed to the client.
+            This property is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.YScaleFactor">
+            <summary>
+            Gets or Sets the Y translation scaling factor which is mulitiplied
+            with the raw input data from the Sensor before passed to the client.
+            This property is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.ZScaleFactor">
+            <summary>
+            Gets or Sets the Z translation scaling factor which is mulitiplied
+            with the raw input data from the Sensor before passed to the client.
+            This property is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.XRotScaleFactor">
+            <summary>
+            Gets or Sets the X rotation scaling factor which is mulitiplied
+            with the raw input data from the Sensor before passed to the client.
+            This property is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.YRotScaleFactor">
+            <summary>
+            Gets or Sets the Y rotation scaling factor which is mulitiplied
+            with the raw input data from the Sensor before passed to the client.
+            This property is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.ZRotScaleFactor">
+            <summary>
+            Gets or Sets the Z rotation scaling factor which is mulitiplied
+            with the raw input data from the Sensor before passed to the client.
+            This property is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.TranslationFunction">
+            <summary>
+            Sets the Translation filter function which takes the raw input data
+            from the Sensor and passes it to this function as argument.
+            The result of this will be passed to the client.
+            This property is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.RotationFunction">
+            <summary>
+            Sets the Rotation filter function which takes the raw input data
+            from the Sensor and passes it to this function as argument.
+            The result of this will be passed to the client.
+            This property is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.TranslationThreshold">
+            <summary>
+            Gets or Sets the Translation Threshold. The Vector3D.Length attribute
+            must be > TranslationThreshold to be passed to the client.
+            This property is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.RotationThreshold">
+            <summary>
+            Gets or Sets the Rotation Threshold. The AngleAxis.Angle attribute
+            must be > RotationThreshold to be passed to the client.
+            This property is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.Period">
+            <summary>
+            Gets the time frame the values of Translation and Rotation are scaled to.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.Translation">
+            <summary>
+            Gets lengths of movement for all 3 axes.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.Rotation">
+            <summary>
+            Gets angles for all 3 axes.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Sensor.Device">
+            <summary>
+            Gets the parent Device object associated with the Sensor.
+            </summary>
+        </member>
+        <member name="T:TDxInput._ISimpleDeviceEvents_DeviceChangeEventHandler">
+            <summary>
+            Delegate declaration for DeviceChange event handler. Only states the return 
+            type of the event which is void for COM events and the signature of the event.
+            This is implicitly COM visible and needed for COM to determine the signature
+            of the event.
+            </summary>
+            <param name="reserved">Not yet defined functionality.</param>
+        </member>
+        <member name="T:TDxInput._ISimpleDeviceEvents">
+            <summary>
+            COM Events publisher interface forced to use
+            the same GUID as the original driver interface does.
+            Must be IDispatch Interface for late binding, not standard dual.
+            </summary>
+        </member>
+        <member name="M:TDxInput._ISimpleDeviceEvents.DeviceChange(System.Int32)">
+            <summary>
+            The DeviceChange event is fired whenever a device is plugged in
+            or pulled off. The reserved argument has no use for now.
+            </summary>
+            <param name="reserved"></param>
+        </member>
+        <member name="T:TDxInput._ISensorEvents_SensorInputEventHandler">
+            <summary>
+            Delegate declaration for SensorInput event handler. Only states the return 
+            type of the event which is void for COM events and the signature of the event.
+            This is implicitly COM visible and needed for COM to determine the signature
+            of the event.
+            </summary>
+        </member>
+        <member name="T:TDxInput._ISensorEvents">
+            <summary>
+            COM Events publisher interface forced to use
+            the same GUID as the original driver interface does.
+            Must be IDispatch Interface for late binding, not standard dual.
+            </summary>
+        </member>
+        <member name="M:TDxInput._ISensorEvents.SensorInput">
+            <summary>
+            The SensorInput event is fired whenever the Sensor recieves 
+            valid data from the device.
+            </summary>
+            <param name="reserved"></param>
+        </member>
+        <member name="T:TDxInput.Device">
+            <summary>
+            Main device class representing the entire NDOF device
+            encapsulating Keyboard and Sensor.
+            Indirectly implements the _ISimpleDeviceEvents_Event interface via the
+            ComSourceInterfaces attribute in order to properly expose events to COM.
+            Implements the IDisposeable interface which helps to properly dispose
+            this object and its events.
+            Implements the ISimpleDevice interface which exposes its methods to COM.
+            Because of that the ClassInterfaceType must be "None", otherwise the CLR
+            provides another class interface (and does not use IAngleAxis).
+            The class is forced to use the same GUID as the original CoClass does
+            in order to be accessible by binary-only clients.
+            </summary>
+        </member>
+        <member name="T:TDxInput.ISimpleDevice">
+            <summary>
+            COM interface exposing the methods of Device.
+            Forced to use the same GUID as the original driver interface does.
+            Provides both interface implementations (Dual), IDispatch and IUnknown
+            for early and late binding.
+            </summary>
+        </member>
+        <member name="M:TDxInput.ISimpleDevice.Connect">
+            <summary>
+            Tries to find connected devices. For proper
+            operation this method must be called before getting data from the
+            device.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="M:TDxInput.ISimpleDevice.Disconnect">
+            <summary>
+            Disconnects already connected devices.
+            Before the client application shuts down, this method should be
+            called in order to disconnect event handlers and save application 
+            profiles.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="M:TDxInput.ISimpleDevice.LoadPreferences(System.String)">
+            <summary>
+            Loads the application profile in argument preferencesName.
+            As usual in a COM environment the stings are of type BSTR,
+            so marshal strings that way.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="P:TDxInput.ISimpleDevice.Sensor">
+            <summary>
+            Returns an interface pointer to the associated Sensor object.
+            For COM interop this must be marshaled explicitly to Interface.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="P:TDxInput.ISimpleDevice.Keyboard">
+            <summary>
+            Returns an interface pointer to the associated Keyboard object.
+            For COM interop this must be marshaled explicitly to Interface.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="P:TDxInput.ISimpleDevice.Type">
+            <summary>
+            Returns type of the connected device.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="P:TDxInput.ISimpleDevice.IsConnected">
+            <summary>
+            Returns true if a device is connected with the driver.
+            The DispId attribute states the vtable entry of the method.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Device.m_prefs">
+            <summary>
+            Object which encapsulates LoadPreferencesName() functionality.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Device.m_HidControl">
+            <summary>
+            Used to communicate with the sigleton instance of HidControl for searching
+            devices and registering DeviceChange events.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Device.m_IHidDevice">
+            <summary>
+            Object of HidLibrary used to raise events when Hid Reports
+            are recieved.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Device.m_HidControlEvents_DeviceChangeEventHandler">
+            <summary>
+            DeviceChange event handler member variable storing the function pointer
+            (delegate) to the method m_HidControl will call back if a DeviceChange
+            is detected.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Device.m_lock">
+            <summary>
+            Binary semaphore for locking event access.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Device.IsAerion(HidLibrary.IHidDeviceInfo)">
+            <summary>
+            Predicate which queries p_IHidDeviceInfo.VendorID and
+            p_IHidDeviceInfo.ProductID and returns true if an Aerion
+            device is connected.
+            </summary>
+            <param name="p_IHidDeviceInfo"></param>
+            <returns>boolean</returns>
+        </member>
+        <member name="M:TDxInput.Device.IsSpaceExplorer(HidLibrary.IHidDeviceInfo)">
+            <summary>
+            Predicate which queries p_IHidDeviceInfo.VendorID and
+            p_IHidDeviceInfo.ProductID and returns true if a SpaceExplorer
+            device is connected.
+            </summary>
+            <param name="p_IHidDeviceInfo"></param>
+            <returns>boolean</returns>
+        </member>
+        <member name="M:TDxInput.Device.IsSpaceNavigator(HidLibrary.IHidDeviceInfo)">
+            <summary>
+            Predicate which queries p_IHidDeviceInfo.VendorID and
+            p_IHidDeviceInfo.ProductID and returns true if a SpaceNavigator
+            device is connected.
+            </summary>
+            <param name="p_IHidDeviceInfo"></param>
+            <returns>boolean</returns>
+        </member>
+        <member name="M:TDxInput.Device.IsSpaceTraveler(HidLibrary.IHidDeviceInfo)">
+            <summary>
+            Predicate which queries p_IHidDeviceInfo.VendorID and
+            p_IHidDeviceInfo.ProductID and returns true if a SpaceTraveler
+            device is connected.
+            </summary>
+            <param name="p_IHidDeviceInfo"></param>
+            <returns>boolean</returns>
+        </member>
+        <member name="M:TDxInput.Device.IsSpacePilot(HidLibrary.IHidDeviceInfo)">
+            <summary>
+            Predicate which queries p_IHidDeviceInfo.VendorID and
+            p_IHidDeviceInfo.ProductID and returns true if a SpacePilot
+            device is connected.
+            </summary>
+            <param name="p_IHidDeviceInfo"></param>
+            <returns>boolean</returns>
+        </member>
+        <member name="M:TDxInput.Device.ConnectAerion">
+            <summary>
+            Connects the AerionInput main instance with a plugged NDOF-device by
+            passing a predicate.
+            Instructs m_IHidDevice to handle incoming data and sets the global Type of
+            the device.
+            </summary>
+            <returns>true if device is connected</returns>
+        </member>
+        <member name="M:TDxInput.Device.ConnectSpaceExplorer">
+            <summary>
+            Connects the AerionInput main instance with a plugged NDOF-device by
+            passing a predicate.
+            Instructs m_IHidDevice to handle incoming data and sets the global Type of
+            the device.
+            </summary>
+            <returns>true if device is connected</returns>
+        </member>
+        <member name="M:TDxInput.Device.ConnectSpaceTraveler">
+            <summary>
+            Connects the AerionInput main instance with a plugged NDOF-device by
+            passing a predicate.
+            Instructs m_IHidDevice to handle incoming data and sets the global Type of
+            the device.
+            </summary>
+            <returns>true if device is connected</returns>
+        </member>
+        <member name="M:TDxInput.Device.ConnectSpaceNavigator">
+            <summary>
+            Connects the AerionInput main instance with a plugged NDOF-device by
+            passing a predicate.
+            Instructs m_IHidDevice to handle incoming data and sets the global Type of
+            the device.
+            </summary>
+            <returns>true if device is connected</returns>
+        </member>
+        <member name="M:TDxInput.Device.ConnectSpacePilot">
+            <summary>
+            Connects the AerionInput main instance with a plugged NDOF-device by
+            passing a predicate.
+            Instructs m_IHidDevice to handle incoming data and sets the global Type of
+            the device.
+            </summary>
+            <returns>true if device is connected</returns>
+        </member>
+        <member name="M:TDxInput.Device.HidControlDeviceChange(System.Object,System.EventArgs)">
+            <summary>
+            Handles the HidControlDeviceChange event. First disconnects the current
+            device from the driver, then calls Connect() which looks for new devices.
+            Fires DeviceChange event in order to notify clients.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TDxInput.Device.LoadPreferences(System.String)">
+            <summary>
+            Loads the application profile in argument preferencesName
+            and updates all relevant fields. For now save the config
+            file, as the Blender plugin does not disconnect (and thereby
+            save the config file) correctly.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Device.Connect">
+            <summary>
+            Look for connected supported devices and register for HidControl.DeviceChange
+            event to be notified if devices are connected. If a supported device is found
+            init the Sensor and the Keyboard. Then load initial "default" profile.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Device.Disconnect">
+            <summary>
+            Disconnect a connected device. Stop the HidDevice processing input data,
+            and deregister from HidDevice.DeviceChange event handler. Save the config file.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Device.#ctor">
+            <summary>
+            Destructor supporting IDisposeable implementation.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Device.Dispose">
+            <summary>
+            Suppress garbage collection of this object, take care of it yourself.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Device.Dispose(System.Boolean)">
+            <summary>
+            Clean up managed and unmanged ressources by hand.
+            </summary>
+            <param name="Disposing"></param>
+        </member>
+        <member name="E:TDxInput.Device.m_DeviceChange">
+            <summary>
+            Member variable storing registered event handlers for DeviceChange event.
+            This is neccessary for a (hopefully) thread save event implementation.
+            </summary>
+        </member>
+        <member name="E:TDxInput.Device.DeviceChange">
+            <summary>
+            Overwritten add() and remove() handlers for DeviceChange event which
+            makes registering event handlers respect our member variable m_DeviceChange.
+            This is neccessary for a (hopefully) thread save event implementation.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Device.Sensor">
+            <summary>
+            Returns the associated Sensor object.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Device.Keyboard">
+            <summary>
+            Returns the associated Keyboard object.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Device.Type">
+            <summary>
+            Returns type of the connected device.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Device.IsConnected">
+            <summary>
+            Returns true if a device is connected with the driver.
+            </summary>
+        </member>
+        <member name="T:TDxInput.Keyboard">
+            <summary>
+            Represents the keys of the device. Holds boolean array with the state of all keys.
+            Fires KeyUp and KeyDown events whenever Keys are pressed and released.
+            Implements the IKeyboard interface which exposes its methods to COM.
+            Because of that the ClassInterfaceType must be "None", otherwise the CLR
+            provides another class interface (and does not use IVector3D).
+            The class is forced to use the same GUID as the original CoClass does
+            in order to be accessible by binary-only clients.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Keyboard.c_Button">
+            <summary>
+            Usage page for Button Reports
+            </summary>
+        </member>
+        <member name="F:TDxInput.Keyboard.m_KeyDownList">
+            <summary>
+            BitArray containing one bit (0 = up, 1 = down) for each key of the device.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Keyboard.m_IHidDevice">
+            <summary>
+            IHidDevice object of HidLibrary which raises events when Hid Reports
+            are recieved.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Keyboard.IsDisposed">
+            <summary>
+            IDisposeable implementation help variable.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Keyboard.m_HidDeviceEvents_HidDataReceivedEventHandler">
+            <summary>
+            HidDataReceived event handler member variable storing the function pointer
+            (delegate) to the method m_HidDevice will call back if a HidDataReceived
+            is detected.
+            </summary>
+        </member>
+        <member name="F:TDxInput.Keyboard.m_lock">
+            <summary>
+            Binary semaphore for locking event access.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Keyboard.HidDataReceived(System.Object,HidLibrary.HidDataReceivedEventArgs)">
+            <summary>
+            Handles HidDataReceived events and processes incoming raw data from the
+            Device. Fills BitArray m_KeyDownList with key press data.
+            At the end fire KeyDown or KeyUp to notify clients.
+            </summary>
+            <param name="sender"></param>
+            <param name="p_HidDataReceivedEventArgs"></param>
+        </member>
+        <member name="M:TDxInput.Keyboard.GetKeyName(System.Int32)">
+            <summary>
+            Returns the Name of the supplied key, if any.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Keyboard.GetKeyLabel(System.Int32)">
+            <summary>
+            Returns the Label of the supplied key, if any.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Keyboard.IsKeyUp(System.Int32)">
+            <summary>
+            Returns true if the supplied key is up at the time.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Keyboard.IsKeyDown(System.Int32)">
+            <summary>
+            Returns true if the supplied key is pressed down at the time.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Keyboard.InitKeyboard(TDxInput.Device,HidLibrary.IHidDevice)">
+            <summary>
+            Binds the HidDataReceivedEvent to HidDataReceived() and sets parent
+            Device object.
+            TODO: Send feature report to device to query number of keys.
+            This method is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="M:TDxInput.Keyboard.DestroyKeyboard">
+            <summary>
+            Unbinds the HidDataReceivedEvent from HidDataReceived().
+            This method is an extension of the orginal API, which is not exposed to COM.
+            Thatswhy the Attribute ComVisible(false).
+            </summary>
+        </member>
+        <member name="M:TDxInput.Keyboard.#ctor">
+            <summary>
+            Default constructor needed by COM to create objects.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Keyboard.Finalize">
+            <summary>
+            Destructor supporting IDisposeable implementation.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Keyboard.Dispose">
+            <summary>
+            Suppress garbage collection of this object, take care of it yourself.
+            </summary>
+        </member>
+        <member name="M:TDxInput.Keyboard.Dispose(System.Boolean)">
+            <summary>
+            Clean up managed and unmanged ressources by hand.
+            </summary>
+            <param name="Disposing"></param>
+        </member>
+        <member name="E:TDxInput.Keyboard.m_KeyDown">
+            <summary>
+            Member variable storing registered event handlers for KeyDown event.
+            This is neccessary for a (hopefully) thread save event implementation. 
+            </summary>
+        </member>
+        <member name="E:TDxInput.Keyboard.m_KeyUp">
+            <summary>
+            Member variable storing registered event handlers for KeyUp event.
+            This is neccessary for a (hopefully) thread save event implementation. 
+            </summary>
+        </member>
+        <member name="E:TDxInput.Keyboard.KeyDown">
+            <summary>
+            Overwritten add() and remove() handlers for KeyDown event which
+            makes registering event handlers respect our member variable m_KeyDown.
+            This is neccessary for a (hopefully) thread save event implementation.
+            </summary>
+        </member>
+        <member name="E:TDxInput.Keyboard.KeyUp">
+            <summary>
+            Overwritten add() and remove() handlers for KeyUp event which
+            makes registering event handlers respect our member variable m_KeyUp.
+            This is neccessary for a (hopefully) thread save event implementation.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Keyboard.Keys">
+            <summary>
+            Returns number of keys the device offers.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Keyboard.Device">
+            <summary>
+            Returns the parent Device object associated with the Sensor.
+            </summary>
+        </member>
+        <member name="P:TDxInput.Keyboard.ProgrammableKeys">
+            <summary>
+            Returns number of programmable keys the device offers.
+            </summary>
+        </member>
+    </members>
+</doc>

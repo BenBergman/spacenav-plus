@@ -1,0 +1,11 @@
+- test the DeviceChange Events in Plugin
+- save profiles for each connected device seperately
+- activate the 3Dconnexion LED on their devices
+- implement a feature report which returns the number of the buttons
+- implement something like a setup routine
+- implement our own classes and types additionally to the tdx ones
+- convert naming scheme to standard .NET naming
+- make it possible to only register our types or both types
+- convert the entire project to VC++
+- implement a simple C API
+

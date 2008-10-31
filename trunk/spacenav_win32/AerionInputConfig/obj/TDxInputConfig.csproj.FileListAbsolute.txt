@@ -1,0 +1,10 @@
+D:\uni\05_ws0708\globefish\TDxInputConfig\obj\Debug\ResolveAssemblyReference.cache
+D:\uni\05_ws0708\globefish\TDxInputConfig\obj\Debug\TDxInputConfig.MainForm.resources
+D:\uni\05_ws0708\globefish\TDxInputConfig\obj\Debug\TDxInputConfig.Properties.Resources.resources
+D:\uni\05_ws0708\globefish\TDxInputConfig\obj\Debug\TDxInputConfig.csproj.GenerateResource.Cache
+D:\uni\05_ws0708\globefish\TDxInputConfig\bin\Debug\TDxInputConfig.exe
+D:\uni\05_ws0708\globefish\TDxInputConfig\bin\Debug\TDxInputConfig.pdb
+D:\uni\05_ws0708\globefish\TDxInputConfig\obj\Debug\TDxInputConfig.exe
+D:\uni\05_ws0708\globefish\TDxInputConfig\obj\Debug\TDxInputConfig.pdb
+D:\uni\05_ws0708\globefish\svn\AerionInputConfig\obj\Debug\TDxInputConfig.exe
+D:\uni\05_ws0708\globefish\svn\AerionInputConfig\obj\Debug\TDxInputConfig.pdb

@@ -1,0 +1,9 @@
+D:\uni\05_ws0708\globefish\TDxInput\bin\Debug\TDxInput.dll
+D:\uni\05_ws0708\globefish\TDxInput\bin\Debug\TDxInput.pdb
+D:\uni\05_ws0708\globefish\TDxInput\bin\Debug\TDxInput.tlb
+D:\uni\05_ws0708\globefish\TDxInput\bin\Debug\HIDLibrary.dll
+D:\uni\05_ws0708\globefish\TDxInput\bin\Debug\HIDLibrary.pdb
+D:\uni\05_ws0708\globefish\TDxInput\bin\Debug\HIDLibrary.xml
+D:\uni\05_ws0708\globefish\TDxInput\obj\Debug\ResolveAssemblyReference.cache
+D:\uni\05_ws0708\globefish\TDxInput\obj\Debug\TDxInput.dll
+D:\uni\05_ws0708\globefish\TDxInput\obj\Debug\TDxInput.pdb

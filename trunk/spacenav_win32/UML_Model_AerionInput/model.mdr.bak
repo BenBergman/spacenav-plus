@@ -1,0 +1,2240 @@
+MagicDrawUML "15.1"
+(RTManager
+	(RTManagerOptions
+		SPACES_COUNT 8
+		CODE_GENERATION_REVERSE_OPTION 2
+		DELETED_ELEMENT_GENERATION_OPTION 0
+		LAUNCH_WIZARD TRUE
+		MERGE_AFTER_REVERSE TRUE
+		CREATE_ATTRIBUTES FALSE
+		DEFAULT_WORKING_DIRECTORY "<install.root>"
+		DEFAULT_LANGUAGE "C#"
+		DEFAULT_WORKING_DIRECTORY "<install.root>"
+		TEMP_DIRECTORY "Active Directory"
+		(C#LanguageOptions
+			mGenEmptyDoc FALSE
+			mBracketInNewLine TRUE
+			mAddSpaces TRUE
+			mUseJavaDoc FALSE
+			mDefaultHeader "@(#) $FILE_NAME"
+			mGenerateDocumentation TRUE
+			CSH_CONCAT_NAMESPACE_NAMES TRUE
+			(DocumentationProperties
+				DefaultDocumentationProcessor "STANDARD_PROCESSOR"
+				mCommentStyle 0
+				(Processors
+					(CSH_XML_PROCESSOR
+						(mDocumentationTagManager
+							(CLASSIFIER
+								(DocumentationTagProperty
+									mName "summary"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "remarks"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "permission"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "example"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "seealso"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "include"
+									mGenerate "true"
+								)
+							)
+							(OPERARTION
+								(DocumentationTagProperty
+									mName "summary"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "value"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "param"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "returns"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "exception"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "permission"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "example"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "seealso"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "include"
+									mGenerate "true"
+								)
+							)
+							(ATTRIBUTE
+								(DocumentationTagProperty
+									mName "summary"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "permission"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "example"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "seealso"
+									mGenerate "true"
+								)
+								(DocumentationTagProperty
+									mName "include"
+									mGenerate "true"
+								)
+							)
+						)
+					)
+				)
+			)
+			CSH_COLLECT_USINGS TRUE
+			mDefines( list
+			)
+		)
+		mResultToDiagram 3
+		mAnalysisType 0
+		defaultWorkingPackage "eee_1045467100313_135436_1"
+		defaultPathForReferences( list
+			"eee_1045467100313_135436_1"
+		)
+		resolveTemplateType TRUE
+		recentSourceRoots( list
+			"D:\\uni\\05_ws0708\\globefish\\uml_model_tdxinput\\generation"
+		)
+	)
+	(RTProjectGroupObject
+		mID "_15_5_24400562_1220817447734_639602_1213"
+		mName "Code Engineering Sets"
+		(CshRTProject
+			mID "_15_5_24400562_1222439839109_810231_3093"
+			mName "Ohne Titel1"
+			mObjectDataID "eee_1045467100313_135436_1"
+			(mProperties
+				mName "Project"
+				DEFAULT_METHOD_RETURN_TYPE "void"
+				DEFAULT_ATTRIBUTE_TYPE "int"
+				MAIN_FILE_EXTENSION "cs"
+				PREPROCESS "true"
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839109_317368_3094"
+				mName "_IKeyboardEvents.cs"
+				mObjectDataID "_15_5_24400562_1222439123968_217332_699"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_IKeyboardEvents.cs"
+				mLastModified "1222371910503"
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839109_944805_3103"
+					mName "_IKeyboardEvents"
+					mRemoved TRUE
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_IKeyboardEvents.cs C _IKeyboardEvents"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_815309_3095"
+					mObjectDataID "_15_5_24400562_1222439229484_540449_799"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_IKeyboardEvents.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_600106_3096"
+					mObjectDataID "_15_5_24400562_1222439229484_48982_805"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_IKeyboardEvents.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_639563_3097"
+					mObjectDataID "_15_5_24400562_1222439229484_778589_810"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_IKeyboardEvents.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_375979_3098"
+					mObjectDataID "_15_5_24400562_1222439229484_980269_816"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_IKeyboardEvents.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839109_704387_3099"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_IKeyboardEvents.cs P AerionInput"
+					(CshRTInterface
+						mID "_15_5_24400562_1222439839109_101118_3100"
+						mName "_IKeyboardEvents"
+						mObjectDataID "_15_5_24400562_1222439229468_428692_752"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_IKeyboardEvents.cs P AerionInput C _IKeyboardEvents"
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_492283_3101"
+							mName "KeyDown"
+							mObjectDataID "_15_5_24400562_1222439229562_283743_1088"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_IKeyboardEvents.cs P AerionInput C _IKeyboardEvents M KeyDown Arg int"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_931221_3102"
+							mName "KeyUp"
+							mObjectDataID "_15_5_24400562_1222439229562_427078_1091"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_IKeyboardEvents.cs P AerionInput C _IKeyboardEvents M KeyUp Arg int"
+						)
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839109_737770_3104"
+				mName "_ISensorEvents.cs"
+				mObjectDataID "_15_5_24400562_1222439123968_770244_700"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISensorEvents.cs"
+				mLastModified "1222371909628"
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839109_108555_3112"
+					mName "_ISensorEvents"
+					mRemoved TRUE
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISensorEvents.cs C _ISensorEvents"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_313156_3105"
+					mObjectDataID "_15_5_24400562_1222439229484_492008_820"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISensorEvents.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_648312_3106"
+					mObjectDataID "_15_5_24400562_1222439229484_784858_824"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISensorEvents.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_647224_3107"
+					mObjectDataID "_15_5_24400562_1222439229500_604770_828"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISensorEvents.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_741979_3108"
+					mObjectDataID "_15_5_24400562_1222439229500_640021_832"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISensorEvents.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839109_439090_3109"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISensorEvents.cs P AerionInput"
+					(CshRTInterface
+						mID "_15_5_24400562_1222439839109_647065_3110"
+						mName "_ISensorEvents"
+						mObjectDataID "_15_5_24400562_1222439229468_370759_754"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISensorEvents.cs P AerionInput C _ISensorEvents"
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_226114_3111"
+							mName "SensorInput"
+							mObjectDataID "_15_5_24400562_1222439229562_729723_1097"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISensorEvents.cs P AerionInput C _ISensorEvents M SensorInput"
+						)
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839109_594218_3113"
+				mName "_ISimpleDeviceEvents.cs"
+				mObjectDataID "_15_5_24400562_1222439123968_21216_701"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISimpleDeviceEvents.cs"
+				mLastModified "1222371909675"
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839109_636877_3121"
+					mName "_ISimpleDeviceEvents"
+					mRemoved TRUE
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISimpleDeviceEvents.cs C _ISimpleDeviceEvents"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_327969_3114"
+					mObjectDataID "_15_5_24400562_1222439229500_449653_836"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISimpleDeviceEvents.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_344889_3115"
+					mObjectDataID "_15_5_24400562_1222439229500_370650_840"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISimpleDeviceEvents.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_311829_3116"
+					mObjectDataID "_15_5_24400562_1222439229500_53632_844"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISimpleDeviceEvents.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_143519_3117"
+					mObjectDataID "_15_5_24400562_1222439229500_969276_848"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISimpleDeviceEvents.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839109_212862_3118"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISimpleDeviceEvents.cs P AerionInput"
+					(CshRTInterface
+						mID "_15_5_24400562_1222439839109_749175_3119"
+						mName "_ISimpleDeviceEvents"
+						mObjectDataID "_15_5_24400562_1222439229468_234240_756"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISimpleDeviceEvents.cs P AerionInput C _ISimpleDeviceEvents"
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_901939_3120"
+							mName "DeviceChange"
+							mObjectDataID "_15_5_24400562_1222439229562_792064_1102"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\_ISimpleDeviceEvents.cs P AerionInput C _ISimpleDeviceEvents M DeviceChange"
+						)
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839109_789366_3122"
+				mName "AngleAxis.cs"
+				mObjectDataID "_15_5_24400562_1222439123968_965621_702"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs"
+				mLastModified "1222371910503"
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839109_933625_3140"
+					mName "AngleAxis"
+					mRemoved TRUE
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs C AngleAxis"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_116295_3123"
+					mObjectDataID "_15_5_24400562_1222439229500_826286_852"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_320046_3124"
+					mObjectDataID "_15_5_24400562_1222439229500_346625_856"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_781901_3125"
+					mObjectDataID "_15_5_24400562_1222439229500_254844_860"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_24996_3126"
+					mObjectDataID "_15_5_24400562_1222439229500_655736_864"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839109_608620_3127"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput"
+					(CshRTClassObject
+						mID "_15_5_24400562_1222439839109_526605_3128"
+						mName "AngleAxis"
+						mObjectDataID "_15_5_24400562_1222439229468_704825_758"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput C AngleAxis"
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_246550_3129"
+							mName "m_X"
+							mObjectDataID "_15_5_24400562_1222439229562_222491_1107"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput C AngleAxis A m_X"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_299895_3130"
+							mName "m_Y"
+							mObjectDataID "_15_5_24400562_1222439229562_184195_1108"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput C AngleAxis A m_Y"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_34275_3131"
+							mName "m_Z"
+							mObjectDataID "_15_5_24400562_1222439229562_399663_1109"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput C AngleAxis A m_Z"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_198001_3132"
+							mName "m_Angle"
+							mObjectDataID "_15_5_24400562_1222439229562_903992_1110"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput C AngleAxis A m_Angle"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_111540_3133"
+							mName "m_Sensor"
+							mObjectDataID "_15_5_24400562_1222439229562_597614_1113"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput C AngleAxis A m_Sensor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_996365_3134"
+							mName "Sensor"
+							mObjectDataID "_15_5_24400562_1222439229578_502188_1116"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput C AngleAxis A Sensor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_390713_3135"
+							mName "X"
+							mObjectDataID "_15_5_24400562_1222439229578_788496_1124"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput C AngleAxis A X"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_314186_3136"
+							mName "Y"
+							mObjectDataID "_15_5_24400562_1222439229578_849680_1132"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput C AngleAxis A Y"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_367688_3137"
+							mName "Z"
+							mObjectDataID "_15_5_24400562_1222439229578_805769_1140"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput C AngleAxis A Z"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_878902_3138"
+							mName "Angle"
+							mObjectDataID "_15_5_24400562_1222439229578_964264_1148"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput C AngleAxis A Angle"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_95055_3139"
+							mName "AngleAxis"
+							mObjectDataID "_15_5_24400562_1222439229578_371207_1156"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\AngleAxis.cs P AerionInput C AngleAxis M AngleAxis"
+						)
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839109_584841_3141"
+				mName "Device.cs"
+				mObjectDataID "_15_5_24400562_1222439123968_150966_703"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs"
+				mLastModified "1222438530312"
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839109_412727_3189"
+					mName "Device"
+					mRemoved TRUE
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs C Device"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_700186_3142"
+					mObjectDataID "_15_5_24400562_1222439229500_552891_872"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_389603_3143"
+					mObjectDataID "_15_5_24400562_1222439229500_768004_876"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_831724_3144"
+					mObjectDataID "_15_5_24400562_1222439229500_8665_880"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_766663_3145"
+					mObjectDataID "_15_5_24400562_1222439229500_35597_884"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_176497_3146"
+					mObjectDataID "_15_5_24400562_1222439229500_753726_889"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs UN HidLibrary"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839109_251796_3147"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput"
+					(CshRTClassObject
+						mID "_15_5_24400562_1222439839109_465062_3148"
+						mName "_ISimpleDeviceEvents_DeviceChangeEventHandler"
+						mRemoved TRUE
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C _ISimpleDeviceEvents_DeviceChangeEventHandler"
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_449580_3149"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C _ISimpleDeviceEvents_DeviceChangeEventHandler M  Arg int"
+						)
+					)
+					(CshRTClassObject
+						mID "_15_5_24400562_1222439839109_590262_3150"
+						mName "Device"
+						mObjectDataID "_15_5_24400562_1222439229468_331694_762"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device"
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_250904_3164"
+							mName "m_Sensor"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A m_Sensor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_232213_3165"
+							mName "m_Keyboard"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A m_Keyboard"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_634922_3151"
+							mName "c_AerionVendorID"
+							mObjectDataID "_15_5_24400562_1222439229578_27596_1164"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_AerionVendorID"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_416099_3152"
+							mName "c_LogitechVendorID"
+							mObjectDataID "_15_5_24400562_1222439229578_592280_1166"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_LogitechVendorID"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_304304_3153"
+							mName "c_AerionProductID"
+							mObjectDataID "_15_5_24400562_1222439229578_324617_1168"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_AerionProductID"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_797984_3154"
+							mName "c_SpaceTravelerProductID"
+							mObjectDataID "_15_5_24400562_1222439229578_14172_1170"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_SpaceTravelerProductID"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_19243_3155"
+							mName "c_SpacePilotProductID"
+							mObjectDataID "_15_5_24400562_1222439229578_9421_1172"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_SpacePilotProductID"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_71709_3156"
+							mName "c_SpaceNavigatorProductID"
+							mObjectDataID "_15_5_24400562_1222439229578_229886_1174"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_SpaceNavigatorProductID"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_854850_3157"
+							mName "c_SpaceExplorerProductID"
+							mObjectDataID "_15_5_24400562_1222439229578_654872_1176"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_SpaceExplorerProductID"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_348515_3158"
+							mName "c_UnknownDeviceType"
+							mObjectDataID "_15_5_24400562_1222439229578_262385_1178"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_UnknownDeviceType"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_62741_3159"
+							mName "c_SpaceExplorerDeviceType"
+							mObjectDataID "_15_5_24400562_1222439229593_979608_1180"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_SpaceExplorerDeviceType"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_793734_3160"
+							mName "c_SpaceNavigatorDeviceType"
+							mObjectDataID "_15_5_24400562_1222439229593_193805_1182"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_SpaceNavigatorDeviceType"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_442637_3161"
+							mName "c_SpaceTravelerDeviceType"
+							mObjectDataID "_15_5_24400562_1222439229593_327157_1184"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_SpaceTravelerDeviceType"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_749690_3162"
+							mName "c_SpacePilotDeviceType"
+							mObjectDataID "_15_5_24400562_1222439229593_296213_1186"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_SpacePilotDeviceType"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_606513_3163"
+							mName "c_AerionDeviceType"
+							mObjectDataID "_15_5_24400562_1222439229593_830154_1188"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A c_AerionDeviceType"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_660557_3166"
+							mName "m_Type"
+							mObjectDataID "_15_5_24400562_1222439229593_442726_1196"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A m_Type"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_411942_3167"
+							mName "m_cntrl"
+							mObjectDataID "_15_5_24400562_1222439229593_399348_1201"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A m_cntrl"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_898847_3168"
+							mName "m_dev"
+							mObjectDataID "_15_5_24400562_1222439229593_122589_1205"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A m_dev"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_880336_3169"
+							mName "m_HidControlEvents_DeviceChangeEventHandler"
+							mObjectDataID "_15_5_24400562_1222439229593_94173_1209"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A m_HidControlEvents_DeviceChangeEventHandler"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_931974_3170"
+							mName "DeviceChange"
+							mObjectDataID "_15_5_24400562_1222439229593_90603_1210"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device .$ Evt DeviceChange"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_785047_3171"
+							mName "IsAerion"
+							mObjectDataID "_15_5_24400562_1222439229593_588195_1214"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M IsAerion Arg IHidDeviceInfo"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_818554_3172"
+							mName "IsSpaceExplorer"
+							mObjectDataID "_15_5_24400562_1222439229593_96300_1218"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M IsSpaceExplorer Arg IHidDeviceInfo"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_471596_3173"
+							mName "IsSpaceNavigator"
+							mObjectDataID "_15_5_24400562_1222439229593_741445_1221"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M IsSpaceNavigator Arg IHidDeviceInfo"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_970083_3174"
+							mName "IsSpaceTraveler"
+							mObjectDataID "_15_5_24400562_1222439229593_808693_1224"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M IsSpaceTraveler Arg IHidDeviceInfo"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_678021_3175"
+							mName "IsSpacePilot"
+							mObjectDataID "_15_5_24400562_1222439229593_467522_1227"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M IsSpacePilot Arg IHidDeviceInfo"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_253525_3176"
+							mName "ConnectAerion"
+							mObjectDataID "_15_5_24400562_1222439229593_488234_1230"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M ConnectAerion"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_461442_3177"
+							mName "ConnectSpaceExplorer"
+							mObjectDataID "_15_5_24400562_1222439229593_661386_1232"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M ConnectSpaceExplorer"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_855196_3178"
+							mName "ConnectSpaceTraveler"
+							mObjectDataID "_15_5_24400562_1222439229593_142241_1234"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M ConnectSpaceTraveler"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_948770_3179"
+							mName "ConnectSpaceNavigator"
+							mObjectDataID "_15_5_24400562_1222439229593_668600_1236"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M ConnectSpaceNavigator"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_221985_3180"
+							mName "ConnectSpacePilot"
+							mObjectDataID "_15_5_24400562_1222439229609_290172_1238"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M ConnectSpacePilot"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_661452_3181"
+							mName "HidControlDeviceChange"
+							mObjectDataID "_15_5_24400562_1222439229609_758766_1240"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M HandleHidControlDeviceChange Arg object Arg EventArgs"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_12863_3182"
+							mName "Sensor"
+							mObjectDataID "_15_5_24400562_1222439229609_670193_1247"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A Sensor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_206347_3183"
+							mName "Keyboard"
+							mObjectDataID "_15_5_24400562_1222439229609_383702_1255"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A Keyboard"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839109_522916_3184"
+							mName "Type"
+							mObjectDataID "_15_5_24400562_1222439229609_732923_1261"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device A Type"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_751851_3185"
+							mName "LoadPreferences"
+							mObjectDataID "_15_5_24400562_1222439229609_339789_1267"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M LoadPreferences Arg string"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_4429_3186"
+							mName "Connect"
+							mObjectDataID "_15_5_24400562_1222439229625_574891_1270"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M Connect"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_73473_3187"
+							mName "Disconnect"
+							mObjectDataID "_15_5_24400562_1222439229625_800563_1272"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M Disconnect"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_303292_3188"
+							mName "Device"
+							mObjectDataID "_15_5_24400562_1222439229625_486545_1274"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Device.cs P AerionInput C Device M Device"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223972970140_803552_1713"
+							mName "m_Prefs"
+							mObjectDataID "_15_5_24400562_1223972909953_170459_1355"
+						)
+						(RTAttributeObject
+							mID "_15_5_12d203c6_1224680847328_702627_1716"
+							mName "m_Sensor"
+							mObjectDataID "_15_5_12d203c6_1224679858031_551246_1498"
+						)
+						(RTAttributeObject
+							mID "_15_5_12d203c6_1224680847328_409935_1717"
+							mName "m_Keyboard"
+							mObjectDataID "_15_5_12d203c6_1224679868609_647051_1505"
+						)
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839109_181118_3190"
+				mName "IAngleAxis.cs"
+				mObjectDataID "_15_5_24400562_1222439123968_393875_704"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IAngleAxis.cs"
+				mLastModified "1222371909191"
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_756935_3191"
+					mObjectDataID "_15_5_24400562_1222439229500_731169_897"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IAngleAxis.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_108804_3192"
+					mObjectDataID "_15_5_24400562_1222439229515_956572_901"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IAngleAxis.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_928135_3193"
+					mObjectDataID "_15_5_24400562_1222439229515_8625_905"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IAngleAxis.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_528700_3194"
+					mObjectDataID "_15_5_24400562_1222439229515_562144_909"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IAngleAxis.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839109_532462_3195"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IAngleAxis.cs P AerionInput"
+					(CshRTInterface
+						mID "_15_5_24400562_1222439839109_1462_3196"
+						mName "IAngleAxis"
+						mRemoved TRUE
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IAngleAxis.cs P AerionInput C IAngleAxis"
+					)
+				)
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839109_36151_3197"
+					mName "IAngleAxis"
+					mObjectDataID "_15_1_12d203c6_1214215634968_306090_926"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IAngleAxis.cs C IAngleAxis"
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_19066_3198"
+						mName "get_X"
+						mObjectDataID "_15_1_12d203c6_1214219309859_803212_1570"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IAngleAxis.cs C IAngleAxis M get_X Arg double"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_122729_3199"
+						mName "get_Y"
+						mObjectDataID "_15_1_12d203c6_1214219311437_573308_1575"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IAngleAxis.cs C IAngleAxis M get_Y Arg double"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_894867_3200"
+						mName "get_Z"
+						mObjectDataID "_15_1_12d203c6_1214219313187_838994_1580"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IAngleAxis.cs C IAngleAxis M get_Z Arg double"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_873202_3201"
+						mName "get_Angle"
+						mObjectDataID "_15_1_12d203c6_1214219315078_533169_1585"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IAngleAxis.cs C IAngleAxis M get_Angle Arg double"
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839109_180524_3202"
+				mName "IKeyboard.cs"
+				mObjectDataID "_15_5_24400562_1222439123968_675673_705"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs"
+				mLastModified "1222438531046"
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_975500_3203"
+					mObjectDataID "_15_5_24400562_1222439229515_445121_913"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_731579_3204"
+					mObjectDataID "_15_5_24400562_1222439229515_51972_917"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_92404_3205"
+					mObjectDataID "_15_5_24400562_1222439229515_119541_921"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_400403_3206"
+					mObjectDataID "_15_5_24400562_1222439229515_303033_925"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839109_133453_3207"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs P AerionInput"
+					(CshRTInterface
+						mID "_15_5_24400562_1222439839109_506876_3208"
+						mName "IKeyboard"
+						mRemoved TRUE
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs P AerionInput C IKeyboard"
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_681541_3210"
+							mName "GetKeyName"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs P AerionInput C IKeyboard M GetKeyName Arg int"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_429349_3212"
+							mName "IsKeyUp"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs P AerionInput C IKeyboard M IsKeyUp Arg int"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_623337_3209"
+							mName "get_Device"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs P AerionInput C IKeyboard M get_Device"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_84667_3213"
+							mName "IsKeyDown"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs P AerionInput C IKeyboard M IsKeyDown Arg int"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_728073_3211"
+							mName "GetKeyLabel"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs P AerionInput C IKeyboard M GetKeyLabel Arg int"
+						)
+					)
+				)
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839109_188524_3214"
+					mName "IKeyboard"
+					mObjectDataID "_15_1_12d203c6_1214215499593_85865_824"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs C IKeyboard"
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_127058_3215"
+						mName "GetKeyName"
+						mObjectDataID "_15_1_12d203c6_1214215302921_114487_775"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs C IKeyboard M GetKeyName Arg long Arg BSTR"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_701138_3216"
+						mName "GetKeyLabel"
+						mObjectDataID "_15_1_12d203c6_1214215141593_208993_765"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs C IKeyboard M GetKeyLabel Arg long Arg BSTR"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_561154_3217"
+						mName "IsKeyUp"
+						mObjectDataID "_15_1_12d203c6_1214215085968_203142_761"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs C IKeyboard M IsKeyUp Arg long Arg Boolean"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_940005_3218"
+						mName "IsKeyDown"
+						mObjectDataID "_15_1_12d203c6_1214215022609_109506_755"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs C IKeyboard M IsKeyDown Arg long Arg Boolean"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_418013_3219"
+						mName "get_Keys"
+						mObjectDataID "_15_1_12d203c6_1214216193671_432021_1082"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs C IKeyboard M get_Keys Arg long"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_499273_3220"
+						mName "get_Device"
+						mObjectDataID "_15_1_12d203c6_1214216640031_344288_1168"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs C IKeyboard M get_Device Arg "
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_313109_3221"
+						mName "get_ProgrammableKeys"
+						mObjectDataID "_15_1_12d203c6_1214216825843_921930_1189"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IKeyboard.cs C IKeyboard M get_ProgrammableKeys Arg long"
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839109_430240_3222"
+				mName "ISensor.cs"
+				mObjectDataID "_15_5_24400562_1222439123968_723271_706"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs"
+				mLastModified "1222438531250"
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_220774_3223"
+					mObjectDataID "_15_5_24400562_1222439229515_314224_929"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_744452_3224"
+					mObjectDataID "_15_5_24400562_1222439229515_865765_933"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_998990_3225"
+					mObjectDataID "_15_5_24400562_1222439229515_303071_937"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_795933_3226"
+					mObjectDataID "_15_5_24400562_1222439229515_599247_941"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839109_786506_3227"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs P AerionInput"
+					(CshRTInterface
+						mID "_15_5_24400562_1222439839109_154712_3228"
+						mName "ISensor"
+						mRemoved TRUE
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs P AerionInput C ISensor"
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_160820_3229"
+							mName "get_Device"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs P AerionInput C ISensor M get_Device"
+						)
+					)
+				)
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839109_383795_3230"
+					mName "ISensor"
+					mObjectDataID "_15_1_12d203c6_1214215665187_618348_1056"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs C ISensor"
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_963832_3231"
+						mName "get_Device"
+						mObjectDataID "_15_1_12d203c6_1214216750765_167326_1178"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs C ISensor M get_Device Arg "
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_898863_3232"
+						mName "get_Rotation"
+						mObjectDataID "_15_1_12d203c6_1214219634515_398859_1629"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs C ISensor M get_Rotation Arg "
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_47273_3233"
+						mName "get_Translation"
+						mObjectDataID "_15_1_12d203c6_1214219633171_658249_1622"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs C ISensor M get_Translation Arg "
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_219678_3234"
+						mName "get_Period"
+						mObjectDataID "_15_1_12d203c6_1214219631390_933627_1615"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISensor.cs C ISensor M get_Period Arg double"
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839109_890520_3235"
+				mName "ISimpleDevice.cs"
+				mObjectDataID "_15_5_24400562_1222439123968_840492_707"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs"
+				mLastModified "1222438530812"
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_888145_3236"
+					mObjectDataID "_15_5_24400562_1222439229515_338686_945"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_330744_3237"
+					mObjectDataID "_15_5_24400562_1222439229515_421432_949"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_931946_3238"
+					mObjectDataID "_15_5_24400562_1222439229515_483083_953"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_203862_3239"
+					mObjectDataID "_15_5_24400562_1222439229515_443965_957"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839109_374494_3240"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs P AerionInput"
+					(CshRTInterface
+						mID "_15_5_24400562_1222439839109_912394_3241"
+						mName "ISimpleDevice"
+						mRemoved TRUE
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs P AerionInput C ISimpleDevice"
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_139716_3242"
+							mName "Connect"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs P AerionInput C ISimpleDevice M Connect"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_59897_3244"
+							mName "LoadPreferences"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs P AerionInput C ISimpleDevice M LoadPreferences Arg string"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839109_153684_3243"
+							mName "Disconnect"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs P AerionInput C ISimpleDevice M Disconnect"
+						)
+					)
+				)
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839109_803124_3245"
+					mName "ISimpleDevice"
+					mObjectDataID "_15_1_12d203c6_1214215628437_810367_907"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs C ISimpleDevice"
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_180898_3246"
+						mName "Connect"
+						mObjectDataID "_15_1_12d203c6_1214220270500_201621_1655"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs C ISimpleDevice M Connect"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_249002_3247"
+						mName "Disconnect"
+						mObjectDataID "_15_1_12d203c6_1214220272312_961662_1662"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs C ISimpleDevice M Disconnect"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_363736_3248"
+						mName "LoadPreferences"
+						mObjectDataID "_15_1_12d203c6_1214220274015_792394_1669"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs C ISimpleDevice M LoadPreferences Arg BSTR"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_18612_3249"
+						mName "get_Keyboard"
+						mObjectDataID "_15_1_12d203c6_1214252081477_644969_415"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs C ISimpleDevice M get_Keyboard Arg "
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_325425_3250"
+						mName "get_Sensor"
+						mObjectDataID "_15_1_12d203c6_1214252083406_766887_422"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs C ISimpleDevice M get_Sensor Arg "
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_972645_3251"
+						mName "get_Type"
+						mObjectDataID "_15_1_12d203c6_1214252085535_163719_429"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ISimpleDevice.cs C ISimpleDevice M get_Type Arg long"
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839109_843616_3252"
+				mName "ITDxInfo.cs"
+				mObjectDataID "_15_5_24400562_1222439123984_312210_708"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ITDxInfo.cs"
+				mLastModified "1222438531343"
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_533004_3253"
+					mObjectDataID "_15_5_24400562_1222439229515_176497_961"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ITDxInfo.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_295875_3254"
+					mObjectDataID "_15_5_24400562_1222439229531_11114_965"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ITDxInfo.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_657765_3255"
+					mObjectDataID "_15_5_24400562_1222439229531_688816_969"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ITDxInfo.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839109_20086_3256"
+					mObjectDataID "_15_5_24400562_1222439229531_412342_973"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ITDxInfo.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839109_598532_3257"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ITDxInfo.cs P AerionInput"
+					(CshRTInterface
+						mID "_15_5_24400562_1222439839109_639_3258"
+						mName "ITDxInfo"
+						mRemoved TRUE
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ITDxInfo.cs P AerionInput C ITDxInfo"
+					)
+				)
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839109_835939_3259"
+					mName "ITDxInfo"
+					mObjectDataID "_15_1_12d203c6_1214218433390_875323_1393"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ITDxInfo.cs C ITDxInfo"
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839109_16782_3260"
+						mName "RevisionNumber"
+						mObjectDataID "_15_1_12d203c6_1214218717593_540057_1440"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\ITDxInfo.cs C ITDxInfo M RevisionNumber Arg BSTR"
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_157307_3261"
+				mName "IVector3D.cs"
+				mObjectDataID "_15_5_24400562_1222439123984_404143_709"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IVector3D.cs"
+				mLastModified "1222371909722"
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_874101_3262"
+					mObjectDataID "_15_5_24400562_1222439229531_848180_977"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IVector3D.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_238674_3263"
+					mObjectDataID "_15_5_24400562_1222439229531_288059_981"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IVector3D.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_494897_3264"
+					mObjectDataID "_15_5_24400562_1222439229531_691267_985"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IVector3D.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_646673_3265"
+					mObjectDataID "_15_5_24400562_1222439229531_998083_989"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IVector3D.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839125_113755_3266"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IVector3D.cs P AerionInput"
+					(CshRTInterface
+						mID "_15_5_24400562_1222439839125_162407_3267"
+						mName "IVector3D"
+						mRemoved TRUE
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IVector3D.cs P AerionInput C IVector3D"
+					)
+				)
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839125_334530_3268"
+					mName "IVector3D"
+					mObjectDataID "_15_1_12d203c6_1214218415484_13421_1357"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IVector3D.cs C IVector3D"
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839125_231033_3269"
+						mName "get_X"
+						mObjectDataID "_15_1_12d203c6_1214219488984_596821_1594"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IVector3D.cs C IVector3D M get_X Arg double"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839125_405980_3270"
+						mName "get_Y"
+						mObjectDataID "_15_1_12d203c6_1214219490375_885804_1600"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IVector3D.cs C IVector3D M get_Y Arg double"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839125_91711_3271"
+						mName "get_Z"
+						mObjectDataID "_15_1_12d203c6_1214219492265_682595_1606"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IVector3D.cs C IVector3D M get_Z Arg double"
+					)
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839125_395341_3272"
+						mName "get_Length"
+						mObjectDataID "_15_1_12d203c6_1214219278515_728102_1533"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\IVector3D.cs C IVector3D M get_Length Arg double"
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_380671_3273"
+				mName "Keyboard.cs"
+				mObjectDataID "_15_5_24400562_1222439123984_227989_710"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs"
+				mLastModified "1222438529546"
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839125_337628_3307"
+					mName "Keyboard"
+					mRemoved TRUE
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs C Keyboard"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_440178_3274"
+					mObjectDataID "_15_5_24400562_1222439229531_929808_993"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_316182_3275"
+					mObjectDataID "_15_5_24400562_1222439229531_472334_997"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_475066_3276"
+					mObjectDataID "_15_5_24400562_1222439229546_377852_1001"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs UN System.Collections"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_762102_3277"
+					mObjectDataID "_15_5_24400562_1222439229546_313304_1005"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_625250_3278"
+					mObjectDataID "_15_5_24400562_1222439229546_734314_1009"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_773605_3279"
+					mObjectDataID "_15_5_24400562_1222439229546_169826_1013"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs UN HidLibrary"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839125_276851_3280"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput"
+					(CshRTClassObject
+						mID "_15_5_24400562_1222439839125_604644_3281"
+						mName "_IKeyboardEvents_KeyDownEventHandler"
+						mRemoved TRUE
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C _IKeyboardEvents_KeyDownEventHandler"
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_942883_3282"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C _IKeyboardEvents_KeyDownEventHandler M  Arg int"
+						)
+					)
+					(CshRTClassObject
+						mID "_15_5_24400562_1222439839125_505282_3283"
+						mName "_IKeyboardEvents_KeyUpEventHandler"
+						mRemoved TRUE
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C _IKeyboardEvents_KeyUpEventHandler"
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_794959_3284"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C _IKeyboardEvents_KeyUpEventHandler M  Arg int"
+						)
+					)
+					(CshRTClassObject
+						mID "_15_5_24400562_1222439839125_64365_3285"
+						mName "Keyboard"
+						mObjectDataID "_15_5_24400562_1222439229468_565795_780"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard"
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_572928_3297"
+							mName "get_Device"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard M get_Device"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_918989_3287"
+							mName "m_Device"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard A m_Device"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_798898_3286"
+							mName "c_Button"
+							mObjectDataID "_15_5_24400562_1222439229671_959778_1459"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard A c_Button"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_33333_3288"
+							mName "m_IHidDevice"
+							mObjectDataID "_15_5_24400562_1222439229671_135472_1466"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard A m_IHidDevice"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_619242_3289"
+							mName "m_ProgrammableKeys"
+							mObjectDataID "_15_5_24400562_1222439229671_498421_1467"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard A m_ProgrammableKeys"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_66878_3290"
+							mName "m_KeyUpList"
+							mObjectDataID "_15_5_24400562_1222439229671_240016_1468"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard A m_KeyUpList"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_520847_3291"
+							mName "m_KeyNameList"
+							mObjectDataID "_15_5_24400562_1222439229671_652571_1474"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard A m_KeyNameList"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_382589_3292"
+							mName "m_KeyLabelList"
+							mObjectDataID "_15_5_24400562_1222439229671_771349_1480"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard A m_KeyLabelList"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_198332_3293"
+							mName "m_HidDeviceEvents_HidDataReceivedEventHandler"
+							mObjectDataID "_15_5_24400562_1222439229687_947759_1496"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard A m_HidDeviceEvents_HidDataReceivedEventHandler"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_257614_3294"
+							mName "KeyDown"
+							mObjectDataID "_15_5_24400562_1222439229687_164695_1497"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard .$ Evt KeyDown"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_899466_3295"
+							mName "KeyUp"
+							mObjectDataID "_15_5_24400562_1222439229687_199201_1501"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard .$ Evt KeyUp"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_298422_3296"
+							mName "Keys"
+							mObjectDataID "_15_5_24400562_1222439229687_782194_1505"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard A Keys"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_893343_3298"
+							mName "ProgrammableKeys"
+							mObjectDataID "_15_5_24400562_1222439229687_504736_1513"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard A ProgrammableKeys"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_524036_3299"
+							mName "HidDataReceived"
+							mObjectDataID "_15_5_24400562_1222439229687_181843_1519"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard M HidDataReceived Arg object Arg HidDataReceivedEventArgs"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_148034_3300"
+							mName "GetKeyName"
+							mObjectDataID "_15_5_24400562_1222439229687_412897_1523"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard M GetKeyName Arg int"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_519136_3301"
+							mName "GetKeyLabel"
+							mObjectDataID "_15_5_24400562_1222439229687_176875_1526"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard M GetKeyLabel Arg int"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_717568_3302"
+							mName "IsKeyUp"
+							mObjectDataID "_15_5_24400562_1222439229687_260192_1529"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard M IsKeyUp Arg int"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_352605_3303"
+							mName "IsKeyDown"
+							mObjectDataID "_15_5_24400562_1222439229687_377915_1532"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard M IsKeyDown Arg int"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_221069_3304"
+							mName "InitKeyboard"
+							mObjectDataID "_15_5_24400562_1222439229687_821293_1535"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard M InitKeyboard Arg Device Arg IHidDevice"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_399006_3305"
+							mName "Keyboard"
+							mObjectDataID "_15_5_24400562_1222439229703_159468_1542"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard M Keyboard"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_329233_3306"
+							mName "DestroyKeyboard"
+							mObjectDataID "_15_5_24400562_1222439229703_459688_1543"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Keyboard.cs P AerionInput C Keyboard M DestroyKeyboard"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223972970156_656446_1714"
+							mName "Device"
+							mObjectDataID "_15_5_24400562_1223972374421_983138_1087"
+						)
+						(RTAttributeObject
+							mID "_15_5_12d203c6_1224680847343_176755_1718"
+							mName "m_Device"
+							mObjectDataID "_15_5_12d203c6_1224680389921_177329_1512"
+						)
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_937678_3308"
+				mName "Sensor.cs"
+				mObjectDataID "_15_5_24400562_1222439123984_778005_711"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs"
+				mLastModified "1222438530546"
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839125_855179_3363"
+					mName "Sensor"
+					mRemoved TRUE
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs C Sensor"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_101265_3309"
+					mObjectDataID "_15_5_24400562_1222439229546_651675_1021"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_194279_3310"
+					mObjectDataID "_15_5_24400562_1222439229546_981073_1025"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_662900_3311"
+					mObjectDataID "_15_5_24400562_1222439229546_304529_1029"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_228735_3312"
+					mObjectDataID "_15_5_24400562_1222439229546_351140_1033"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_732944_3313"
+					mObjectDataID "_15_5_24400562_1222439229546_414838_1037"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs UN HidLibrary"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839125_758127_3314"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput"
+					(CshRTClassObject
+						mID "_15_5_24400562_1222439839125_59594_3317"
+						mName "func"
+						mObjectDataID "_15_5_24400562_1222439229468_439899_784"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C func"
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_559385_3318"
+							mObjectDataID "_15_5_24400562_1222439229703_530765_1552"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C func M  Arg double Arg double"
+						)
+					)
+					(RTEnumeration
+						mID "_15_5_24400562_1222439839125_726730_3319"
+						mName "functions"
+						mObjectDataID "_15_5_24400562_1222439229468_950981_786"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C functions"
+						(RTEnumerationLiteral
+							mID "_15_5_24400562_1222439839125_641481_3320"
+							mName "no_func"
+							mObjectDataID "_15_5_24400562_1222439229468_479348_787"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C functions A no_func"
+						)
+						(RTEnumerationLiteral
+							mID "_15_5_24400562_1222439839125_454501_3321"
+							mName "sin"
+							mObjectDataID "_15_5_24400562_1222439229468_257928_788"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C functions A sin"
+						)
+						(RTEnumerationLiteral
+							mID "_15_5_24400562_1222439839125_828092_3322"
+							mName "square"
+							mObjectDataID "_15_5_24400562_1222439229468_816764_789"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C functions A square"
+						)
+						(RTEnumerationLiteral
+							mID "_15_5_24400562_1222439839125_183987_3323"
+							mName "cube"
+							mObjectDataID "_15_5_24400562_1222439229468_646907_790"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C functions A cube"
+						)
+					)
+					(CshRTClassObject
+						mID "_15_5_24400562_1222439839125_673533_3324"
+						mName "Sensor"
+						mObjectDataID "_15_5_24400562_1222439229468_604995_792"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor"
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_743917_3335"
+							mName "m_ZRotScaleFactor"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_ZRotScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_374636_3340"
+							mName "m_Rotation"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_Rotation"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_372870_3333"
+							mName "m_XRotScaleFactor"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_XRotScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_948700_3344"
+							mName "XScaleFactor"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A XScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_302364_3330"
+							mName "m_XScaleFactor"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_XScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_148603_3338"
+							mName "m_Device"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_Device"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_739741_3345"
+							mName "YScaleFactor"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A YScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_218880_3334"
+							mName "m_YRotScaleFactor"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_YRotScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_126449_3339"
+							mName "m_Translation"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_Translation"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_887179_3332"
+							mName "m_ZScaleFactor"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_ZScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_692928_3352"
+							mName "Translation"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A Translation"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_751236_3331"
+							mName "m_YScaleFactor"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_YScaleFactor"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_711676_3354"
+							mName "get_Device"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor M get_Device"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_800354_3353"
+							mName "Rotation"
+							mRemoved TRUE
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A Rotation"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_36256_3325"
+							mName "c_MaxValueTranslation"
+							mObjectDataID "_15_5_24400562_1222439229703_994214_1559"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A c_MaxValueTranslation"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_41058_3326"
+							mName "c_MaxValueRotation"
+							mObjectDataID "_15_5_24400562_1222439229703_760548_1561"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A c_MaxValueRotation"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_583347_3327"
+							mName "c_Translation"
+							mObjectDataID "_15_5_24400562_1222439229703_109030_1563"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A c_Translation"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_250228_3328"
+							mName "c_Rotation"
+							mObjectDataID "_15_5_24400562_1222439229703_654995_1565"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A c_Rotation"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_749216_3329"
+							mName "m_Period"
+							mObjectDataID "_15_5_24400562_1222439229703_401752_1567"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_Period"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_222464_3336"
+							mName "m_TranslationFunction"
+							mObjectDataID "_15_5_24400562_1222439229703_545601_1576"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_TranslationFunction"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_833767_3337"
+							mName "m_RotationFunction"
+							mObjectDataID "_15_5_24400562_1222439229703_460472_1579"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_RotationFunction"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_737669_3341"
+							mName "m_IHidDevice"
+							mObjectDataID "_15_5_24400562_1222439229718_126556_1591"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_IHidDevice"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_313939_3342"
+							mName "m_HidDeviceEvents_HidDataReceivedEventHandler"
+							mObjectDataID "_15_5_24400562_1222439229718_742457_1594"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A m_HidDeviceEvents_HidDataReceivedEventHandler"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_300662_3343"
+							mName "SensorInput"
+							mObjectDataID "_15_5_24400562_1222439229718_176568_1595"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor .$ Evt SensorInput"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_292524_3346"
+							mName "ZScaleFactor"
+							mObjectDataID "_15_5_24400562_1222439229718_346764_1619"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A ZScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_971187_3347"
+							mName "XRotScaleFactor"
+							mObjectDataID "_15_5_24400562_1222439229718_246962_1629"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A XRotScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_927760_3348"
+							mName "YRotScaleFactor"
+							mObjectDataID "_15_5_24400562_1222439229718_151760_1639"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A YRotScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_227050_3349"
+							mName "ZRotScaleFactor"
+							mObjectDataID "_15_5_24400562_1222439229734_417377_1649"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A ZRotScaleFactor"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_824934_3350"
+							mName "set_Function"
+							mObjectDataID "_15_5_24400562_1222439229734_76425_1659"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor M setFunction Arg functions"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_148110_3351"
+							mName "Period"
+							mObjectDataID "_15_5_24400562_1222439229734_191853_1665"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor A Period"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_50676_3355"
+							mName "HidDataReceived"
+							mObjectDataID "_15_5_24400562_1222439229734_937031_1689"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor M HidDataReceived Arg object Arg HidDataReceivedEventArgs"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_325196_3356"
+							mName "no_func"
+							mObjectDataID "_15_5_24400562_1222439229734_523931_1693"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor M no_func Arg double Arg double"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_211084_3357"
+							mName "sin"
+							mObjectDataID "_15_5_24400562_1222439229734_711505_1697"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor M sin Arg double Arg double"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_811069_3358"
+							mName "cube"
+							mObjectDataID "_15_5_24400562_1222439229734_158335_1701"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor M cube Arg double Arg double"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_898511_3359"
+							mName "square"
+							mObjectDataID "_15_5_24400562_1222439229734_459906_1705"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor M square Arg double Arg double"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_160386_3360"
+							mName "InitSensor"
+							mObjectDataID "_15_5_24400562_1222439229750_813874_1709"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor M InitSensor Arg Device Arg IHidDevice"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_734634_3361"
+							mName "DestroySensor"
+							mObjectDataID "_15_5_24400562_1222439229750_828900_1716"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor M DestroySensor"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_795151_3362"
+							mName "Sensor"
+							mObjectDataID "_15_5_24400562_1222439229750_42720_1721"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Sensor.cs P AerionInput C Sensor M Sensor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223469305937_962431_1452"
+							mName "RotationFunction"
+							mObjectDataID "_15_5_24400562_1223468110406_630462_1434"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223469305937_730045_1453"
+							mName "TranslationFunction"
+							mObjectDataID "_15_5_24400562_1223468137312_710236_1444"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_401187_1767"
+							mName "YScaleFactor"
+							mObjectDataID "_15_5_24400562_1222439229718_553246_1609"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_915099_1768"
+							mName "m_ZRotScaleFactor"
+							mObjectDataID "_15_5_24400562_1223471210765_43986_1500"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_673143_1769"
+							mName "m_XScaleFactor"
+							mObjectDataID "_15_5_24400562_1223471210765_957190_1501"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_972520_1770"
+							mName "m_YScaleFactor"
+							mObjectDataID "_15_5_24400562_1223471210765_453066_1502"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_204564_1771"
+							mName "m_ZScaleFactor"
+							mObjectDataID "_15_5_24400562_1223471210765_577413_1503"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_741932_1772"
+							mName "m_XRotScaleFactor"
+							mObjectDataID "_15_5_24400562_1223471210765_864167_1504"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_577525_1773"
+							mName "m_YRotScaleFactor"
+							mObjectDataID "_15_5_24400562_1223471210781_702510_1505"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_513326_1774"
+							mName "XScaleFactor"
+							mObjectDataID "_15_5_24400562_1222439229718_239370_1599"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_736688_1775"
+							mName "Translation"
+							mObjectDataID "_15_5_24400562_1222439229734_339754_1673"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_656606_1776"
+							mName "Rotation"
+							mObjectDataID "_15_5_24400562_1222439229734_382158_1681"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223972970156_358024_1715"
+							mName "Device"
+							mObjectDataID "_15_5_24400562_1223972437078_885290_1093"
+						)
+						(RTAttributeObject
+							mID "_15_5_12d203c6_1224680847343_726440_1719"
+							mName "m_Translation"
+							mObjectDataID "_15_5_12d203c6_1224678729781_520354_1432"
+						)
+						(RTAttributeObject
+							mID "_15_5_12d203c6_1224680847343_396157_1720"
+							mName "m_Rotation"
+							mObjectDataID "_15_5_12d203c6_1224678744437_565725_1439"
+						)
+						(RTAttributeObject
+							mID "_15_5_12d203c6_1224680847343_979928_1721"
+							mName "m_Device"
+							mObjectDataID "_15_5_12d203c6_1224680407046_612194_1514"
+						)
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_291900_3364"
+				mName "TDxInfo.cs"
+				mObjectDataID "_15_5_24400562_1222439123984_499096_712"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\TDxInfo.cs"
+				mLastModified "1222438530734"
+				(CshRTClassObject
+					mID "_15_5_24400562_1222439839125_129257_3374"
+					mName "TDxInfo"
+					mRemoved TRUE
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\TDxInfo.cs C TDxInfo"
+					(CshRTOperation
+						mID "_15_5_24400562_1222439839125_403542_3375"
+						mName "RevisionNumber"
+						mRemoved TRUE
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\TDxInfo.cs C TDxInfo M RevisionNumber"
+					)
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_442514_3365"
+					mObjectDataID "_15_5_24400562_1222439229546_664101_1045"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\TDxInfo.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_372521_3366"
+					mObjectDataID "_15_5_24400562_1222439229546_702692_1049"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\TDxInfo.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_323426_3367"
+					mObjectDataID "_15_5_24400562_1222439229546_902115_1053"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\TDxInfo.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_345895_3368"
+					mObjectDataID "_15_5_24400562_1222439229546_146556_1057"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\TDxInfo.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839125_473613_3369"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\TDxInfo.cs P AerionInput"
+					(CshRTClassObject
+						mID "_15_5_24400562_1222439839125_144996_3370"
+						mName "TDxInfo"
+						mObjectDataID "_15_5_24400562_1222439229468_596392_794"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\TDxInfo.cs P AerionInput C TDxInfo"
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_382321_3371"
+							mName "c_RevisionNumber"
+							mObjectDataID "_15_5_24400562_1222439229750_423597_1725"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\TDxInfo.cs P AerionInput C TDxInfo A c_RevisionNumber"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_389622_3372"
+							mName "RevisionNumber"
+							mObjectDataID "_15_5_24400562_1222439229750_260986_1727"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\TDxInfo.cs P AerionInput C TDxInfo A RevisionNumber"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_198774_3373"
+							mName "TDxInfo"
+							mObjectDataID "_15_5_24400562_1222439229750_209890_1733"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\TDxInfo.cs P AerionInput C TDxInfo M TDxInfo"
+						)
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_276063_3376"
+				mName "Vector3D.cs"
+				mObjectDataID "_15_5_24400562_1222439123984_238870_713"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs"
+				mLastModified "1222371909488"
+				(CshRTInterface
+					mID "_15_5_24400562_1222439839125_783511_3394"
+					mName "Vector3D"
+					mRemoved TRUE
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs C Vector3D"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_123059_3377"
+					mObjectDataID "_15_5_24400562_1222439229546_785372_1065"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs UN System"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_245135_3378"
+					mObjectDataID "_15_5_24400562_1222439229546_463488_1069"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs UN System.Collections.Generic"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_787394_3379"
+					mObjectDataID "_15_5_24400562_1222439229562_398464_1073"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs UN System.Text"
+				)
+				(CshRTUsing
+					mID "_15_5_24400562_1222439839125_76640_3380"
+					mObjectDataID "_15_5_24400562_1222439229562_93152_1077"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs UN System.Runtime.InteropServices"
+				)
+				(CshRTNamespace
+					mID "_15_5_24400562_1222439839125_476560_3381"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput"
+					(CshRTClassObject
+						mID "_15_5_24400562_1222439839125_748985_3382"
+						mName "Vector3D"
+						mObjectDataID "_15_5_24400562_1222439229468_861792_796"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput C Vector3D"
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_318722_3383"
+							mName "m_X"
+							mObjectDataID "_15_5_24400562_1222439229750_252829_1737"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput C Vector3D A m_X"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_508623_3384"
+							mName "m_Y"
+							mObjectDataID "_15_5_24400562_1222439229750_405566_1738"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput C Vector3D A m_Y"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_707265_3385"
+							mName "m_Z"
+							mObjectDataID "_15_5_24400562_1222439229750_18536_1739"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput C Vector3D A m_Z"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_673547_3386"
+							mName "m_Length"
+							mObjectDataID "_15_5_24400562_1222439229750_455064_1740"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput C Vector3D A m_Length"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_858669_3387"
+							mName "m_Sensor"
+							mObjectDataID "_15_5_24400562_1222439229750_600060_1743"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput C Vector3D A m_Sensor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_425031_3388"
+							mName "Sensor"
+							mObjectDataID "_15_5_24400562_1222439229750_784033_1746"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput C Vector3D A Sensor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_508478_3389"
+							mName "X"
+							mObjectDataID "_15_5_24400562_1222439229750_493257_1754"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput C Vector3D A X"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_825020_3390"
+							mName "Y"
+							mObjectDataID "_15_5_24400562_1222439229750_974343_1762"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput C Vector3D A Y"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_960345_3391"
+							mName "Z"
+							mObjectDataID "_15_5_24400562_1222439229765_61128_1770"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput C Vector3D A Z"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1222439839125_502194_3392"
+							mName "Length"
+							mObjectDataID "_15_5_24400562_1222439229765_197431_1778"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput C Vector3D A Length"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1222439839125_588445_3393"
+							mName "Vector3D"
+							mObjectDataID "_15_5_24400562_1222439229765_41333_1786"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Vector3D.cs P AerionInput C Vector3D M Vector3D"
+						)
+					)
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_524759_3395"
+				mName "_IKeyboardEvents_KeyDownEventHandler.cs"
+				mObjectDataID "_15_5_24400562_1222439144156_134984_714"
+				mLastModified "0"
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_121315_3397"
+				mName "_IKeyboardEvents_KeyUpEventHandler.cs"
+				mObjectDataID "_15_5_24400562_1222439144156_872717_716"
+				mLastModified "0"
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_797945_3399"
+				mName "_ISensorEvents_SensorInputEventHandler.cs"
+				mObjectDataID "_15_5_24400562_1222439144171_657110_718"
+				mLastModified "0"
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_706253_3401"
+				mName "_ISimpleDeviceEvents_DeviceChangeEventHandler.cs"
+				mObjectDataID "_15_5_24400562_1222439144171_777301_720"
+				mLastModified "0"
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_851051_3403"
+				mName "BSTR.cs"
+				mObjectDataID "_15_5_24400562_1222439144171_269159_723"
+				mLastModified "0"
+				(CshRTClassObject
+					mID "_15_5_24400562_1222439839125_525787_3404"
+					mName "BSTR"
+					mObjectDataID "_15_1_12d203c6_1214220298203_105586_1677"
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_705446_3405"
+				mName "HRESULT.cs"
+				mObjectDataID "_15_5_24400562_1222439144171_105133_726"
+				mLastModified "0"
+				(CshRTClassObject
+					mID "_15_5_24400562_1222439839125_720154_3406"
+					mName "HRESULT"
+					mObjectDataID "_15_1_12d203c6_1214215191609_103462_769"
+				)
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_182194_3407"
+				mName "MulticastDelegate.cs"
+				mObjectDataID "_15_5_24400562_1222439144171_790355_729"
+				mLastModified "0"
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1222439839125_579092_3408"
+				mName "IDisposable.cs"
+				mObjectDataID "_15_5_24400562_1222439144187_983848_740"
+				mLastModified "0"
+			)
+			mLanguage "C#"
+			WORKING_DIRECTORY "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput"
+			GenerationDir "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput"
+			workingPackage "eee_1045467100313_135436_1"
+			pathForReferences( list
+				"eee_1045467100313_135436_1"
+			)
+			mProjectType 0
+		)
+		(CshRTProject
+			mID "_15_5_24400562_1223473286625_121767_1777"
+			mName "preferences"
+			mObjectDataID "eee_1045467100313_135436_1"
+			(mProperties
+				mName "Project"
+				DEFAULT_METHOD_RETURN_TYPE "void"
+				DEFAULT_ATTRIBUTE_TYPE "int"
+				MAIN_FILE_EXTENSION "cs"
+				PREPROCESS "true"
+			)
+			(CshRTComponent
+				mID "_15_5_24400562_1223473286625_139832_1778"
+				mName "Preferences.cs"
+				mObjectDataID "_15_5_24400562_1223472863921_732460_1765"
+				mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs"
+				mLastModified "0"
+				(CshRTNamespace
+					mID "_15_5_24400562_1223473286625_463384_1779"
+					mName "AerionInput"
+					mObjectDataID "_15_5_24400562_1222439229453_342349_751"
+					mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput"
+					(CshRTClassObject
+						mID "_15_5_24400562_1223473286625_171022_1780"
+						mName "Preferences"
+						mObjectDataID "_15_5_24400562_1223466391859_942500_1029"
+						mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences"
+						(CshRTOperation
+							mID "_15_5_24400562_1223473286625_790022_1781"
+							mName "loadConfig"
+							mObjectDataID "_15_5_24400562_1223466570750_392348_1406"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences M loadConfig"
+						)
+						(CshRTOperation
+							mID "_15_5_24400562_1223473286625_160677_1782"
+							mName "saveConfig"
+							mObjectDataID "_15_5_24400562_1223466615250_4803_1414"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences M saveConfig"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_658838_1783"
+							mName "PreferencesName"
+							mObjectDataID "_15_5_24400562_1223466742046_173941_1418"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A PreferencesName"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_468308_1784"
+							mName "XScaleFactor"
+							mObjectDataID "_15_5_24400562_1223471369937_922590_1560"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A XScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_703133_1785"
+							mName "YScaleFactor"
+							mObjectDataID "_15_5_24400562_1223471369937_101653_1561"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A YScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_773920_1786"
+							mName "ZScaleFactor"
+							mObjectDataID "_15_5_24400562_1223471369937_595163_1562"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A ZScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_172115_1787"
+							mName "XRotScaleFactor"
+							mObjectDataID "_15_5_24400562_1223471369937_1388_1563"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A XRotScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_112772_1788"
+							mName "YRotScaleFactor"
+							mObjectDataID "_15_5_24400562_1223471369937_479281_1564"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A YRotScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_64943_1789"
+							mName "ZRotScaleFactor"
+							mObjectDataID "_15_5_24400562_1223471369937_934125_1565"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A ZRotScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_414844_1790"
+							mName "RotationFunction"
+							mObjectDataID "_15_5_24400562_1223471369937_481034_1566"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A RotationFunction"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_774975_1791"
+							mName "TranslationFunction"
+							mObjectDataID "_15_5_24400562_1223471369937_900783_1567"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A TranslationFunction"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_913593_1792"
+							mName "m_RotationFunction"
+							mObjectDataID "_15_5_24400562_1223471812437_305345_1642"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A m_RotationFunction"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_358554_1793"
+							mName "m_TranslationFunction"
+							mObjectDataID "_15_5_24400562_1223471812437_986576_1641"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A m_TranslationFunction"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_724146_1794"
+							mName "m_PreferencesName"
+							mObjectDataID "_15_5_24400562_1223466761031_414881_1420"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A m_PreferencesName"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_825999_1795"
+							mName "m_ZRotScaleFactor"
+							mObjectDataID "_15_5_24400562_1222439229703_693964_1573"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A m_ZRotScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_759571_1796"
+							mName "m_YRotScaleFactor"
+							mObjectDataID "_15_5_24400562_1222439229703_430986_1572"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A m_YRotScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_373741_1797"
+							mName "m_XRotScaleFactor"
+							mObjectDataID "_15_5_24400562_1222439229703_680393_1571"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A m_XRotScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_553903_1798"
+							mName "m_ZScaleFactor"
+							mObjectDataID "_15_5_24400562_1222439229703_487659_1570"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A m_ZScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286625_592491_1799"
+							mName "m_XScaleFactor"
+							mObjectDataID "_15_5_24400562_1222439229703_367037_1568"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A m_XScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223473286640_418962_1800"
+							mName "m_YScaleFactor"
+							mObjectDataID "_15_5_24400562_1222439229703_499752_1569"
+							mImage "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput\\Preferences.cs P AerionInput C Preferences A m_YScaleFactor"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223972970156_967765_1716"
+							mName "TranslationThreshold"
+							mObjectDataID "_15_5_24400562_1223972602000_878135_1112"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223972970156_319014_1717"
+							mName "RotationThreshold"
+							mObjectDataID "_15_5_24400562_1223972629203_632995_1123"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223972970156_838648_1718"
+							mName "m_RotationThreshold"
+							mObjectDataID "_15_5_24400562_1223972680656_40418_1145"
+						)
+						(RTAttributeObject
+							mID "_15_5_24400562_1223972970156_755920_1719"
+							mName "m_TranslationThreshold"
+							mObjectDataID "_15_5_24400562_1223972701734_406808_1149"
+						)
+					)
+				)
+			)
+			mLanguage "C#"
+			WORKING_DIRECTORY "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput"
+			GenerationDir "D:\\uni\\05_ws0708\\globefish\\svn\\UML_Model_AerionInput\\AerionInput"
+			workingPackage "eee_1045467100313_135436_1"
+			pathForReferences( list
+				"eee_1045467100313_135436_1"
+			)
+			mProjectType 0
+		)
+	)
+)
