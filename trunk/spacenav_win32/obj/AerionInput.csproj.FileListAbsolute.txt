@@ -1,9 +1,0 @@
-i:\uni\05_ws0708\globefish\svn\AerionInput\bin\Release\TDxInput.XML
-i:\uni\05_ws0708\globefish\svn\AerionInput\bin\Release\TDxInput.dll
-i:\uni\05_ws0708\globefish\svn\AerionInput\bin\Release\TDxInput.pdb
-i:\uni\05_ws0708\globefish\svn\AerionInput\bin\Release\TDxInput.tlb
-i:\uni\05_ws0708\globefish\svn\AerionInput\bin\Release\HIDLibrary.dll
-i:\uni\05_ws0708\globefish\svn\AerionInput\bin\Release\HIDLibrary.pdb
-i:\uni\05_ws0708\globefish\svn\AerionInput\obj\Release\ResolveAssemblyReference.cache
-i:\uni\05_ws0708\globefish\svn\AerionInput\obj\Release\TDxInput.dll
-i:\uni\05_ws0708\globefish\svn\AerionInput\obj\Release\TDxInput.pdb
