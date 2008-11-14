@@ -1,0 +1,13 @@
+obj\Release\ResolveAssemblyReference.cache
+bin\Release\HIDLibrary.dll
+bin\Release\HIDLibrary.pdb
+obj\Release\HIDLibrary.dll
+obj\Release\HIDLibrary.pdb
+bin\Debug\HIDLibrary.dll
+bin\Debug\HIDLibrary.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\HIDLibrary.dll
+obj\Debug\HIDLibrary.pdb
+obj\Debug\HidLibrary.Properties.Resources.resources
+obj\Debug\HidLibrary.csproj.GenerateResource.Cache
+obj\Debug\HidLibrary.HidControl.resources

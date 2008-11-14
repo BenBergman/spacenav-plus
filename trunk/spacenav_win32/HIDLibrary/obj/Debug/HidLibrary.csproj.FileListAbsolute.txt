@@ -1,0 +1,9 @@
+G:\Projekte\C# Spielwiese\HIDLibrary\HIDLibrary\bin\Debug\HIDLibrary.XML
+G:\Projekte\C# Spielwiese\HIDLibrary\HIDLibrary\bin\Debug\HIDLibrary.dll
+G:\Projekte\C# Spielwiese\HIDLibrary\HIDLibrary\bin\Debug\HIDLibrary.pdb
+G:\Projekte\C# Spielwiese\HIDLibrary\HIDLibrary\obj\Debug\ResolveAssemblyReference.cache
+G:\Projekte\C# Spielwiese\HIDLibrary\HIDLibrary\obj\Debug\HidLibrary.HidControl.resources
+G:\Projekte\C# Spielwiese\HIDLibrary\HIDLibrary\obj\Debug\HidLibrary.Properties.Resources.resources
+G:\Projekte\C# Spielwiese\HIDLibrary\HIDLibrary\obj\Debug\HidLibrary.csproj.GenerateResource.Cache
+G:\Projekte\C# Spielwiese\HIDLibrary\HIDLibrary\obj\Debug\HIDLibrary.dll
+G:\Projekte\C# Spielwiese\HIDLibrary\HIDLibrary\obj\Debug\HIDLibrary.pdb

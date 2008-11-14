@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 6.00.0366 */
-/* at Fri Oct 31 13:05:31 2008
+/* at Fri Nov 14 16:49:33 2008
  */
 /* Compiler settings for vc80.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)
@@ -45,16 +45,10 @@
 
 /* Forward Declarations */ 
 
-#ifndef __IAngleAxis_FWD_DEFINED__
-#define __IAngleAxis_FWD_DEFINED__
-typedef interface IAngleAxis IAngleAxis;
-#endif 	/* __IAngleAxis_FWD_DEFINED__ */
-
-
-#ifndef __IKeyboard_FWD_DEFINED__
-#define __IKeyboard_FWD_DEFINED__
-typedef interface IKeyboard IKeyboard;
-#endif 	/* __IKeyboard_FWD_DEFINED__ */
+#ifndef __IVector3D_FWD_DEFINED__
+#define __IVector3D_FWD_DEFINED__
+typedef interface IVector3D IVector3D;
+#endif 	/* __IVector3D_FWD_DEFINED__ */
 
 
 #ifndef __ITDxInfo_FWD_DEFINED__
@@ -63,10 +57,10 @@ typedef interface ITDxInfo ITDxInfo;
 #endif 	/* __ITDxInfo_FWD_DEFINED__ */
 
 
-#ifndef __IVector3D_FWD_DEFINED__
-#define __IVector3D_FWD_DEFINED__
-typedef interface IVector3D IVector3D;
-#endif 	/* __IVector3D_FWD_DEFINED__ */
+#ifndef __IAngleAxis_FWD_DEFINED__
+#define __IAngleAxis_FWD_DEFINED__
+typedef interface IAngleAxis IAngleAxis;
+#endif 	/* __IAngleAxis_FWD_DEFINED__ */
 
 
 #ifndef __ISensor_FWD_DEFINED__
@@ -75,10 +69,22 @@ typedef interface ISensor ISensor;
 #endif 	/* __ISensor_FWD_DEFINED__ */
 
 
+#ifndef __IKeyboard_FWD_DEFINED__
+#define __IKeyboard_FWD_DEFINED__
+typedef interface IKeyboard IKeyboard;
+#endif 	/* __IKeyboard_FWD_DEFINED__ */
+
+
 #ifndef __ISimpleDevice_FWD_DEFINED__
 #define __ISimpleDevice_FWD_DEFINED__
 typedef interface ISimpleDevice ISimpleDevice;
 #endif 	/* __ISimpleDevice_FWD_DEFINED__ */
+
+
+#ifndef ____ISimpleDeviceEvents_DeviceChangeEventHandler_FWD_DEFINED__
+#define ____ISimpleDeviceEvents_DeviceChangeEventHandler_FWD_DEFINED__
+typedef interface __ISimpleDeviceEvents_DeviceChangeEventHandler __ISimpleDeviceEvents_DeviceChangeEventHandler;
+#endif 	/* ____ISimpleDeviceEvents_DeviceChangeEventHandler_FWD_DEFINED__ */
 
 
 #ifndef ____IKeyboardEvents_KeyDownEventHandler_FWD_DEFINED__
@@ -93,34 +99,28 @@ typedef interface __IKeyboardEvents_KeyUpEventHandler __IKeyboardEvents_KeyUpEve
 #endif 	/* ____IKeyboardEvents_KeyUpEventHandler_FWD_DEFINED__ */
 
 
-#ifndef ___func_FWD_DEFINED__
-#define ___func_FWD_DEFINED__
-typedef interface _func _func;
-#endif 	/* ___func_FWD_DEFINED__ */
-
-
-#ifndef ____ISimpleDeviceEvents_DeviceChangeEventHandler_FWD_DEFINED__
-#define ____ISimpleDeviceEvents_DeviceChangeEventHandler_FWD_DEFINED__
-typedef interface __ISimpleDeviceEvents_DeviceChangeEventHandler __ISimpleDeviceEvents_DeviceChangeEventHandler;
-#endif 	/* ____ISimpleDeviceEvents_DeviceChangeEventHandler_FWD_DEFINED__ */
-
-
 #ifndef ____ISensorEvents_SensorInputEventHandler_FWD_DEFINED__
 #define ____ISensorEvents_SensorInputEventHandler_FWD_DEFINED__
 typedef interface __ISensorEvents_SensorInputEventHandler __ISensorEvents_SensorInputEventHandler;
 #endif 	/* ____ISensorEvents_SensorInputEventHandler_FWD_DEFINED__ */
 
 
-#ifndef ___IKeyboardEvents_FWD_DEFINED__
-#define ___IKeyboardEvents_FWD_DEFINED__
-typedef interface _IKeyboardEvents _IKeyboardEvents;
-#endif 	/* ___IKeyboardEvents_FWD_DEFINED__ */
+#ifndef ___func_FWD_DEFINED__
+#define ___func_FWD_DEFINED__
+typedef interface _func _func;
+#endif 	/* ___func_FWD_DEFINED__ */
 
 
 #ifndef ___ISimpleDeviceEvents_FWD_DEFINED__
 #define ___ISimpleDeviceEvents_FWD_DEFINED__
 typedef interface _ISimpleDeviceEvents _ISimpleDeviceEvents;
 #endif 	/* ___ISimpleDeviceEvents_FWD_DEFINED__ */
+
+
+#ifndef ___IKeyboardEvents_FWD_DEFINED__
+#define ___IKeyboardEvents_FWD_DEFINED__
+typedef interface _IKeyboardEvents _IKeyboardEvents;
+#endif 	/* ___IKeyboardEvents_FWD_DEFINED__ */
 
 
 #ifndef ___ISensorEvents_FWD_DEFINED__
@@ -187,715 +187,6 @@ void __RPC_USER MIDL_user_free( void * );
 
 extern RPC_IF_HANDLE __MIDL_itf_vc80_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_vc80_0000_v0_0_s_ifspec;
-
-#ifndef __IAngleAxis_INTERFACE_DEFINED__
-#define __IAngleAxis_INTERFACE_DEFINED__
-
-/* interface IAngleAxis */
-/* [object][dual][uuid] */ 
-
-
-EXTERN_C const IID IID_IAngleAxis;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("1ef2baff-54e9-4706-9f61-078f7134fd35")
-    IAngleAxis : public IDispatch
-    {
-    public:
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_X( 
-            /* [retval][out] */ double *pRetVal) = 0;
-        
-        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_X( 
-            /* [in] */ double pRetVal) = 0;
-        
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Y( 
-            /* [retval][out] */ double *pRetVal) = 0;
-        
-        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_Y( 
-            /* [in] */ double pRetVal) = 0;
-        
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Z( 
-            /* [retval][out] */ double *pRetVal) = 0;
-        
-        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_Z( 
-            /* [in] */ double pRetVal) = 0;
-        
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Angle( 
-            /* [retval][out] */ double *pRetVal) = 0;
-        
-        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_Angle( 
-            /* [in] */ double pRetVal) = 0;
-        
-    };
-    
-#else 	/* C style interface */
-
-    typedef struct IAngleAxisVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            IAngleAxis * This,
-            /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            IAngleAxis * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            IAngleAxis * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            IAngleAxis * This,
-            /* [out] */ UINT *pctinfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            IAngleAxis * This,
-            /* [in] */ UINT iTInfo,
-            /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo **ppTInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            IAngleAxis * This,
-            /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
-            /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID *rgDispId);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            IAngleAxis * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_X )( 
-            IAngleAxis * This,
-            /* [retval][out] */ double *pRetVal);
-        
-        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_X )( 
-            IAngleAxis * This,
-            /* [in] */ double pRetVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Y )( 
-            IAngleAxis * This,
-            /* [retval][out] */ double *pRetVal);
-        
-        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_Y )( 
-            IAngleAxis * This,
-            /* [in] */ double pRetVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Z )( 
-            IAngleAxis * This,
-            /* [retval][out] */ double *pRetVal);
-        
-        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_Z )( 
-            IAngleAxis * This,
-            /* [in] */ double pRetVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Angle )( 
-            IAngleAxis * This,
-            /* [retval][out] */ double *pRetVal);
-        
-        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_Angle )( 
-            IAngleAxis * This,
-            /* [in] */ double pRetVal);
-        
-        END_INTERFACE
-    } IAngleAxisVtbl;
-
-    interface IAngleAxis
-    {
-        CONST_VTBL struct IAngleAxisVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define IAngleAxis_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
-
-#define IAngleAxis_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
-
-#define IAngleAxis_Release(This)	\
-    (This)->lpVtbl -> Release(This)
-
-
-#define IAngleAxis_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
-
-#define IAngleAxis_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
-
-#define IAngleAxis_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
-
-#define IAngleAxis_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
-
-
-#define IAngleAxis_get_X(This,pRetVal)	\
-    (This)->lpVtbl -> get_X(This,pRetVal)
-
-#define IAngleAxis_put_X(This,pRetVal)	\
-    (This)->lpVtbl -> put_X(This,pRetVal)
-
-#define IAngleAxis_get_Y(This,pRetVal)	\
-    (This)->lpVtbl -> get_Y(This,pRetVal)
-
-#define IAngleAxis_put_Y(This,pRetVal)	\
-    (This)->lpVtbl -> put_Y(This,pRetVal)
-
-#define IAngleAxis_get_Z(This,pRetVal)	\
-    (This)->lpVtbl -> get_Z(This,pRetVal)
-
-#define IAngleAxis_put_Z(This,pRetVal)	\
-    (This)->lpVtbl -> put_Z(This,pRetVal)
-
-#define IAngleAxis_get_Angle(This,pRetVal)	\
-    (This)->lpVtbl -> get_Angle(This,pRetVal)
-
-#define IAngleAxis_put_Angle(This,pRetVal)	\
-    (This)->lpVtbl -> put_Angle(This,pRetVal)
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-/* [id][propget] */ HRESULT STDMETHODCALLTYPE IAngleAxis_get_X_Proxy( 
-    IAngleAxis * This,
-    /* [retval][out] */ double *pRetVal);
-
-
-void __RPC_STUB IAngleAxis_get_X_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id][propput] */ HRESULT STDMETHODCALLTYPE IAngleAxis_put_X_Proxy( 
-    IAngleAxis * This,
-    /* [in] */ double pRetVal);
-
-
-void __RPC_STUB IAngleAxis_put_X_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id][propget] */ HRESULT STDMETHODCALLTYPE IAngleAxis_get_Y_Proxy( 
-    IAngleAxis * This,
-    /* [retval][out] */ double *pRetVal);
-
-
-void __RPC_STUB IAngleAxis_get_Y_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id][propput] */ HRESULT STDMETHODCALLTYPE IAngleAxis_put_Y_Proxy( 
-    IAngleAxis * This,
-    /* [in] */ double pRetVal);
-
-
-void __RPC_STUB IAngleAxis_put_Y_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id][propget] */ HRESULT STDMETHODCALLTYPE IAngleAxis_get_Z_Proxy( 
-    IAngleAxis * This,
-    /* [retval][out] */ double *pRetVal);
-
-
-void __RPC_STUB IAngleAxis_get_Z_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id][propput] */ HRESULT STDMETHODCALLTYPE IAngleAxis_put_Z_Proxy( 
-    IAngleAxis * This,
-    /* [in] */ double pRetVal);
-
-
-void __RPC_STUB IAngleAxis_put_Z_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id][propget] */ HRESULT STDMETHODCALLTYPE IAngleAxis_get_Angle_Proxy( 
-    IAngleAxis * This,
-    /* [retval][out] */ double *pRetVal);
-
-
-void __RPC_STUB IAngleAxis_get_Angle_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id][propput] */ HRESULT STDMETHODCALLTYPE IAngleAxis_put_Angle_Proxy( 
-    IAngleAxis * This,
-    /* [in] */ double pRetVal);
-
-
-void __RPC_STUB IAngleAxis_put_Angle_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-
-#endif 	/* __IAngleAxis_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_vc80_0745 */
-/* [local] */ 
-
-/* [uuid] */ 
-enum  DECLSPEC_UUID("1edd5ab3-8202-329a-afcb-fb9931020ce5") functions
-    {	functions_none	= 0,
-	functions_sin	= 1,
-	functions_square	= 2,
-	functions_cube	= 3
-    } ;
-
-
-extern RPC_IF_HANDLE __MIDL_itf_vc80_0745_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_vc80_0745_v0_0_s_ifspec;
-
-#ifndef __IKeyboard_INTERFACE_DEFINED__
-#define __IKeyboard_INTERFACE_DEFINED__
-
-/* interface IKeyboard */
-/* [object][dual][uuid] */ 
-
-
-EXTERN_C const IID IID_IKeyboard;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("d6f968e7-2993-48d7-af24-8b602d925b2c")
-    IKeyboard : public IDispatch
-    {
-    public:
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Keys( 
-            /* [retval][out] */ long *pRetVal) = 0;
-        
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_ProgrammableKeys( 
-            /* [retval][out] */ long *pRetVal) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetKeyLabel( 
-            /* [in] */ long key,
-            /* [retval][out] */ BSTR *pRetVal) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetKeyName( 
-            /* [in] */ long key,
-            /* [retval][out] */ BSTR *pRetVal) = 0;
-        
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Device( 
-            /* [retval][out] */ IDispatch **pRetVal) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE IsKeyDown( 
-            /* [in] */ long key,
-            /* [retval][out] */ VARIANT_BOOL *pRetVal) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE IsKeyUp( 
-            /* [in] */ long key,
-            /* [retval][out] */ VARIANT_BOOL *pRetVal) = 0;
-        
-    };
-    
-#else 	/* C style interface */
-
-    typedef struct IKeyboardVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            IKeyboard * This,
-            /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            IKeyboard * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            IKeyboard * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            IKeyboard * This,
-            /* [out] */ UINT *pctinfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            IKeyboard * This,
-            /* [in] */ UINT iTInfo,
-            /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo **ppTInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            IKeyboard * This,
-            /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
-            /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID *rgDispId);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            IKeyboard * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Keys )( 
-            IKeyboard * This,
-            /* [retval][out] */ long *pRetVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProgrammableKeys )( 
-            IKeyboard * This,
-            /* [retval][out] */ long *pRetVal);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetKeyLabel )( 
-            IKeyboard * This,
-            /* [in] */ long key,
-            /* [retval][out] */ BSTR *pRetVal);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetKeyName )( 
-            IKeyboard * This,
-            /* [in] */ long key,
-            /* [retval][out] */ BSTR *pRetVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Device )( 
-            IKeyboard * This,
-            /* [retval][out] */ IDispatch **pRetVal);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *IsKeyDown )( 
-            IKeyboard * This,
-            /* [in] */ long key,
-            /* [retval][out] */ VARIANT_BOOL *pRetVal);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *IsKeyUp )( 
-            IKeyboard * This,
-            /* [in] */ long key,
-            /* [retval][out] */ VARIANT_BOOL *pRetVal);
-        
-        END_INTERFACE
-    } IKeyboardVtbl;
-
-    interface IKeyboard
-    {
-        CONST_VTBL struct IKeyboardVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define IKeyboard_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
-
-#define IKeyboard_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
-
-#define IKeyboard_Release(This)	\
-    (This)->lpVtbl -> Release(This)
-
-
-#define IKeyboard_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
-
-#define IKeyboard_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
-
-#define IKeyboard_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
-
-#define IKeyboard_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
-
-
-#define IKeyboard_get_Keys(This,pRetVal)	\
-    (This)->lpVtbl -> get_Keys(This,pRetVal)
-
-#define IKeyboard_get_ProgrammableKeys(This,pRetVal)	\
-    (This)->lpVtbl -> get_ProgrammableKeys(This,pRetVal)
-
-#define IKeyboard_GetKeyLabel(This,key,pRetVal)	\
-    (This)->lpVtbl -> GetKeyLabel(This,key,pRetVal)
-
-#define IKeyboard_GetKeyName(This,key,pRetVal)	\
-    (This)->lpVtbl -> GetKeyName(This,key,pRetVal)
-
-#define IKeyboard_get_Device(This,pRetVal)	\
-    (This)->lpVtbl -> get_Device(This,pRetVal)
-
-#define IKeyboard_IsKeyDown(This,key,pRetVal)	\
-    (This)->lpVtbl -> IsKeyDown(This,key,pRetVal)
-
-#define IKeyboard_IsKeyUp(This,key,pRetVal)	\
-    (This)->lpVtbl -> IsKeyUp(This,key,pRetVal)
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-/* [id][propget] */ HRESULT STDMETHODCALLTYPE IKeyboard_get_Keys_Proxy( 
-    IKeyboard * This,
-    /* [retval][out] */ long *pRetVal);
-
-
-void __RPC_STUB IKeyboard_get_Keys_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id][propget] */ HRESULT STDMETHODCALLTYPE IKeyboard_get_ProgrammableKeys_Proxy( 
-    IKeyboard * This,
-    /* [retval][out] */ long *pRetVal);
-
-
-void __RPC_STUB IKeyboard_get_ProgrammableKeys_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT STDMETHODCALLTYPE IKeyboard_GetKeyLabel_Proxy( 
-    IKeyboard * This,
-    /* [in] */ long key,
-    /* [retval][out] */ BSTR *pRetVal);
-
-
-void __RPC_STUB IKeyboard_GetKeyLabel_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT STDMETHODCALLTYPE IKeyboard_GetKeyName_Proxy( 
-    IKeyboard * This,
-    /* [in] */ long key,
-    /* [retval][out] */ BSTR *pRetVal);
-
-
-void __RPC_STUB IKeyboard_GetKeyName_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id][propget] */ HRESULT STDMETHODCALLTYPE IKeyboard_get_Device_Proxy( 
-    IKeyboard * This,
-    /* [retval][out] */ IDispatch **pRetVal);
-
-
-void __RPC_STUB IKeyboard_get_Device_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT STDMETHODCALLTYPE IKeyboard_IsKeyDown_Proxy( 
-    IKeyboard * This,
-    /* [in] */ long key,
-    /* [retval][out] */ VARIANT_BOOL *pRetVal);
-
-
-void __RPC_STUB IKeyboard_IsKeyDown_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-/* [id] */ HRESULT STDMETHODCALLTYPE IKeyboard_IsKeyUp_Proxy( 
-    IKeyboard * This,
-    /* [in] */ long key,
-    /* [retval][out] */ VARIANT_BOOL *pRetVal);
-
-
-void __RPC_STUB IKeyboard_IsKeyUp_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-
-#endif 	/* __IKeyboard_INTERFACE_DEFINED__ */
-
-
-#ifndef __ITDxInfo_INTERFACE_DEFINED__
-#define __ITDxInfo_INTERFACE_DEFINED__
-
-/* interface ITDxInfo */
-/* [object][dual][uuid] */ 
-
-
-EXTERN_C const IID IID_ITDxInfo;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("00612962-8fb6-47b2-bf98-4e8c0ff5f559")
-    ITDxInfo : public IDispatch
-    {
-    public:
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE RevisionNumber( 
-            /* [retval][out] */ BSTR *pRetVal) = 0;
-        
-    };
-    
-#else 	/* C style interface */
-
-    typedef struct ITDxInfoVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            ITDxInfo * This,
-            /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            ITDxInfo * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            ITDxInfo * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            ITDxInfo * This,
-            /* [out] */ UINT *pctinfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            ITDxInfo * This,
-            /* [in] */ UINT iTInfo,
-            /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo **ppTInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            ITDxInfo * This,
-            /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
-            /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID *rgDispId);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            ITDxInfo * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *RevisionNumber )( 
-            ITDxInfo * This,
-            /* [retval][out] */ BSTR *pRetVal);
-        
-        END_INTERFACE
-    } ITDxInfoVtbl;
-
-    interface ITDxInfo
-    {
-        CONST_VTBL struct ITDxInfoVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define ITDxInfo_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
-
-#define ITDxInfo_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
-
-#define ITDxInfo_Release(This)	\
-    (This)->lpVtbl -> Release(This)
-
-
-#define ITDxInfo_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
-
-#define ITDxInfo_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
-
-#define ITDxInfo_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
-
-#define ITDxInfo_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
-
-
-#define ITDxInfo_RevisionNumber(This,pRetVal)	\
-    (This)->lpVtbl -> RevisionNumber(This,pRetVal)
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-/* [id] */ HRESULT STDMETHODCALLTYPE ITDxInfo_RevisionNumber_Proxy( 
-    ITDxInfo * This,
-    /* [retval][out] */ BSTR *pRetVal);
-
-
-void __RPC_STUB ITDxInfo_RevisionNumber_Stub(
-    IRpcStubBuffer *This,
-    IRpcChannelBuffer *_pRpcChannelBuffer,
-    PRPC_MESSAGE _pRpcMessage,
-    DWORD *_pdwStubPhase);
-
-
-
-#endif 	/* __ITDxInfo_INTERFACE_DEFINED__ */
-
 
 #ifndef __IVector3D_INTERFACE_DEFINED__
 #define __IVector3D_INTERFACE_DEFINED__
@@ -1183,6 +474,439 @@ void __RPC_STUB IVector3D_put_Length_Stub(
 #endif 	/* __IVector3D_INTERFACE_DEFINED__ */
 
 
+/* interface __MIDL_itf_vc80_0745 */
+/* [local] */ 
+
+/* [uuid] */ 
+enum  DECLSPEC_UUID("e9d6b6c3-117c-340f-9dd3-fc3e9f84c58f") functions
+    {	functions_none	= 0,
+	functions_sin	= 1,
+	functions_square	= 2,
+	functions_cube	= 3
+    } ;
+
+
+extern RPC_IF_HANDLE __MIDL_itf_vc80_0745_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_vc80_0745_v0_0_s_ifspec;
+
+#ifndef __ITDxInfo_INTERFACE_DEFINED__
+#define __ITDxInfo_INTERFACE_DEFINED__
+
+/* interface ITDxInfo */
+/* [object][dual][uuid] */ 
+
+
+EXTERN_C const IID IID_ITDxInfo;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("00612962-8fb6-47b2-bf98-4e8c0ff5f559")
+    ITDxInfo : public IDispatch
+    {
+    public:
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE RevisionNumber( 
+            /* [retval][out] */ BSTR *pRetVal) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct ITDxInfoVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ITDxInfo * This,
+            /* [in] */ REFIID riid,
+            /* [iid_is][out] */ void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ITDxInfo * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ITDxInfo * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ITDxInfo * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ITDxInfo * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ITDxInfo * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ITDxInfo * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *RevisionNumber )( 
+            ITDxInfo * This,
+            /* [retval][out] */ BSTR *pRetVal);
+        
+        END_INTERFACE
+    } ITDxInfoVtbl;
+
+    interface ITDxInfo
+    {
+        CONST_VTBL struct ITDxInfoVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ITDxInfo_QueryInterface(This,riid,ppvObject)	\
+    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+
+#define ITDxInfo_AddRef(This)	\
+    (This)->lpVtbl -> AddRef(This)
+
+#define ITDxInfo_Release(This)	\
+    (This)->lpVtbl -> Release(This)
+
+
+#define ITDxInfo_GetTypeInfoCount(This,pctinfo)	\
+    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+
+#define ITDxInfo_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+
+#define ITDxInfo_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+
+#define ITDxInfo_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+
+
+#define ITDxInfo_RevisionNumber(This,pRetVal)	\
+    (This)->lpVtbl -> RevisionNumber(This,pRetVal)
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+/* [id] */ HRESULT STDMETHODCALLTYPE ITDxInfo_RevisionNumber_Proxy( 
+    ITDxInfo * This,
+    /* [retval][out] */ BSTR *pRetVal);
+
+
+void __RPC_STUB ITDxInfo_RevisionNumber_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+
+#endif 	/* __ITDxInfo_INTERFACE_DEFINED__ */
+
+
+#ifndef __IAngleAxis_INTERFACE_DEFINED__
+#define __IAngleAxis_INTERFACE_DEFINED__
+
+/* interface IAngleAxis */
+/* [object][dual][uuid] */ 
+
+
+EXTERN_C const IID IID_IAngleAxis;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("1ef2baff-54e9-4706-9f61-078f7134fd35")
+    IAngleAxis : public IDispatch
+    {
+    public:
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_X( 
+            /* [retval][out] */ double *pRetVal) = 0;
+        
+        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_X( 
+            /* [in] */ double pRetVal) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Y( 
+            /* [retval][out] */ double *pRetVal) = 0;
+        
+        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_Y( 
+            /* [in] */ double pRetVal) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Z( 
+            /* [retval][out] */ double *pRetVal) = 0;
+        
+        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_Z( 
+            /* [in] */ double pRetVal) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Angle( 
+            /* [retval][out] */ double *pRetVal) = 0;
+        
+        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_Angle( 
+            /* [in] */ double pRetVal) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IAngleAxisVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IAngleAxis * This,
+            /* [in] */ REFIID riid,
+            /* [iid_is][out] */ void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IAngleAxis * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IAngleAxis * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IAngleAxis * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IAngleAxis * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IAngleAxis * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IAngleAxis * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_X )( 
+            IAngleAxis * This,
+            /* [retval][out] */ double *pRetVal);
+        
+        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_X )( 
+            IAngleAxis * This,
+            /* [in] */ double pRetVal);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Y )( 
+            IAngleAxis * This,
+            /* [retval][out] */ double *pRetVal);
+        
+        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_Y )( 
+            IAngleAxis * This,
+            /* [in] */ double pRetVal);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Z )( 
+            IAngleAxis * This,
+            /* [retval][out] */ double *pRetVal);
+        
+        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_Z )( 
+            IAngleAxis * This,
+            /* [in] */ double pRetVal);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Angle )( 
+            IAngleAxis * This,
+            /* [retval][out] */ double *pRetVal);
+        
+        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_Angle )( 
+            IAngleAxis * This,
+            /* [in] */ double pRetVal);
+        
+        END_INTERFACE
+    } IAngleAxisVtbl;
+
+    interface IAngleAxis
+    {
+        CONST_VTBL struct IAngleAxisVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IAngleAxis_QueryInterface(This,riid,ppvObject)	\
+    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+
+#define IAngleAxis_AddRef(This)	\
+    (This)->lpVtbl -> AddRef(This)
+
+#define IAngleAxis_Release(This)	\
+    (This)->lpVtbl -> Release(This)
+
+
+#define IAngleAxis_GetTypeInfoCount(This,pctinfo)	\
+    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+
+#define IAngleAxis_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+
+#define IAngleAxis_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+
+#define IAngleAxis_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+
+
+#define IAngleAxis_get_X(This,pRetVal)	\
+    (This)->lpVtbl -> get_X(This,pRetVal)
+
+#define IAngleAxis_put_X(This,pRetVal)	\
+    (This)->lpVtbl -> put_X(This,pRetVal)
+
+#define IAngleAxis_get_Y(This,pRetVal)	\
+    (This)->lpVtbl -> get_Y(This,pRetVal)
+
+#define IAngleAxis_put_Y(This,pRetVal)	\
+    (This)->lpVtbl -> put_Y(This,pRetVal)
+
+#define IAngleAxis_get_Z(This,pRetVal)	\
+    (This)->lpVtbl -> get_Z(This,pRetVal)
+
+#define IAngleAxis_put_Z(This,pRetVal)	\
+    (This)->lpVtbl -> put_Z(This,pRetVal)
+
+#define IAngleAxis_get_Angle(This,pRetVal)	\
+    (This)->lpVtbl -> get_Angle(This,pRetVal)
+
+#define IAngleAxis_put_Angle(This,pRetVal)	\
+    (This)->lpVtbl -> put_Angle(This,pRetVal)
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+/* [id][propget] */ HRESULT STDMETHODCALLTYPE IAngleAxis_get_X_Proxy( 
+    IAngleAxis * This,
+    /* [retval][out] */ double *pRetVal);
+
+
+void __RPC_STUB IAngleAxis_get_X_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id][propput] */ HRESULT STDMETHODCALLTYPE IAngleAxis_put_X_Proxy( 
+    IAngleAxis * This,
+    /* [in] */ double pRetVal);
+
+
+void __RPC_STUB IAngleAxis_put_X_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id][propget] */ HRESULT STDMETHODCALLTYPE IAngleAxis_get_Y_Proxy( 
+    IAngleAxis * This,
+    /* [retval][out] */ double *pRetVal);
+
+
+void __RPC_STUB IAngleAxis_get_Y_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id][propput] */ HRESULT STDMETHODCALLTYPE IAngleAxis_put_Y_Proxy( 
+    IAngleAxis * This,
+    /* [in] */ double pRetVal);
+
+
+void __RPC_STUB IAngleAxis_put_Y_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id][propget] */ HRESULT STDMETHODCALLTYPE IAngleAxis_get_Z_Proxy( 
+    IAngleAxis * This,
+    /* [retval][out] */ double *pRetVal);
+
+
+void __RPC_STUB IAngleAxis_get_Z_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id][propput] */ HRESULT STDMETHODCALLTYPE IAngleAxis_put_Z_Proxy( 
+    IAngleAxis * This,
+    /* [in] */ double pRetVal);
+
+
+void __RPC_STUB IAngleAxis_put_Z_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id][propget] */ HRESULT STDMETHODCALLTYPE IAngleAxis_get_Angle_Proxy( 
+    IAngleAxis * This,
+    /* [retval][out] */ double *pRetVal);
+
+
+void __RPC_STUB IAngleAxis_get_Angle_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id][propput] */ HRESULT STDMETHODCALLTYPE IAngleAxis_put_Angle_Proxy( 
+    IAngleAxis * This,
+    /* [in] */ double pRetVal);
+
+
+void __RPC_STUB IAngleAxis_put_Angle_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+
+#endif 	/* __IAngleAxis_INTERFACE_DEFINED__ */
+
+
 #ifndef __ISensor_INTERFACE_DEFINED__
 #define __ISensor_INTERFACE_DEFINED__
 
@@ -1379,6 +1103,282 @@ void __RPC_STUB ISensor_get_Period_Stub(
 
 
 #endif 	/* __ISensor_INTERFACE_DEFINED__ */
+
+
+#ifndef __IKeyboard_INTERFACE_DEFINED__
+#define __IKeyboard_INTERFACE_DEFINED__
+
+/* interface IKeyboard */
+/* [object][dual][uuid] */ 
+
+
+EXTERN_C const IID IID_IKeyboard;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d6f968e7-2993-48d7-af24-8b602d925b2c")
+    IKeyboard : public IDispatch
+    {
+    public:
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Keys( 
+            /* [retval][out] */ long *pRetVal) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_ProgrammableKeys( 
+            /* [retval][out] */ long *pRetVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetKeyLabel( 
+            /* [in] */ long key,
+            /* [retval][out] */ BSTR *pRetVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetKeyName( 
+            /* [in] */ long key,
+            /* [retval][out] */ BSTR *pRetVal) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Device( 
+            /* [retval][out] */ IDispatch **pRetVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE IsKeyDown( 
+            /* [in] */ long key,
+            /* [retval][out] */ VARIANT_BOOL *pRetVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE IsKeyUp( 
+            /* [in] */ long key,
+            /* [retval][out] */ VARIANT_BOOL *pRetVal) = 0;
+        
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct IKeyboardVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IKeyboard * This,
+            /* [in] */ REFIID riid,
+            /* [iid_is][out] */ void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IKeyboard * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IKeyboard * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            IKeyboard * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            IKeyboard * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            IKeyboard * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            IKeyboard * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Keys )( 
+            IKeyboard * This,
+            /* [retval][out] */ long *pRetVal);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ProgrammableKeys )( 
+            IKeyboard * This,
+            /* [retval][out] */ long *pRetVal);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetKeyLabel )( 
+            IKeyboard * This,
+            /* [in] */ long key,
+            /* [retval][out] */ BSTR *pRetVal);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetKeyName )( 
+            IKeyboard * This,
+            /* [in] */ long key,
+            /* [retval][out] */ BSTR *pRetVal);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Device )( 
+            IKeyboard * This,
+            /* [retval][out] */ IDispatch **pRetVal);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *IsKeyDown )( 
+            IKeyboard * This,
+            /* [in] */ long key,
+            /* [retval][out] */ VARIANT_BOOL *pRetVal);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *IsKeyUp )( 
+            IKeyboard * This,
+            /* [in] */ long key,
+            /* [retval][out] */ VARIANT_BOOL *pRetVal);
+        
+        END_INTERFACE
+    } IKeyboardVtbl;
+
+    interface IKeyboard
+    {
+        CONST_VTBL struct IKeyboardVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IKeyboard_QueryInterface(This,riid,ppvObject)	\
+    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+
+#define IKeyboard_AddRef(This)	\
+    (This)->lpVtbl -> AddRef(This)
+
+#define IKeyboard_Release(This)	\
+    (This)->lpVtbl -> Release(This)
+
+
+#define IKeyboard_GetTypeInfoCount(This,pctinfo)	\
+    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+
+#define IKeyboard_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+
+#define IKeyboard_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+
+#define IKeyboard_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+
+
+#define IKeyboard_get_Keys(This,pRetVal)	\
+    (This)->lpVtbl -> get_Keys(This,pRetVal)
+
+#define IKeyboard_get_ProgrammableKeys(This,pRetVal)	\
+    (This)->lpVtbl -> get_ProgrammableKeys(This,pRetVal)
+
+#define IKeyboard_GetKeyLabel(This,key,pRetVal)	\
+    (This)->lpVtbl -> GetKeyLabel(This,key,pRetVal)
+
+#define IKeyboard_GetKeyName(This,key,pRetVal)	\
+    (This)->lpVtbl -> GetKeyName(This,key,pRetVal)
+
+#define IKeyboard_get_Device(This,pRetVal)	\
+    (This)->lpVtbl -> get_Device(This,pRetVal)
+
+#define IKeyboard_IsKeyDown(This,key,pRetVal)	\
+    (This)->lpVtbl -> IsKeyDown(This,key,pRetVal)
+
+#define IKeyboard_IsKeyUp(This,key,pRetVal)	\
+    (This)->lpVtbl -> IsKeyUp(This,key,pRetVal)
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+/* [id][propget] */ HRESULT STDMETHODCALLTYPE IKeyboard_get_Keys_Proxy( 
+    IKeyboard * This,
+    /* [retval][out] */ long *pRetVal);
+
+
+void __RPC_STUB IKeyboard_get_Keys_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id][propget] */ HRESULT STDMETHODCALLTYPE IKeyboard_get_ProgrammableKeys_Proxy( 
+    IKeyboard * This,
+    /* [retval][out] */ long *pRetVal);
+
+
+void __RPC_STUB IKeyboard_get_ProgrammableKeys_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id] */ HRESULT STDMETHODCALLTYPE IKeyboard_GetKeyLabel_Proxy( 
+    IKeyboard * This,
+    /* [in] */ long key,
+    /* [retval][out] */ BSTR *pRetVal);
+
+
+void __RPC_STUB IKeyboard_GetKeyLabel_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id] */ HRESULT STDMETHODCALLTYPE IKeyboard_GetKeyName_Proxy( 
+    IKeyboard * This,
+    /* [in] */ long key,
+    /* [retval][out] */ BSTR *pRetVal);
+
+
+void __RPC_STUB IKeyboard_GetKeyName_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id][propget] */ HRESULT STDMETHODCALLTYPE IKeyboard_get_Device_Proxy( 
+    IKeyboard * This,
+    /* [retval][out] */ IDispatch **pRetVal);
+
+
+void __RPC_STUB IKeyboard_get_Device_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id] */ HRESULT STDMETHODCALLTYPE IKeyboard_IsKeyDown_Proxy( 
+    IKeyboard * This,
+    /* [in] */ long key,
+    /* [retval][out] */ VARIANT_BOOL *pRetVal);
+
+
+void __RPC_STUB IKeyboard_IsKeyDown_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [id] */ HRESULT STDMETHODCALLTYPE IKeyboard_IsKeyUp_Proxy( 
+    IKeyboard * This,
+    /* [in] */ long key,
+    /* [retval][out] */ VARIANT_BOOL *pRetVal);
+
+
+void __RPC_STUB IKeyboard_IsKeyUp_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+
+#endif 	/* __IKeyboard_INTERFACE_DEFINED__ */
 
 
 #ifndef __ISimpleDevice_INTERFACE_DEFINED__
@@ -1639,6 +1639,116 @@ void __RPC_STUB ISimpleDevice_LoadPreferences_Stub(
 #endif 	/* __ISimpleDevice_INTERFACE_DEFINED__ */
 
 
+#ifndef ____ISimpleDeviceEvents_DeviceChangeEventHandler_INTERFACE_DEFINED__
+#define ____ISimpleDeviceEvents_DeviceChangeEventHandler_INTERFACE_DEFINED__
+
+/* interface __ISimpleDeviceEvents_DeviceChangeEventHandler */
+/* [object][dual][uuid] */ 
+
+
+EXTERN_C const IID IID___ISimpleDeviceEvents_DeviceChangeEventHandler;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("5f1662ce-ce52-3e87-bed3-ee314df8519d")
+    __ISimpleDeviceEvents_DeviceChangeEventHandler : public IDispatch
+    {
+    public:
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct __ISimpleDeviceEvents_DeviceChangeEventHandlerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __ISimpleDeviceEvents_DeviceChangeEventHandler * This,
+            /* [in] */ REFIID riid,
+            /* [iid_is][out] */ void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __ISimpleDeviceEvents_DeviceChangeEventHandler * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __ISimpleDeviceEvents_DeviceChangeEventHandler * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            __ISimpleDeviceEvents_DeviceChangeEventHandler * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            __ISimpleDeviceEvents_DeviceChangeEventHandler * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            __ISimpleDeviceEvents_DeviceChangeEventHandler * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            __ISimpleDeviceEvents_DeviceChangeEventHandler * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        END_INTERFACE
+    } __ISimpleDeviceEvents_DeviceChangeEventHandlerVtbl;
+
+    interface __ISimpleDeviceEvents_DeviceChangeEventHandler
+    {
+        CONST_VTBL struct __ISimpleDeviceEvents_DeviceChangeEventHandlerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __ISimpleDeviceEvents_DeviceChangeEventHandler_QueryInterface(This,riid,ppvObject)	\
+    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+
+#define __ISimpleDeviceEvents_DeviceChangeEventHandler_AddRef(This)	\
+    (This)->lpVtbl -> AddRef(This)
+
+#define __ISimpleDeviceEvents_DeviceChangeEventHandler_Release(This)	\
+    (This)->lpVtbl -> Release(This)
+
+
+#define __ISimpleDeviceEvents_DeviceChangeEventHandler_GetTypeInfoCount(This,pctinfo)	\
+    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+
+#define __ISimpleDeviceEvents_DeviceChangeEventHandler_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+
+#define __ISimpleDeviceEvents_DeviceChangeEventHandler_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+
+#define __ISimpleDeviceEvents_DeviceChangeEventHandler_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____ISimpleDeviceEvents_DeviceChangeEventHandler_INTERFACE_DEFINED__ */
+
+
 #ifndef ____IKeyboardEvents_KeyDownEventHandler_INTERFACE_DEFINED__
 #define ____IKeyboardEvents_KeyDownEventHandler_INTERFACE_DEFINED__
 
@@ -1859,226 +1969,6 @@ EXTERN_C const IID IID___IKeyboardEvents_KeyUpEventHandler;
 #endif 	/* ____IKeyboardEvents_KeyUpEventHandler_INTERFACE_DEFINED__ */
 
 
-#ifndef ___func_INTERFACE_DEFINED__
-#define ___func_INTERFACE_DEFINED__
-
-/* interface _func */
-/* [object][dual][uuid] */ 
-
-
-EXTERN_C const IID IID__func;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("8a81ecdd-10ec-3082-8302-4673be36ae0f")
-    _func : public IDispatch
-    {
-    public:
-    };
-    
-#else 	/* C style interface */
-
-    typedef struct _funcVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            _func * This,
-            /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            _func * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            _func * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            _func * This,
-            /* [out] */ UINT *pctinfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            _func * This,
-            /* [in] */ UINT iTInfo,
-            /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo **ppTInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            _func * This,
-            /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
-            /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID *rgDispId);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            _func * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
-        
-        END_INTERFACE
-    } _funcVtbl;
-
-    interface _func
-    {
-        CONST_VTBL struct _funcVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define _func_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
-
-#define _func_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
-
-#define _func_Release(This)	\
-    (This)->lpVtbl -> Release(This)
-
-
-#define _func_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
-
-#define _func_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
-
-#define _func_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
-
-#define _func_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
-
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ___func_INTERFACE_DEFINED__ */
-
-
-#ifndef ____ISimpleDeviceEvents_DeviceChangeEventHandler_INTERFACE_DEFINED__
-#define ____ISimpleDeviceEvents_DeviceChangeEventHandler_INTERFACE_DEFINED__
-
-/* interface __ISimpleDeviceEvents_DeviceChangeEventHandler */
-/* [object][dual][uuid] */ 
-
-
-EXTERN_C const IID IID___ISimpleDeviceEvents_DeviceChangeEventHandler;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("5f1662ce-ce52-3e87-bed3-ee314df8519d")
-    __ISimpleDeviceEvents_DeviceChangeEventHandler : public IDispatch
-    {
-    public:
-    };
-    
-#else 	/* C style interface */
-
-    typedef struct __ISimpleDeviceEvents_DeviceChangeEventHandlerVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __ISimpleDeviceEvents_DeviceChangeEventHandler * This,
-            /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __ISimpleDeviceEvents_DeviceChangeEventHandler * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __ISimpleDeviceEvents_DeviceChangeEventHandler * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            __ISimpleDeviceEvents_DeviceChangeEventHandler * This,
-            /* [out] */ UINT *pctinfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            __ISimpleDeviceEvents_DeviceChangeEventHandler * This,
-            /* [in] */ UINT iTInfo,
-            /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo **ppTInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            __ISimpleDeviceEvents_DeviceChangeEventHandler * This,
-            /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [in] */ UINT cNames,
-            /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID *rgDispId);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __ISimpleDeviceEvents_DeviceChangeEventHandler * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
-        
-        END_INTERFACE
-    } __ISimpleDeviceEvents_DeviceChangeEventHandlerVtbl;
-
-    interface __ISimpleDeviceEvents_DeviceChangeEventHandler
-    {
-        CONST_VTBL struct __ISimpleDeviceEvents_DeviceChangeEventHandlerVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __ISimpleDeviceEvents_DeviceChangeEventHandler_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
-
-#define __ISimpleDeviceEvents_DeviceChangeEventHandler_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
-
-#define __ISimpleDeviceEvents_DeviceChangeEventHandler_Release(This)	\
-    (This)->lpVtbl -> Release(This)
-
-
-#define __ISimpleDeviceEvents_DeviceChangeEventHandler_GetTypeInfoCount(This,pctinfo)	\
-    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
-
-#define __ISimpleDeviceEvents_DeviceChangeEventHandler_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
-
-#define __ISimpleDeviceEvents_DeviceChangeEventHandler_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
-
-#define __ISimpleDeviceEvents_DeviceChangeEventHandler_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
-
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____ISimpleDeviceEvents_DeviceChangeEventHandler_INTERFACE_DEFINED__ */
-
-
 #ifndef ____ISensorEvents_SensorInputEventHandler_INTERFACE_DEFINED__
 #define ____ISensorEvents_SensorInputEventHandler_INTERFACE_DEFINED__
 
@@ -2189,61 +2079,52 @@ EXTERN_C const IID IID___ISensorEvents_SensorInputEventHandler;
 #endif 	/* ____ISensorEvents_SensorInputEventHandler_INTERFACE_DEFINED__ */
 
 
+#ifndef ___func_INTERFACE_DEFINED__
+#define ___func_INTERFACE_DEFINED__
 
-#ifndef __NDOF_LIBRARY_DEFINED__
-#define __NDOF_LIBRARY_DEFINED__
-
-/* library NDOF */
-/* [uuid][version] */ 
-
-
-EXTERN_C const IID LIBID_NDOF;
-
-#ifndef ___IKeyboardEvents_DISPINTERFACE_DEFINED__
-#define ___IKeyboardEvents_DISPINTERFACE_DEFINED__
-
-/* dispinterface _IKeyboardEvents */
-/* [uuid] */ 
+/* interface _func */
+/* [object][dual][uuid] */ 
 
 
-EXTERN_C const IID DIID__IKeyboardEvents;
+EXTERN_C const IID IID__func;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-
-    MIDL_INTERFACE("6b6bb0a8-4491-40cf-b1a9-c15a801fe151")
-    _IKeyboardEvents : public IDispatch
+    
+    MIDL_INTERFACE("8a81ecdd-10ec-3082-8302-4673be36ae0f")
+    _func : public IDispatch
     {
+    public:
     };
     
 #else 	/* C style interface */
 
-    typedef struct _IKeyboardEventsVtbl
+    typedef struct _funcVtbl
     {
         BEGIN_INTERFACE
         
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            _IKeyboardEvents * This,
+            _func * This,
             /* [in] */ REFIID riid,
             /* [iid_is][out] */ void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            _IKeyboardEvents * This);
+            _func * This);
         
         ULONG ( STDMETHODCALLTYPE *Release )( 
-            _IKeyboardEvents * This);
+            _func * This);
         
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            _IKeyboardEvents * This,
+            _func * This,
             /* [out] */ UINT *pctinfo);
         
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            _IKeyboardEvents * This,
+            _func * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
             /* [out] */ ITypeInfo **ppTInfo);
         
         HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            _IKeyboardEvents * This,
+            _func * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
             /* [in] */ UINT cNames,
@@ -2251,7 +2132,7 @@ EXTERN_C const IID DIID__IKeyboardEvents;
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            _IKeyboardEvents * This,
+            _func * This,
             /* [in] */ DISPID dispIdMember,
             /* [in] */ REFIID riid,
             /* [in] */ LCID lcid,
@@ -2262,11 +2143,11 @@ EXTERN_C const IID DIID__IKeyboardEvents;
             /* [out] */ UINT *puArgErr);
         
         END_INTERFACE
-    } _IKeyboardEventsVtbl;
+    } _funcVtbl;
 
-    interface _IKeyboardEvents
+    interface _func
     {
-        CONST_VTBL struct _IKeyboardEventsVtbl *lpVtbl;
+        CONST_VTBL struct _funcVtbl *lpVtbl;
     };
 
     
@@ -2274,27 +2155,28 @@ EXTERN_C const IID DIID__IKeyboardEvents;
 #ifdef COBJMACROS
 
 
-#define _IKeyboardEvents_QueryInterface(This,riid,ppvObject)	\
+#define _func_QueryInterface(This,riid,ppvObject)	\
     (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
 
-#define _IKeyboardEvents_AddRef(This)	\
+#define _func_AddRef(This)	\
     (This)->lpVtbl -> AddRef(This)
 
-#define _IKeyboardEvents_Release(This)	\
+#define _func_Release(This)	\
     (This)->lpVtbl -> Release(This)
 
 
-#define _IKeyboardEvents_GetTypeInfoCount(This,pctinfo)	\
+#define _func_GetTypeInfoCount(This,pctinfo)	\
     (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
 
-#define _IKeyboardEvents_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+#define _func_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
     (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
 
-#define _IKeyboardEvents_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+#define _func_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
     (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
 
-#define _IKeyboardEvents_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+#define _func_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
     (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+
 
 #endif /* COBJMACROS */
 
@@ -2302,8 +2184,20 @@ EXTERN_C const IID DIID__IKeyboardEvents;
 #endif 	/* C style interface */
 
 
-#endif 	/* ___IKeyboardEvents_DISPINTERFACE_DEFINED__ */
 
+
+#endif 	/* ___func_INTERFACE_DEFINED__ */
+
+
+
+#ifndef __NDOF_LIBRARY_DEFINED__
+#define __NDOF_LIBRARY_DEFINED__
+
+/* library NDOF */
+/* [uuid][version] */ 
+
+
+EXTERN_C const IID LIBID_NDOF;
 
 #ifndef ___ISimpleDeviceEvents_DISPINTERFACE_DEFINED__
 #define ___ISimpleDeviceEvents_DISPINTERFACE_DEFINED__
@@ -2409,6 +2303,112 @@ EXTERN_C const IID DIID__ISimpleDeviceEvents;
 
 
 #endif 	/* ___ISimpleDeviceEvents_DISPINTERFACE_DEFINED__ */
+
+
+#ifndef ___IKeyboardEvents_DISPINTERFACE_DEFINED__
+#define ___IKeyboardEvents_DISPINTERFACE_DEFINED__
+
+/* dispinterface _IKeyboardEvents */
+/* [uuid] */ 
+
+
+EXTERN_C const IID DIID__IKeyboardEvents;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+
+    MIDL_INTERFACE("6b6bb0a8-4491-40cf-b1a9-c15a801fe151")
+    _IKeyboardEvents : public IDispatch
+    {
+    };
+    
+#else 	/* C style interface */
+
+    typedef struct _IKeyboardEventsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            _IKeyboardEvents * This,
+            /* [in] */ REFIID riid,
+            /* [iid_is][out] */ void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            _IKeyboardEvents * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            _IKeyboardEvents * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            _IKeyboardEvents * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            _IKeyboardEvents * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            _IKeyboardEvents * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            _IKeyboardEvents * This,
+            /* [in] */ DISPID dispIdMember,
+            /* [in] */ REFIID riid,
+            /* [in] */ LCID lcid,
+            /* [in] */ WORD wFlags,
+            /* [out][in] */ DISPPARAMS *pDispParams,
+            /* [out] */ VARIANT *pVarResult,
+            /* [out] */ EXCEPINFO *pExcepInfo,
+            /* [out] */ UINT *puArgErr);
+        
+        END_INTERFACE
+    } _IKeyboardEventsVtbl;
+
+    interface _IKeyboardEvents
+    {
+        CONST_VTBL struct _IKeyboardEventsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define _IKeyboardEvents_QueryInterface(This,riid,ppvObject)	\
+    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+
+#define _IKeyboardEvents_AddRef(This)	\
+    (This)->lpVtbl -> AddRef(This)
+
+#define _IKeyboardEvents_Release(This)	\
+    (This)->lpVtbl -> Release(This)
+
+
+#define _IKeyboardEvents_GetTypeInfoCount(This,pctinfo)	\
+    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
+
+#define _IKeyboardEvents_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
+
+#define _IKeyboardEvents_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
+
+#define _IKeyboardEvents_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+#endif 	/* ___IKeyboardEvents_DISPINTERFACE_DEFINED__ */
 
 
 #ifndef ___ISensorEvents_DISPINTERFACE_DEFINED__

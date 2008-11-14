@@ -117,11 +117,11 @@ namespace TDxInput
         {
             get { return m_Length; }
 
-            ////////////////////////////////////////
-            /// valid values: 1.0, 0.0
-            /// norm the vector if length == 1.0
-            /// if length == 0.0 zero out x, y, z
-            ////////////////////////////////////////
+            ///////////////////////////////////////
+            // valid values: 1.0, 0.0            //
+            // norm the vector if length == 1.0  //
+            // if length == 0.0 zero out x, y, z //
+            ///////////////////////////////////////
             set
             {
                 if (value == 0.0)

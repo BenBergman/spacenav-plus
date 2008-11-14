@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BU Weimar")]
-[assembly: AssemblyProduct("TDxInput")]
+[assembly: AssemblyProduct("AerionInput")]
 [assembly: AssemblyCopyright("Copyright © Christian Bayer 2008")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

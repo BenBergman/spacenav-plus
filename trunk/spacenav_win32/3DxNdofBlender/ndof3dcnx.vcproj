@@ -17,7 +17,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="..\..\blender\blender-NDOF-Windows\plugins"
+			OutputDirectory="..\..\..\..\blender\blender-NDOF-Windows\plugins"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="2"
 			UseOfMFC="2"
@@ -101,11 +101,13 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="..\..\blender\blender-NDOF-Windows\plugins"
+			OutputDirectory="..\..\..\..\blender\blender-NDOF-Windows\plugins"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="2"
-			UseOfATL="2"
+			UseOfMFC="1"
+			UseOfATL="1"
 			CharacterSet="1"
+			DeleteExtensionsOnClean="*.ncb *.pdb *.obj;*.ilk;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;$(TargetPath)"
 			WholeProgramOptimization="1"
 			>
 			<Tool

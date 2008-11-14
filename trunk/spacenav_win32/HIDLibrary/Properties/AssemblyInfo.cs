@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden 
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
-[assembly: AssemblyTitle("AerionInputConfig")]
+[assembly: AssemblyTitle("HIDLibrary")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BU Weimar")]
-[assembly: AssemblyProduct("AerionInputConfig")]
-[assembly: AssemblyCopyright("Copyright © Christian Bayer 2008")]
+[assembly: AssemblyProduct("HIDLibrary")]
+[assembly: AssemblyCopyright("Copyright © Roman Reichel 2006")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Die folgende GUID bestimmt die ID der Typbibliothek, wenn dieses Projekt für COM verfügbar gemacht wird
-[assembly: Guid("72031b09-4859-414f-89d6-e42d1da6f0ac")]
+[assembly: Guid("9b0a62c0-491a-41d2-a449-c9b83ad96131")]
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //
@@ -29,5 +29,7 @@ using System.Runtime.InteropServices;
 //      Buildnummer
 //      Revision
 //
+// Sie können alle Werte angeben oder die standardmäßigen Revisions- und Buildnummern 
+// übernehmen, indem Sie "*" eingeben:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

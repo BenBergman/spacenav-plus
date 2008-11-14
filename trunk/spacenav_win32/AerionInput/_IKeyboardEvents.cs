@@ -82,10 +82,10 @@ namespace TDxInput
         void KeyUp([In] int keyCode);
 
         #region overloaded int32 functions and old event handlers
-        /// <summary>
-        /// Overloaded int32-parameter events (non-functional)
-        /// </summary>
-        /// <param name="keycode"></param>
+        // <summary>
+        // Overloaded int32-parameter events (non-functional)
+        // </summary>
+        // <param name="keycode"></param>
         /*
         [PreserveSig]
         void KeyDown([param: MarshalAs(UnmanagedType.I4)]int keycode);
