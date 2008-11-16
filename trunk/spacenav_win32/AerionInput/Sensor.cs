@@ -28,7 +28,16 @@ using HidLibrary;
 
 namespace TDxInput
 {
-
+    /// <summary>
+    /// Filter function delegate. If you want to define a new filter function,
+    /// use this signature for it (input value x and maximum value max).
+    /// Then process the input value through your function (e.g. f(x)=x^4)
+    /// and return this value. Possible extensions can be an accumulation
+    /// of function values and returning a median of the last 5 values for example.
+    /// </summary>
+    /// <param name="p_x"></param>
+    /// <param name="p_max"></param>
+    /// <returns></returns>
     public delegate double func(double p_x, double p_max);
 
     /// <summary>

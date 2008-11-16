@@ -489,13 +489,16 @@ namespace TDxInput
         }
 
         /// <summary>
-        /// Destructor supporting IDisposeable implementation.
+        /// Default constructor needed by COM to create objects.
         /// </summary>
         public Device()
         {
             m_HidControl = HidControl.GetInstance();
         }
 
+        /// <summary>
+        /// Destructor supporting IDisposeable implementation.
+        /// </summary>
         ~Device()
         {
             Dispose(false);

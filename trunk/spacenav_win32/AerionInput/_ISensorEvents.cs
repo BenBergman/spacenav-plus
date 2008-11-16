@@ -50,7 +50,6 @@ namespace TDxInput
         /// The SensorInput event is fired whenever the Sensor recieves 
         /// valid data from the device.
         /// </summary>
-        /// <param name="reserved"></param>
         [DispId(1)]
         void SensorInput();
 

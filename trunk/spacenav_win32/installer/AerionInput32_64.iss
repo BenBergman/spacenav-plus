@@ -20,7 +20,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-LicenseFile=dist\copying
+LicenseFile=dist\copying.lesser
 InfoBeforeFile=dist\readme
 InfoAfterFile=dist\todo
 OutputBaseFilename=setup
@@ -48,7 +48,7 @@ Source: dist\TDxInput.dll; DestDir: {app}; Flags: ignoreversion
 Source: dist\TDxInput.tlb; DestDir: {app}; Flags: ignoreversion
 Source: dist\todo; DestDir: {app}; Flags: ignoreversion
 Source: dist\3DxNdofBlender.plug; DestDir: {app}; Flags: ignoreversion
-Source: dist\copying; DestDir: {app}; Flags: ignoreversion
+Source: dist\copying.lesser; DestDir: {app}; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
@@ -90,6 +90,11 @@ begin
 end;
 
 function FrameWorkName(Param: String): String;
+begin
+  Result := 'v2.0.50727';
+end;
+
+function FrameWorkName_(Param: String): String;
 var
   Names: TArrayOfString;
   I: Integer;
