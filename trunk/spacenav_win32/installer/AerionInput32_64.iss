@@ -58,22 +58,22 @@ Name: {commondesktop}\{#MyAppName}; Filename: {app}\{#MyAppExeName}; Tasks: desk
 [Run]
 ; v2.0.50727 {FrameWorkName}
 ; 32 bit stuff
-Filename: {win}\Microsoft.NET\Framework\{code:FrameWorkName}\RegAsm.exe; Parameters: {app}\TDxInput.dll /tlb:{app}\TDxInput.tlb /codebase {app}\TDxInput.tlb; WorkingDir: {app}; MinVersion: 0,5.0.2195
+Filename: {win}\Microsoft.NET\Framework\{code:FrameWorkName}\RegAsm.exe; Parameters: "/tlb:""{app}\TDxInput.tlb"" ""{app}\TDxInput.dll"" /codebase ""{app}\TDxInput.dll"""; WorkingDir: {app}; MinVersion: 0,5.0.2195
 ;Filename: {win}\Microsoft.NET\Framework\{code:FrameWorkName}\gacutil.exe; Parameters: /i {app}\TDxInput.dll; WorkingDir: {app}; MinVersion: 0,5.0.2195
 ;Filename: {win}\Microsoft.NET\Framework\{code:FrameWorkName}\gacutil.exe; Parameters: ii {app}\HIDLibrary.dll; WorkingDir: {app}; MinVersion: 0,5.0.2195
 ; 64 bit stuff
-Filename: {win}\Microsoft.NET\Framework64\{code:FrameWorkName}\RegAsm.exe; Parameters: {app}\TDxInput.dll /tlb:{app}\TDxInput.tlb /codebase {app}\TDxInput.tlb; WorkingDir: {app}; MinVersion: 0,5.0.2195; Check: IsWin64
+Filename: {win}\Microsoft.NET\Framework64\{code:FrameWorkName}\RegAsm.exe; Parameters: "/tlb:""{app}\TDxInput.tlb"" ""{app}\TDxInput.dll"" /codebase ""{app}\TDxInput.dll"""; WorkingDir: {app}; MinVersion: 0,5.0.2195; Check: IsWin64
 ;Filename: {win}\Microsoft.NET\Framework64\{code:FrameWorkName}\gacutil.exe; Parameters: /i {app}\TDxInput.dll; WorkingDir: {app}; MinVersion: 0,5.0.2195; Check: IsWin64
 ;Filename: {win}\Microsoft.NET\Framework64\{code:FrameWorkName}\gacutil.exe; Parameters: /i {app}\HIDLibrary.dll; WorkingDir: {app}; MinVersion: 0,5.0.2195; Check: IsWin64
 Filename: {app}\{#MyAppExeName}; Description: {cm:LaunchProgram,{#MyAppName}}; Flags: nowait postinstall skipifsilent
 
 [UninstallRun]
 ; 32 bit stuff
-Filename: {win}\Microsoft.NET\Framework\{code:FrameWorkName}\RegAsm.exe; Parameters: /unregister {app}\TDxInput.dll; WorkingDir: {app}; MinVersion: 0,5.0.2195
+Filename: {win}\Microsoft.NET\Framework\{code:FrameWorkName}\RegAsm.exe; Parameters: "/unregister ""{app}\TDxInput.dll"""; WorkingDir: {app}; MinVersion: 0,5.0.2195
 ;Filename: {win}\Microsoft.NET\Framework\{code:FrameWorkName}\gacutil.exe; Parameters: /u TDxInput; WorkingDir: {app}; MinVersion: 0,5.0.2195
 ;Filename: {win}\Microsoft.NET\Framework\{code:FrameWorkName}\gacutil.exe; Parameters: /u HIDLibrary; WorkingDir: {app}; MinVersion: 0,5.0.2195
 ; 64 bit stuff
-Filename: {win}\Microsoft.NET\Framework64\{code:FrameWorkName}\RegAsm.exe; Parameters: /unregister {app}\TDxInput.dll; WorkingDir: {app}; MinVersion: 0,5.0.2195; Check: IsWin64
+Filename: {win}\Microsoft.NET\Framework64\{code:FrameWorkName}\RegAsm.exe; Parameters: "/unregister ""{app}\TDxInput.dll"""; WorkingDir: {app}; MinVersion: 0,5.0.2195; Check: IsWin64
 ;Filename: {win}\Microsoft.NET\Framework64\{code:FrameWorkName}\gacutil.exe; Parameters: /u TDxInput; WorkingDir: {app}; MinVersion: 0,5.0.2195; Check: IsWin64
 ;Filename: {win}\Microsoft.NET\Framework64\{code:FrameWorkName}\gacutil.exe; Parameters: /u HIDLibrary; WorkingDir: {app}; MinVersion: 0,5.0.2195; Check: IsWin64
 
