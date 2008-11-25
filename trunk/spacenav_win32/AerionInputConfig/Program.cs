@@ -1,5 +1,5 @@
 ﻿/*
-   AerionInputConfig enty points
+   AerionInputConfig entry points
  
    Copyright (C)    Christian Bayer 2008
 					Friedrich-Schiller University of Jena
