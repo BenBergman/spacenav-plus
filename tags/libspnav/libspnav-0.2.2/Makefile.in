@@ -1,0 +1,43 @@
+
+obj = spnav.o $(magellan_obj)
+hdr = spnav.h spnav_magellan.h spnav_config.h
+lib_a = libspnav.a
+soname = libspnav.so.0
+lib_so = $(soname).1
+
+CC = gcc
+AR = ar
+CFLAGS = $(opt) $(dbg) -std=c89 -fpic -pedantic -Wall -fno-strict-aliasing -I.
+
+.PHONY: all
+all: $(lib_a) $(lib_so)
+
+$(lib_a): $(obj)
+	$(AR) rcs $@ $(obj)
+
+$(lib_so): $(obj)
+	$(CC) -shared -Wl,-soname,$(soname) -o $@ $(obj)
+
+%.o: $(srcdir)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+.PHONY: clean
+clean:
+	rm -f $(obj)
+
+.PHONY: cleandist
+distclean:
+	rm -f $(obj) $(lib_a) $(lib_so) Makefile
+
+.PHONY: install
+install: $(lib_a) $(lib_so)
+	cp $(lib_a) $(PREFIX)/$(libdir)/$(lib_a)
+	cp $(lib_so) $(PREFIX)/$(libdir)/$(lib_so)
+	for h in $(hdr); do cp -p $(srcdir)/$$h $(PREFIX)/include/; done
+
+.PHONY: uninstall
+uninstall:
+	rm -f $(PREFIX)/$(libdir)/$(lib_a)
+	rm -f $(PREFIX)/$(libdir)/$(lib_so)
+	for i in $(hdr); do rm -f $(PREFIX)/include/$$i; done
+
