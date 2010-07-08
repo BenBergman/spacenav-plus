@@ -1,0 +1,279 @@
+import "e:\Programme\Microsoft SDKs\Windows\v6.0A\include\prsht.idl";
+import "e:\Programme\Microsoft SDKs\Windows\v6.0A\include\mshtml.idl";
+import "e:\programme\microsoft sdks\windows\v6.0a\include\dimm.idl";
+import "e:\Programme\Microsoft SDKs\Windows\v6.0A\include\mshtmhst.idl";
+import "e:\programme\microsoft sdks\windows\v6.0a\include\docobj.idl";
+import "e:\Programme\Microsoft SDKs\Windows\v6.0A\include\exdisp.idl";
+import "e:\Programme\Microsoft SDKs\Windows\v6.0A\include\objsafe.idl";
+
+#line 13 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface IKeyboard;
+#line 15 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface IVector3D;
+#line 20 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface _ISimpleDeviceEvents;
+#line 22 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface ITDxInfo;
+#line 24 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface IAngleAxis;
+#line 27 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface ISensor;
+#line 32 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface _ISensorEvents;
+#line 36 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface _IKeyboardEvents;
+#line 41 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface __ISimpleDeviceEvents_DeviceChangeEventHandler;
+#line 43 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface _func;
+#line 45 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface __ISensorEvents_SensorInputEventHandler;
+#line 47 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface __IKeyboardEvents_KeyDownEventHandler;
+#line 49 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface __IKeyboardEvents_KeyUpEventHandler;
+[
+	uuid(d6f968e7-2993-48d7-af24-8b602d925b2c),
+	dual
+] 
+#line 75 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface IKeyboard : IDispatch {
+#line 81 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(1)] HRESULT  Keys([out,retval] long *pRetVal);
+#line 83 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(2)] HRESULT  ProgrammableKeys([out,retval] long *pRetVal);
+#line 85 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[id(3)] HRESULT  GetKeyLabel([in] long key, [out,retval] BSTR *pRetVal);
+#line 88 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[id(4)] HRESULT  GetKeyName([in] long key, [out,retval] BSTR *pRetVal);
+#line 91 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(5)] HRESULT  Device([out,retval] IDispatch **pRetVal);
+#line 93 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[id(6)] HRESULT  IsKeyDown([in] long key, [out,retval] VARIANT_BOOL *pRetVal);
+#line 96 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[id(1610743814)] HRESULT  IsKeyUp([in] long key, [out,retval] VARIANT_BOOL *pRetVal);
+};
+
+[
+	uuid(8c2aa71d-2b23-43f5-a6ed-4df57e9cd8d5),
+	dual
+] 
+#line 102 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface IVector3D : IDispatch {
+#line 108 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(1)] HRESULT  X([out,retval] double *pRetVal);
+#line 110 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propput,id(1)] HRESULT  X([in] double pRetVal);
+#line 112 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(2)] HRESULT  Y([out,retval] double *pRetVal);
+#line 114 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propput,id(2)] HRESULT  Y([in] double pRetVal);
+#line 116 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(3)] HRESULT  Z([out,retval] double *pRetVal);
+#line 118 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propput,id(3)] HRESULT  Z([in] double pRetVal);
+#line 120 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(4)] HRESULT  Length([out,retval] double *pRetVal);
+#line 122 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propput,id(4)] HRESULT  Length([in] double pRetVal);
+};
+
+[
+	uuid(e9d6b6c3-117c-340f-9dd3-fc3e9f84c58f)
+] 
+#line 133 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+enum functions {
+	functions_none = 0,
+	functions_sin = 1,
+	functions_square = 2,
+	functions_cube = 3,
+};
+
+[
+	uuid(00612962-8fb6-47b2-bf98-4e8c0ff5f559),
+	dual
+] 
+#line 161 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface ITDxInfo : IDispatch {
+#line 167 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[id(1)] HRESULT  RevisionNumber([out,retval] BSTR *pRetVal);
+};
+
+[
+	uuid(1ef2baff-54e9-4706-9f61-078f7134fd35),
+	dual
+] 
+#line 172 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface IAngleAxis : IDispatch {
+#line 178 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(1)] HRESULT  X([out,retval] double *pRetVal);
+#line 180 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propput,id(1)] HRESULT  X([in] double pRetVal);
+#line 182 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(2)] HRESULT  Y([out,retval] double *pRetVal);
+#line 184 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propput,id(2)] HRESULT  Y([in] double pRetVal);
+#line 186 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(3)] HRESULT  Z([out,retval] double *pRetVal);
+#line 188 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propput,id(3)] HRESULT  Z([in] double pRetVal);
+#line 190 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(4)] HRESULT  Angle([out,retval] double *pRetVal);
+#line 192 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propput,id(4)] HRESULT  Angle([in] double pRetVal);
+};
+
+[
+	uuid(f3a6775e-6fa1-4829-bf32-5b045c29078f),
+	dual
+] 
+#line 205 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface ISensor : IDispatch {
+#line 211 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(1)] HRESULT  Translation([out,retval] IVector3D **pRetVal);
+#line 213 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(2)] HRESULT  Rotation([out,retval] IAngleAxis **pRetVal);
+#line 215 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(3)] HRESULT  Device([out,retval] IDispatch **pRetVal);
+#line 217 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(4)] HRESULT  Period([out,retval] double *pRetVal);
+};
+
+[
+	uuid(cb3bf65e-0816-482a-bb11-64af1e837812),
+	dual
+] 
+#line 222 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface ISimpleDevice : IDispatch {
+#line 228 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[id(1)] HRESULT  Connect();
+	[id(2)] HRESULT  Disconnect();
+	[propget,id(3)] HRESULT  Sensor([out,retval] ISensor **pRetVal);
+#line 232 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(4)] HRESULT  Keyboard([out,retval] IKeyboard **pRetVal);
+#line 234 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(5)] HRESULT  Type([out,retval] long *pRetVal);
+#line 236 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[propget,id(6)] HRESULT  IsConnected([out,retval] VARIANT_BOOL *pRetVal);
+#line 238 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	[id(7)] HRESULT  LoadPreferences([in] BSTR preferencesName);
+};
+
+[
+	uuid(5f1662ce-ce52-3e87-bed3-ee314df8519d),
+	dual
+] 
+#line 323 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface __ISimpleDeviceEvents_DeviceChangeEventHandler : IDispatch {
+};
+
+[
+	uuid(8a81ecdd-10ec-3082-8302-4673be36ae0f),
+	dual
+] 
+#line 327 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface _func : IDispatch {
+};
+
+[
+	uuid(12fcebc7-8e0e-3e17-a5b3-978cf3371c1c),
+	dual
+] 
+#line 331 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface __ISensorEvents_SensorInputEventHandler : IDispatch {
+};
+
+[
+	uuid(d7548f4c-9717-3ea3-b843-aa111d017fac),
+	dual
+] 
+#line 335 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface __IKeyboardEvents_KeyDownEventHandler : IDispatch {
+};
+
+[
+	uuid(cb185ef1-0144-3ed4-b0ee-c0c055985f2b),
+	dual
+] 
+#line 339 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+interface __IKeyboardEvents_KeyUpEventHandler : IDispatch {
+};
+
+
+[ version(1.0), uuid(38e7c118-b8f4-30fb-8d0f-abbba39c703a) ]
+library SiAppDll
+{
+	importlib("stdole2.tlb");
+	importlib("olepro32.dll");
+
+	[
+		uuid(8fe3a216-e235-49a6-9136-f9d81fdadef5)
+	] 
+#line 149 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	dispinterface _ISimpleDeviceEvents {
+	properties:
+
+	methods:
+#line 156 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+		[id(1)] void  DeviceChange([in] long reserved);
+	};
+
+	[
+		uuid(e6929a4a-6f41-46c6-9252-a8cc53472cb1)
+	] 
+#line 265 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	dispinterface _ISensorEvents {
+	properties:
+
+	methods:
+#line 272 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+		[id(1)] void  SensorInput();
+	};
+
+	[
+		uuid(6b6bb0a8-4491-40cf-b1a9-c15a801fe151)
+	] 
+#line 292 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+	dispinterface _IKeyboardEvents {
+	properties:
+
+	methods:
+#line 299 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+		[id(1)] void  KeyDown([in] long keyCode);
+#line 301 "i:\\uni\\05_ws0708\\globefish\\src\\siappwrapper\\debug\\tdxinput.tlh"
+		[id(2)] void  KeyUp([in] long keyCode);
+	};
+
+	[ dllname("SiAppDll.dll") ]
+	module SiAppDll
+	{
+	}
+	[
+		uuid(5BB1322E-5E07-33DA-A587-159FF87EE376),
+		version(1.0),
+		noncreatable
+	] 
+	coclass __Impl__ISimpleDeviceEvents {
+		[default] interface IUnknown;
+	};
+
+	[
+		uuid(79E329DD-66A0-3299-A46D-17C76E7BD580),
+		version(1.0),
+		noncreatable
+	] 
+	coclass __Impl__ISensorEvents {
+		[default] interface IUnknown;
+	};
+
+	[
+		uuid(DFE48A04-131B-3D9F-8536-BA63D874CB8A),
+		version(1.0),
+		noncreatable
+	] 
+	coclass __Impl__IKeyboardEvents {
+		[default] interface IUnknown;
+	};
+
+}
+
