@@ -497,7 +497,7 @@ namespace TDxInput
                     // Filtering and scaling is done here //
                     ////////////////////////////////////////
                     m_Rotation.X =  m_RotationFunction(System.Convert.ToDouble(x), c_MaxValueRotation) * XRotScaleFactor; //Rotation um X-Achse = rot
-                    m_Rotation.Y =  m_RotationFunction(System.Convert.ToDouble(y), c_MaxValueRotation) * YRotScaleFactor; //Rotation um Y-Achse = grün
+                    m_Rotation.Y =  m_RotationFunction(System.Convert.ToDouble(y), c_MaxValueRotation) * YRotScaleFactor; //Rotation um Y-Achse = grï¿½n
                     m_Rotation.Z =  m_RotationFunction(System.Convert.ToDouble(z), c_MaxValueRotation) * ZRotScaleFactor; //Rotation um Z-Achse = blau
                 }
                 catch (Exception e)
@@ -595,6 +595,17 @@ namespace TDxInput
         }
 
         /// <summary>
+        /// Sqaure filter. Output = Input*Input [Shifted to origin]
+        /// </summary>
+        /// <param name="p_x">input value</param>
+        /// <param name="p_max">maximum value the function is scaled to</param>
+        /// <returns></returns>
+        private double square(double p_x, double p_max)
+        {
+            return ((p_x / p_max) * (p_x / p_max) * Math.Sign(p_x)) * p_max;
+        }
+
+        /// <summary>
         /// Cube filter. Output = Input*Input*Input [Shifted to origin]
         /// </summary>
         /// <param name="p_x">input value</param>
@@ -605,16 +616,6 @@ namespace TDxInput
             return ((p_x / p_max) * (p_x / p_max) * (p_x / p_max)) * p_max;
         }
 
-        /// <summary>
-        /// Sqaure filter. Output = Input*Input [Shifted to origin]
-        /// </summary>
-        /// <param name="p_x">input value</param>
-        /// <param name="p_max">maximum value the function is scaled to</param>
-        /// <returns></returns>
-        private double square(double p_x, double p_max)
-        {
-            return ((p_x / p_max) * (p_x / p_max) * Math.Sign(p_x)) * p_max;
-        }
 
         ////////////////////
         // Public methods //

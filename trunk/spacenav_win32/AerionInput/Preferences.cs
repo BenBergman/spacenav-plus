@@ -357,6 +357,8 @@ namespace TDxInput
                 XmlElement Root = doc.DocumentElement;
                 XmlNode DataNode;
 
+                // TODO: Found bug: If app name starts with number, no XML node can be read. Ironically it
+                // can be written...
                 foreach (XmlNode ApplicationNode in Root.ChildNodes)
                 {
                     m_PreferencesName.Add(ApplicationNode.Name);

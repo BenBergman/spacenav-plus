@@ -26,6 +26,8 @@ using System.Text;
 using System.Runtime.InteropServices;
 using HidLibrary;
 
+//TODO Windows Vista 64 und Windows 7 64 Test
+
 namespace TDxInput
 {
     #region old stuff...
@@ -440,6 +442,7 @@ namespace TDxInput
         /// Look for connected supported devices and register for HidControl.DeviceChange
         /// event to be notified if devices are connected. If a supported device is found
         /// init the Sensor and the Keyboard. Then load initial "default" profile.
+        /// Only one device at a time is currently supported.
         /// </summary>
         public void Connect()
         {
@@ -482,7 +485,8 @@ namespace TDxInput
                 m_Keyboard.DestroyKeyboard();
 
                 m_HidControl.DeviceChange -= m_HidControlEvents_DeviceChangeEventHandler;
-                m_IHidDevice.StopInPipeThread();
+                if (m_IHidDevice != null)
+                    m_IHidDevice.StopInPipeThread();
 
                 m_prefs.saveConfig();
             }

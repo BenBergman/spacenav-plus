@@ -32,7 +32,7 @@ namespace TDxInput
     #region old stuff...
     /*
     /// <summary>
-    /// vermutlich überflüssige angepasste EventArgs-Klasse
+    /// vermutlich ï¿½berflï¿½ssige angepasste EventArgs-Klasse
     /// </summary>
     [ComVisible(false)]
     class KeyboardEventArgs : EventArgs
@@ -230,6 +230,7 @@ namespace TDxInput
                         p_HidDataReceivedEventArgs[1],
                         
                         // Needed for more keys than 8
+                        // uncomment as much bytes as you have keys / 8
 
                         /*
                         p_HidDataReceivedEventArgs[2],                        
@@ -330,7 +331,9 @@ namespace TDxInput
         /// </summary>
         public string GetKeyName(int key)
         {
-            if ((0 < key) & (key < m_KeyNameList.Length)) return m_KeyNameList[key];
+            //what is key <0 good for? (damn, i wrote this code and I don't know...)
+            //if ((0 < key) & (key < m_KeyNameList.Length)) return m_KeyNameList[key];
+            if (key < m_KeyNameList.Length) return m_KeyNameList[key];
             else return null;
         }
 
@@ -339,7 +342,9 @@ namespace TDxInput
         /// </summary>
         public string GetKeyLabel(int key)
         {
-            if ((0 < key) & (key < m_KeyLabelList.Length)) return m_KeyLabelList[key];
+            //what is key <0 good for? (damn, i wrote this code and I don't know...)
+            //if ((0 < key) & (key < m_KeyLabelList.Length)) return m_KeyLabelList[key];
+            if (key < m_KeyLabelList.Length) return m_KeyLabelList[key];
             else return null;
         }
 
@@ -416,6 +421,11 @@ namespace TDxInput
             m_KeyDownList = new BitArray(8, false);
             m_KeyNameList = new string[m_Keys];
             m_KeyLabelList = new string[m_Keys];
+        
+            m_KeyNameList[0] = "L";
+            m_KeyNameList[1] = "R";
+            m_KeyLabelList[0] = "L";
+            m_KeyLabelList[1] = "R";
         }
 
         /// <summary>
