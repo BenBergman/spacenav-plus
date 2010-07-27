@@ -1,0 +1,53 @@
+#!/bin/sh
+
+setup_sysv_init() {
+
+	rlvl=`cat /etc/inittab | grep initdefault | sed 's/^id://; s/:init.*$//'`
+	if [ $? != 0 -o -z "$rlvl" ]; then
+		echo 'default runlevel detection failed.'
+		rlvl=2
+	fi
+	echo "selected runlevel: $rlvl"
+	
+	if [ "$1" = 'remove' ]; then
+		echo 'removing sysv init script'
+		rm -f /etc/init.d/spacenavd
+		rm -f /etc/rc${rlvl}.d/S99spacenavd
+	else
+		echo 'setting up sysv init script'
+		install -m 755 init_script /etc/init.d/spacenavd
+		cd /etc/rc${rlvl}.d
+		rm -f S99spacenavd
+		ln -s ../init.d/spacenavd S99spacenavd
+	fi
+}
+
+setup_bsd_init() {
+	echo 'setting up bsd init'
+	echo "BSD init setup not implemented yet, you'll have to do it manually."
+}
+
+
+if [ "$1" = '--no-install' ]; then
+	echo
+	echo --- Spacenavd installation complete ---
+	echo To have spacenavd start automatically at bootup, you must add an appropriate
+	echo "init script. Refer to your system's manual for details on how to do that."
+	echo An example init script is available in the spacenavd source directory.
+	echo If you wish to attempt and install an init script automatically, run ./setup_init
+	echo
+	exit 0
+fi
+
+if [ -d /etc/init.d -a -d /etc/rc0.d ]; then
+	setup_sysv_init $*
+	exit 0
+fi
+
+if [ -f /etc/rc -a -d /etc/rc.d ]; then
+	setup_bsd_init $*
+	exit 0
+fi
+
+echo "You're either using a non-standard init or this detection failed."
+echo "You'll have to setup your init, to start spacenavd, manually."

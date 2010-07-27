@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# spacenavd      free driver for 3Dconnexion 6dof devices
+#
+# chkconfig: 2345 99 99
+# description: A free user space driver for 3Dconnexion input devices,\
+#              compatible with the proprietary 3dxsrv daemon.
+
+DAEMON=/usr/local/bin/spacenavd
+
+[ -x "$DAEMON" ] || exit 0
+
+case "$1" in
+start)
+	echo 'Starting spacenavd daemon'
+	$DAEMON -v
+	;;
+
+stop)
+	echo 'Stopping spacenavd daemon'
+	# detect daemon's process id
+	pid=`cat /var/run/spnavd.pid 2>/dev/null`
+	if [ $? != 0 ]; then
+		pid=`ps -e | grep spacenavd | awk '{ print $1 }'`
+		if [ -z "$pid" ]; then
+			echo 'spacenavd daemon is not running, nothing to do.'
+			exit 1
+		fi
+	fi
+	kill $pid
+	;;
+
+reload|restart|force-reload)
+	$0 stop && sleep 1 && $0 start
+	;;
+esac
