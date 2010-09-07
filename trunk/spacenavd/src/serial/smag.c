@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <string.h>
+#include <serial/smag.h>
 
 /*
 v  MAGELLAN  Version 6.60  3Dconnexion GmbH 05/11/01
@@ -36,7 +37,7 @@ v  MAGELLAN  Version 5.79  by LOGITECH INC. 10/10/97
 
 #define MAXPACKETSIZE 16
 #define MAXREADSIZE 64		/*version string is longer than packets*/
-char device[64];
+
 int file;
 struct InputStruct
 {
@@ -46,27 +47,58 @@ struct InputStruct
   int packetBufPosition;
 } input;
 
-char firstByteParity[16]={
+int firstByteParity[16]={
   0xE0, 0xA0, 0xA0, 0x60, 0xA0, 0x60, 0x60, 0xA0, 0x90, 0x50, 0x50, 0x90, 0xD0, 0x90, 0x90, 0x50
 };
 
-char secondByteParity[64]={
+int secondByteParity[64]={
   0x80, 0x40, 0x40, 0x80, 0x40, 0x80, 0x80, 0x40, 0x40, 0x80, 0x80, 0x40, 0x80, 0x40, 0x40, 0x80,
   0x40, 0x80, 0x80, 0x40, 0x80, 0x40, 0x40, 0x80, 0x80, 0x40, 0x40, 0x80, 0xC0, 0x80, 0x80, 0x40,
   0xC0, 0x80, 0x80, 0x40, 0x80, 0x40, 0x40, 0x80, 0x80, 0x40, 0x40, 0x80, 0x40, 0x80, 0x80, 0x40,
   0x80, 0x40, 0x40, 0x80, 0x40, 0x80, 0x80, 0x40, 0x40, 0x80, 0x80, 0x40, 0x80, 0x40, 0x00, 0x80
 };
 
-int open_smag()
+int open_smag(const char *devfile)
 {
-  file = open(device, O_RDWR | O_NOCTTY | O_NONBLOCK | O_SYNC);
-  if (file < 0)
-    return 1;
+  if (open_file(devfile) < 0)
+    return -1;
+  setup_port();
+  initMagellan();
+  clearInput();
   return 0;
 }
 
-void setUpPort()
+int close_smag()
 {
+  myWriteString("l000", 4);
+  close(file);
+  return 0;
+}
+
+int read_smag(struct dev_input *inp)
+{
+  /*need to return 1 if we fill in inp or 0 if no events*/
+  int bytesRead;
+  bytesRead = myRead();
+  return 0;
+}
+
+int get_fd_smag()
+{
+  return file;
+}
+
+int open_file(const char *devfile)
+{
+  file = open(devfile, O_RDWR | O_NOCTTY | O_NONBLOCK | O_SYNC);
+  if (file < 0)
+    return -1;
+  return 0;
+}
+
+void setup_port()
+{
+  int status;
   struct termios term;
   tcgetattr(file, &term);
   
@@ -77,18 +109,32 @@ void setUpPort()
   term.c_cc[VMIN] = 1;
   term.c_cc[VTIME] = 0;
   
-
   cfsetispeed(&term, 9600);
   cfsetospeed(&term, 9600);
   tcsetattr(file, TCSANOW, &term);
  
-  int status;
   if (ioctl(file, TIOCMGET, &status) == -1)
     printf("error TIOCMGET");
   status |= TIOCM_DTR;
   status |= TIOCM_RTS;
   if (ioctl(file, TIOCMSET, &status) == -1)
     printf("error TIOCMSET");
+}
+
+void get_version_string(char *buffer, int buffersize)
+{
+  myWriteString("\r\rm0", 4);
+  myWriteString("", 0);
+  myWriteString("\r\rm0", 4);
+  myWriteString("c03", 3);
+  myWriteString("z", 1);
+  myWriteString("Z", 1);
+  myWriteString("l000", 4);
+  myRead();/*to read any pending port data. device likes to echo back commands.*/
+  myWriteString("vQ", 2);
+  if (myRead() > 0 && buffersize > input.readBufSize){
+    strcpy(buffer, input.readBuf);
+  }
 }
 
 void longWait()
@@ -124,25 +170,6 @@ int myRead()
   return bytesRead;
 }
 
-int isMagellan()
-{
-  myWriteString("\r\rm0", 4);
-  myWriteString("", 0);
-  myWriteString("\r\rm0", 4);
-  myWriteString("c03", 3);
-  myWriteString("z", 1);
-  myWriteString("Z", 1);
-  myWriteString("l000", 4);
-  myRead();/*to read any pending port data. device likes to echo back commands.*/
-  myWriteString("vQ", 2);
-  if (myRead() < 1)
-    return 0;
-  char *instance = strstr(input.readBuf, "MAGELLAN");
-  if (instance == NULL)
-    return 0;
-  return 1;
-}
-
 void initMagellan()
 {
   myWriteString("", 0);
@@ -170,14 +197,14 @@ void clearInput()
 
 void processDisplacementPacket()
 {
-  int index, lastBytes, offset, factor;
+  int index, lastBytes, offset;
   short int accumLast;
   accumLast = offset = 0;
   
   for (index=1; index<13; index+=2)
   {
     /*first byte check*/
-    char low, up;
+    unsigned char low, up;
     low = input.packetBuf[index] & 0x0F;
     up = input.packetBuf[index] & 0xF0;
     if (up != firstByteParity[low])
@@ -319,7 +346,7 @@ void readCopy()
     if (input.readBuf[index] == '\n')
     {
       input.packetBuf[input.packetBufPosition] = '\0';/*terminate string*/
-      /*printf("%s   %i\n", input.packetBuf, input.packetBufPosition);*/
+
       if (input.packetBuf[0] == 'd' && input.packetBufPosition == 15)
 	processDisplacementPacket();
       else if (input.packetBuf[0] == 'k' && input.packetBufPosition == 4)
@@ -346,51 +373,3 @@ void readCopy()
     }
   }
 }
-
-void close_smag()
-{
-  myWriteString("l000", 4);
-  close(file);  
-}
-
-int main(int argc, char *argv[])
-{
-  if (argc != 2)
-  {
-    printf("error: expecting device parameter. i.e /dev/ttyS0\n");
-    return 1;
-  }
-  strcpy(device, argv[1]);
-  setbuf(stdout, NULL);	/*turn off buffer so printf shows immediately*/
-  if (openFile())
-    return 1;
-  setUpPort();
-  sleep(1);/*give device a chance to get ready*/
-
-  if (isMagellan())
-  {
-    printf("%s\n",input.readBuf);
-    initMagellan();
-    printf("go magellan\n\n");
-  }
-  else
-  {
-    printf("no magellan\n");
-    close(file);
-    return 0;
-  }
-
-  clearInput();
-  int index;
-  for (index=0;index<40000;++index)
-  {
-    if(myRead())
-    {      
-      readCopy();
-    }
-    usleep(500);
-  }
-  
-  
-  return 0;
-  }

@@ -25,5 +25,8 @@ int open_dev_serial(const char *devfile);
 void close_dev_serial(void);
 int read_dev_serial(struct dev_input *inp);
 void clear_device();
+int detect_device(const char *devfile);
+void derive_device_name();
+void setup_device();
 
 #endif	/* DEV_SERIAL_H_ */
