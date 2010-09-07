@@ -100,14 +100,14 @@ typedef void *SBallHandle;	/* Handle type, used by all sball API functions */
  * If the serial port open fails, or the sball does not pass initialization
  * tests, then a NULL is returned as the handle.
  */
-SBallHandle sball_open(const char *sballname);
+int sball_open(const char *sballname);
 
 /*
  * sball_close()
  *   Closes down the Spaceball serial port, frees allocated resources and
  * discards any unprocessed sball messages.
  */
-int sball_close(SBallHandle voidhandle);
+int sball_close();
 
 /*
  * sball_getstatus()
@@ -119,26 +119,26 @@ int sball_close(SBallHandle voidhandle);
  * is less than 1, either an error occured or there were no Spaceball
  * events to process.
  */
-int sball_getstatus(SBallHandle voidhandle, int *tx, int *ty, int *tz, int *rx, int *ry, int *rz, int *buttons);
+int sball_getstatus(int *tx, int *ty, int *tz, int *rx, int *ry, int *rz, int *buttons);
 
 /* sball_get_input() - Added for spacenavd integration by John Tsiombikas.
  *
  * returns the first of any pending events through inp.
  * returns 1 if it got an event, 0 if there where none pending
  */
-int sball_get_input(SBallHandle voidhandle, struct dev_input *inp);
+int sball_get_input(struct dev_input *inp);
 
 /* sball_get_fd() - Added for spacenavd integration by John Tsiombikas.
  *
  * retreives the device file descriptor */
-int sball_get_fd(SBallHandle voidhandle);
+int sball_get_fd();
 
 /*
  * sball_rezero()
  *   Forces the Orb to re-zero itself at the present twist/position.
  * All future event data is relative to this zero point.
  */
-int sball_rezero(SBallHandle voidhandle);
+int sball_rezero();
 
 /*
  * sball_init()
@@ -146,7 +146,7 @@ int sball_rezero(SBallHandle voidhandle);
  * all unprocessed events.  Initialization also forces the Orb to re-zero
  * itself.
  */
-int sball_init(SBallHandle voidhandle);
+int sball_init();
 
 /*
  * sball_set_nullregion()
@@ -167,7 +167,7 @@ int sball_init(SBallHandle voidhandle);
  * Note that setting the null-region too high significantly reduces the
  * dynamic range of the output values from the Spaceball.
  */
-void sball_set_nullregion(SBallHandle voidhandle, int nulltx, int nullty, int nulltz,
+void sball_set_nullregion(int nulltx, int nullty, int nulltz,
 		int nullrx, int nullry, int nullrz);
 
 

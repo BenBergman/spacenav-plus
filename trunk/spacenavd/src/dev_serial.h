@@ -24,5 +24,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 int open_dev_serial(const char *devfile);
 void close_dev_serial(void);
 int read_dev_serial(struct dev_input *inp);
+void clear_device();
 
 #endif	/* DEV_SERIAL_H_ */

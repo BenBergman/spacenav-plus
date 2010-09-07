@@ -66,7 +66,7 @@ static struct event *alloc_event(void);
 static void free_event(struct event *ev);
 
 
-typedef struct {
+typedef struct{
 	SBallCommHandle commhandle;
 	unsigned char buf[256];
 	char resetstring[256];
@@ -89,10 +89,11 @@ typedef struct {
 	/* event list added for spacenavd integration */
 	struct event *evhead, *evtail;
 } sballhandle;
+sballhandle *handle;
 
 
-static void generate_motion_events(sballhandle *handle, int *prev_val, int *new_val, int timer);
-static void generate_button_events(sballhandle *handle, int prevstate, int newstate);
+static void generate_motion_events(int *prev_val, int *new_val, int timer);
+static void generate_button_events(int prevstate, int newstate);
 
 
 /* Spaceball 1003/2003 recommended initialization string.          */
@@ -103,7 +104,7 @@ static void generate_button_events(sballhandle *handle, int prevstate, int newst
 static char *initstring = "CB\rNT\rFTp\rFRp\rP@r@r\rMSSV\rZ\rBcCcC\r";
 
 /* Reset spaceball and ideally determine model */
-static void sball_hwreset(sballhandle * handle)
+static void sball_hwreset()
 {
 	/* Reset some state variables back to zero */
 	handle->spaceball4000 = 0;	/* re-determine which type it is     */
@@ -129,16 +130,14 @@ static void sball_hwreset(sballhandle * handle)
 }
 
 
-SBallHandle sball_open(const char *sballname)
+int sball_open(const char *sballname)
 {
-	sballhandle *handle;
-
 	if(sballname == NULL)
-		return NULL;
+		return -1;
 
 	handle = (sballhandle *) malloc(sizeof(sballhandle));
 	if(handle == NULL)
-		return NULL;
+		return -1;
 
 	/* clear all values in sballhandle to 0 */
 	memset(handle, 0, sizeof(sballhandle));
@@ -147,35 +146,32 @@ SBallHandle sball_open(const char *sballname)
 
 	if(sball_comm_open(sballname, &handle->commhandle) == -1) {
 		free(handle);
-		return NULL;
+		return -1;
 	}
 
-	sball_hwreset(handle);
+	sball_hwreset();
 
-	return handle;		/* successfull open */
+	return 0;		/* successfull open */
 }
 
 
-int sball_close(SBallHandle voidhandle)
+int sball_close()
 {
-	sballhandle *handle = voidhandle;
-
 	if(handle == NULL)
 		return -1;
 
 	sball_comm_close(&handle->commhandle);
 	free(handle);
+	handle=NULL;
 	return 0;		/* successfull close */
 }
 
 
-static int sball_update(SBallHandle voidhandle)
+static int sball_update()
 {
 	int i, num, packs;
 
 	unsigned char rawbuf[1024];
-
-	sballhandle *handle = voidhandle;
 
 	if(handle == NULL)
 		return -1;
@@ -358,7 +354,7 @@ static int sball_update(SBallHandle voidhandle)
 					new_val[4] = (((int)ry) << 16) >> 16;
 					new_val[5] = (((int)rz) << 16) >> 16;
 
-					generate_motion_events(handle, prev_val, new_val, handle->timer);
+					generate_motion_events(prev_val, new_val, handle->timer);
 
 					for(i=0; i<3; i++) {
 						handle->trans[i] = new_val[i];
@@ -395,7 +391,7 @@ static int sball_update(SBallHandle voidhandle)
 						((handle->buf[2] & 0x30) << 8) |	/* 3003 Left/Right buttons */
 						((handle->buf[2] & 0x0F));	/* 1,2,3,4  (2003/4000)    */
 
-					generate_button_events(handle, handle->buttons, newstate);
+					generate_button_events(handle->buttons, newstate);
 					handle->buttons = newstate;
 				}
 				break;
@@ -427,7 +423,7 @@ static int sball_update(SBallHandle voidhandle)
 						((handle->buf[2] & 0x3F)) |	/* 1,2,3,4,5,6 (4000)  */
 						((handle->buf[2] & 0x80) >> 1);	/* 7           (4000)  */
 
-					generate_button_events(handle, handle->buttons, newstate);
+					generate_button_events(handle->buttons, newstate);
 					handle->buttons = newstate;
 
 #if defined(DEBUG)
@@ -512,10 +508,8 @@ static int sball_update(SBallHandle voidhandle)
 }
 
 
-int sball_rezero(SBallHandle voidhandle)
+int sball_rezero()
 {
-	sballhandle *handle = voidhandle;
-
 	char outbuf[200];
 
 	if(handle == NULL)
@@ -527,10 +521,8 @@ int sball_rezero(SBallHandle voidhandle)
 	return 0;
 }
 
-int sball_init(SBallHandle voidhandle)
+int sball_init()
 {
-	sballhandle *handle = voidhandle;
-
 	/*char outbuf[200]; */
 
 	if(handle == NULL)
@@ -549,11 +541,8 @@ int sball_init(SBallHandle voidhandle)
 }
 
 
-void sball_set_nullregion(SBallHandle voidhandle,
-			  int nulltx, int nullty, int nulltz, int nullrx, int nullry, int nullrz)
+void sball_set_nullregion(int nulltx, int nullty, int nulltz, int nullrx, int nullry, int nullrz)
 {
-	sballhandle *handle = voidhandle;
-
 	handle->nulltrans[0] = abs(nulltx);
 	handle->nulltrans[1] = abs(nullty);
 	handle->nulltrans[2] = abs(nulltz);
@@ -574,10 +563,8 @@ static int nullregion(int null, int val)
 	return 0;
 }
 
-static void sball_do_nullregion(SBallHandle voidhandle)
+static void sball_do_nullregion()
 {
-	sballhandle *handle = voidhandle;
-
 	handle->trans[0] = nullregion(handle->nulltrans[0], handle->trans[0]);
 	handle->trans[1] = nullregion(handle->nulltrans[1], handle->trans[1]);
 	handle->trans[2] = nullregion(handle->nulltrans[2], handle->trans[2]);
@@ -586,10 +573,8 @@ static void sball_do_nullregion(SBallHandle voidhandle)
 	handle->rot[2] = nullregion(handle->nullrot[2], handle->rot[2]);
 }
 
-int sball_getstatus(SBallHandle voidhandle, int *tx, int *ty, int *tz,
-		    int *rx, int *ry, int *rz, int *buttons)
+int sball_getstatus(int *tx, int *ty, int *tz, int *rx, int *ry, int *rz, int *buttons)
 {
-	sballhandle *handle = voidhandle;
 
 	int events;
 
@@ -600,7 +585,7 @@ int sball_getstatus(SBallHandle voidhandle, int *tx, int *ty, int *tz,
 
 	/* perform null region processing */
 	if(handle->usenullregion)
-		sball_do_nullregion(voidhandle);
+		sball_do_nullregion();
 
 	if(tx != NULL)
 		*tx = handle->trans[0];
@@ -627,13 +612,12 @@ int sball_getstatus(SBallHandle voidhandle, int *tx, int *ty, int *tz,
 /* everything from this point to the end of file was added by
  * John Tsiombikas for spacenavd integration.
  */
-int sball_get_input(SBallHandle voidhandle, struct dev_input *inp)
+int sball_get_input(struct dev_input *inp)
 {
 	struct event *ev;
-	sballhandle *handle = voidhandle;
 
 	/* read pending packets from the device and append them in the event list */
-	sball_update(handle);
+	sball_update();
 
 	/* if there are any events in the list, grab the first and return it */
 	if((ev = handle->evhead)) {
@@ -646,11 +630,10 @@ int sball_get_input(SBallHandle voidhandle, struct dev_input *inp)
 	return 0;
 }
 
-int sball_get_fd(SBallHandle voidhandle)
+int sball_get_fd()
 {
-	sballhandle *sball = voidhandle;
 
-	return sball_comm_fd(sball->commhandle);
+	return sball_comm_fd(handle->commhandle);
 }
 
 static struct event *alloc_event(void)
@@ -678,7 +661,7 @@ static void free_event(struct event *ev)
 	}
 }
 
-static void generate_motion_events(sballhandle *handle, int *prev_val, int *new_val, int timer)
+static void generate_motion_events(int *prev_val, int *new_val, int timer)
 {
 	int i, pending = 0;
 	struct event *ev;
@@ -719,7 +702,7 @@ static void generate_motion_events(sballhandle *handle, int *prev_val, int *new_
 	}
 }
 
-static void generate_button_events(sballhandle *handle, int prevstate, int newstate)
+static void generate_button_events(int prevstate, int newstate)
 {
 	int i;
 
