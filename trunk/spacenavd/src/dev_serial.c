@@ -44,8 +44,10 @@ int open_dev_serial(const char *devfile)
 	device.read_func = sball_get_input;
 	device.get_fd_func = sball_get_fd;
 
-	if (!detect_device(devfile) || device.open_func == 0)
-		return -1;	
+	if (!detect_device(devfile) || device.open_func == 0){
+		clear_device();
+		return -1;
+	}
 	if(device.open_func(devfile)==-1) {
 		clear_device();
 		return -1;
