@@ -1,5 +1,5 @@
 /*
-spacenavd - a free software replacement driver for 6dof space-mice.
+smag - decoding seriel magellan spaceball data.
 Copyright (C) 2010 Thomas Anderson <ta@nextgenengineering.com>
 
 This program is free software: you can redistribute it and/or modify
