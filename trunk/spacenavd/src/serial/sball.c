@@ -53,17 +53,7 @@ permission notice:
 
 #include "sball.h"
 #include "sballserial.h"
-
-struct event {
-	struct dev_input data;
-	struct event *next;
-};
-
-static struct event *ev_free_list;
-int evpool_size;
-
-static struct event *alloc_event(void);
-static void free_event(struct event *ev);
+#include "serialevent.h"
 
 
 typedef struct{
@@ -636,30 +626,7 @@ int sball_get_fd()
 	return sball_comm_fd(handle->commhandle);
 }
 
-static struct event *alloc_event(void)
-{
-	struct event *ev;
 
-	if(ev_free_list) {
-		ev = ev_free_list;
-		ev_free_list = ev->next;
-	} else {
-		ev = malloc(sizeof *ev);
-		evpool_size++;
-	}
-	return ev;
-}
-
-static void free_event(struct event *ev)
-{
-	if(evpool_size > 512) {
-		free(ev);
-		evpool_size--;
-	} else {
-		ev->next = ev_free_list;
-		ev_free_list = ev;
-	}
-}
 
 static void generate_motion_events(int *prev_val, int *new_val, int timer)
 {
