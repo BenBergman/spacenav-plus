@@ -1,5 +1,5 @@
 /*
-smag - decoding seriel magellan spaceball data.
+smag - decoding serial magellan spaceball data.
 Copyright (C) 2010 Thomas Anderson <ta@nextgenengineering.com>
 
 This program is free software: you can redistribute it and/or modify
