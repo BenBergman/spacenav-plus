@@ -198,7 +198,7 @@ void clearInput()
 void processDisplacementPacket()
 {
   int index, lastBytes, offset;
-  short int accumLast;
+  short int accumLast, number, accumLastAdjusted;
   accumLast = offset = 0;
   
   for (index=1; index<13; index+=2)
@@ -222,7 +222,7 @@ void processDisplacementPacket()
       return;
     }
     
-    short int number = 0x0000;
+    number = 0x0000;
     number = (short int)((input.packetBuf[index] << 6 & 0x03C0) | (input.packetBuf[index+1] & 0x3F));
     if (number>512)
       number = number - 1024;
@@ -242,7 +242,6 @@ void processDisplacementPacket()
  
   /*last byte of packet is a sum of 6 numbers and a factor of 64. use as a packet check
   still not sure what the second to last byte is.*/
-  short int accumLastAdjusted;
   accumLastAdjusted = accumLast & 0x003F;
   accumLastAdjusted += offset;
   if (accumLastAdjusted < 0)
