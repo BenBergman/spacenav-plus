@@ -91,8 +91,9 @@ int detect_device(const char *devfile)
 		  return -1;
 	setup_port();
 	get_version_string(device.version_string, VERSION_STRING_MAX);
-	printf("%s\n", device.version_string);
 	close_smag();
+	if (strlen(device.version_string)>0)
+		  printf("%s\n", device.version_string);	
 	setup_device();  
 	return 0;  
 }
