@@ -22,17 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "serial/sball.h"
 #include "serial/smag.h"
 
-#define VERSION_STRING_MAX 64
-#define NAME_MAX 64
-
-struct Device{
-  char name[NAME_MAX];
-  char version_string[VERSION_STRING_MAX];
-  int (*open_func)(const char *devfile);
-  int (*close_func)();
-  int (*read_func)(struct dev_input *inp);
-  int (*get_fd_func)();
-} device;
+Device device;
 
 int open_dev_serial(const char *devfile)
 {
@@ -89,12 +79,17 @@ int detect_device(const char *devfile)
 {
 	if (open_file(devfile) < 0)
 		  return -1;
+	printf("setting up port\n");
 	setup_port();
+	printf("getting version string\n");
 	get_version_string(device.version_string, VERSION_STRING_MAX);
+	printf("closing smag\n");
 	close_smag();
 	if (strlen(device.version_string)>0)
-		  printf("%s\n", device.version_string);	
-	setup_device();  
+		  printf("%s\n", device.version_string);
+	printf("setting up device\n");
+	setup_device();
+	printf("done setting up device\n");
 	return 0;  
 }
 
@@ -126,3 +121,8 @@ void derive_device_name()
 		return;
 	}
 }
+
+
+@1 Spaceball alive and well after a poweron reset.
+
+@2 Firmware version 2.42 created on 24-Oct-1997.

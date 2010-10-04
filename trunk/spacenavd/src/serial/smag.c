@@ -90,6 +90,8 @@ int get_fd_smag()
 
 int open_file(const char *devfile)
 {
+  file = open(devfile, O_RDWR | O_NONBLOCK);
+  close(file);
   file = open(devfile, O_RDWR | O_NOCTTY | O_NONBLOCK | O_SYNC);
   if (file < 0)
     return -1;

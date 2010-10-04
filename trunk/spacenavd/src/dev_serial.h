@@ -21,6 +21,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "event.h"
 
+#define VERSION_STRING_MAX 256
+#define NAME_MAX 64
+
+enum {BALL_1003, BALL_2003B, BALL_2003C, BALL_3003C, BALL_4000FLX, BALL_5000FLX, MOUSE_CLASSIC, MOUSE_PLUS_XT};
+
+struct Device{
+  char name[NAME_MAX];
+  char version_string[VERSION_STRING_MAX];
+  int device_model;
+  int (*open_func)(const char *devfile);
+  int (*close_func)();
+  int (*read_func)(struct dev_input *inp);
+  int (*get_fd_func)();
+};
+
 int open_dev_serial(const char *devfile);
 void close_dev_serial(void);
 int read_dev_serial(struct dev_input *inp);
