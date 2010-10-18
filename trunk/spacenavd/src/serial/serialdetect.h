@@ -1,5 +1,5 @@
 /*
-serialmagellan - decoding serial magellan spaceball data.
+serialdetect - detecting serial spaceball/magellan device.
 Copyright (C) 2010 Thomas Anderson <ta@nextgenengineering.com>
 
 This program is free software: you can redistribute it and/or modify
@@ -14,26 +14,9 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+*/ 
 
-#include "event.h"
-
-int open_smag(const char *devfile);
-int close_smag();
-int read_smag(struct dev_input *inp);
-int get_fd_smag();
-
-void get_version_string(char *buffer, int buffersize);
-void setup_port();
-void longWait();
-void shortWait();
-void myWriteString(char *string, int count);
-int myRead();
-void initMagellan();
-void clearInput();
-void processDisplacementPacket();
-void processButtonKPacket();
-void processButtonCPacket();
-void processButtonNPacket();
-void processButtonQPacket();
-void readCopy();
+int detectDevice(char *devFile, char *buffer, int bufferSize);
+int openFile(const char *devFile);
+int setPortSpaceball(int fileDescriptor);
+int setPortMagellan(int fileDescriptor);

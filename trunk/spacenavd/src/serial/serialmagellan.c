@@ -1,5 +1,5 @@
 /*
-smag - decoding serial magellan spaceball data.
+serialmagellan - decoding serial magellan spaceball data.
 Copyright (C) 2010 Thomas Anderson <ta@nextgenengineering.com>
 
 This program is free software: you can redistribute it and/or modify
@@ -60,7 +60,8 @@ int secondByteParity[64]={
 
 int open_smag(const char *devfile)
 {
-  if (open_file(devfile) < 0)
+  file = open(devfile, O_RDWR | O_NOCTTY | O_NONBLOCK);
+  if (file < 0)
     return -1;
   setup_port();
   initMagellan();
@@ -86,16 +87,6 @@ int read_smag(struct dev_input *inp)
 int get_fd_smag()
 {
   return file;
-}
-
-int open_file(const char *devfile)
-{
-  file = open(devfile, O_RDWR | O_NONBLOCK);
-  close(file);
-  file = open(devfile, O_RDWR | O_NOCTTY | O_NONBLOCK | O_SYNC);
-  if (file < 0)
-    return -1;
-  return 0;
 }
 
 void setup_port()

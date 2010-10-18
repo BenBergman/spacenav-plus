@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "dev_serial.h"
 #include "serial/sball.h"
 #include "serial/serialmagellan.h"
+#include "serial/serialdetect.h"
 
 struct Device device;
 
