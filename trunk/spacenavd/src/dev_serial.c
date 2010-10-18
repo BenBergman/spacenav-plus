@@ -20,9 +20,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "string.h"
 #include "dev_serial.h"
 #include "serial/sball.h"
-#include "serial/smag.h"
+#include "serial/serialmagellan.h"
 
-Device device;
+struct Device device;
 
 int open_dev_serial(const char *devfile)
 {

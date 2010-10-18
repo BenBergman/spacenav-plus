@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <string.h>
-#include <serial/smag.h>
+#include <serial/serialmagellan.h>
 
 /*
 v  MAGELLAN  Version 6.60  3Dconnexion GmbH 05/11/01
