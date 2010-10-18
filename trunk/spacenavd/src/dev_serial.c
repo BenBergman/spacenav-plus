@@ -121,8 +121,3 @@ void derive_device_name()
 		return;
 	}
 }
-
-
-@1 Spaceball alive and well after a poweron reset.
-
-@2 Firmware version 2.42 created on 24-Oct-1997.
