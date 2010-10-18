@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "stdio.h"
 #include "string.h"
 #include "dev_serial.h"
+#include "serial/serialconstants.h"
 #include "serial/sball.h"
 #include "serial/serialmagellan.h"
 #include "serial/serialdetect.h"
@@ -35,10 +36,13 @@ int open_dev_serial(const char *devfile)
 	device.read_func = sball_get_input;
 	device.get_fd_func = sball_get_fd;
 
-	if (detect_device(devfile) == -1 || device.open_func == 0){
+	if (detectDevice(devfile, &device.version_string, VERSION_STRING_MAX) == -1 || device.open_func == 0){
 		clear_device();
 		return -1;
 	}
+	
+	/*need to setup device based upon device.version_string*/
+	
 	if(device.open_func(devfile)==-1) {
 		clear_device();
 		return -1;

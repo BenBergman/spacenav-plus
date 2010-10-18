@@ -24,11 +24,7 @@ int read_smag(struct dev_input *inp);
 int get_fd_smag();
 
 void get_version_string(char *buffer, int buffersize);
-void setup_port();
-void longWait();
-void shortWait();
-void myWriteString(char *string, int count);
-int myRead();
+
 void initMagellan();
 void clearInput();
 void processDisplacementPacket();

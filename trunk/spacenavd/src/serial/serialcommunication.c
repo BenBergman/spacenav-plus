@@ -15,3 +15,85 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */  
+
+ #include "serial/serialconstants.h"
+ 
+ int openFile(const char *devFile)
+ {
+   return open(devfile, O_RDWR | O_NOCTTY | O_NONBLOCK);
+ }
+ 
+ int setPortSpaceball(int fileDescriptor)
+ {
+   if (setPortCommon(fileDescriptor, CS8 | CREAD | HUPCL | CLOCAL) == -1
+     return -1;
+ }
+ 
+ int setPortMagellan(int fileDescriptor)
+ {
+   int status;
+     
+   if (setPortCommon(fileDescriptor, CS8 | CSTOPB | CRTSCTS | CREAD | HUPCL | CLOCAL) == -1
+     return -1;
+   
+   if (ioctl(fileDescriptor, TIOCMGET, &status) == -1)
+     return -1;
+   status |= TIOCM_DTR;
+   status |= TIOCM_RTS;
+   if (ioctl(fileDescriptor, TIOCMSET, &status) == -1)
+     return -1;
+   return 0;
+ }
+ 
+ int setPortCommon(int fileDescriptor, int flags)
+ {
+   int status;
+   struct termios term;
+   if (tcgetattr(fileDescriptor, &term) == -1)
+     return -1;
+   
+   term.c_cflag = flags;
+   term.c_iflag |= IGNBRK | IGNPAR;
+   term.c_oflag = 0;
+   term.c_lflag = 0;
+   term.c_cc[VMIN] = 1;
+   term.c_cc[VTIME] = 0;
+   
+   cfsetispeed(&term, 9600);
+   cfsetospeed(&term, 9600);
+   if (tcsetattr(fileDescriptor, TCSANOW, &term) == -1)
+     return -1;
+   return 0;
+ }
+ 
+ void longWait()
+ {
+   usleep(150000);  
+ }
+ 
+ void shortWait()
+ {
+   usleep(2000);  
+ }
+ 
+ void serialWriteString(char *string, int count)
+ {
+   int index;
+   for (index=0;index<count;++index)
+   {
+     write(file, string + index, 1);
+     shortWait();
+   }
+   write(file, "\r", 1);
+   longWait();
+ }
+ 
+ int serialRead(int fileDescriptor, char *buffer, int bufferSize)
+ {
+   int bytesRead;
+   bytesRead = read(fileDescriptor, buffer, bufferSize-1);
+   if (bytesRead<1)
+     return 0;
+   buffer[bytesRead] = '\0';
+   return bytesRead;
+ }

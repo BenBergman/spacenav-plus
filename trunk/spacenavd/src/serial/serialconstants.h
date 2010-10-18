@@ -1,5 +1,5 @@
 /*
-serialdetect - detecting serial spaceball/magellan device.
+serialmagellan - decoding serial magellan spaceball data.
 Copyright (C) 2010 Thomas Anderson <ta@nextgenengineering.com>
 
 This program is free software: you can redistribute it and/or modify
@@ -14,26 +14,9 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+*/ 
 
-#include "serial/serialconstants.h"
-#include "serial/serialcommunication.h"
-#include "serial/serialdetect.h"
-
-int detectDevice(char *devFile, char *buffer, int bufferSize)
-{
-  int file, bytesRead;
-  if (file = openFile(devFile) == -1)
-    return -1;
-  if (setPortSpaceball(file) == -1)
-    return -1;
-  /*first look for spaceball. should have data after open and port setup*/
-
-  do
-  {
-
-    
-  }
-  
-  return 0;
-}
+#define MAXPACKETSIZE 16
+#define VERSION_STRING_MAX 256
+#define NAME_MAX 64
+#define MAXREADSIZE

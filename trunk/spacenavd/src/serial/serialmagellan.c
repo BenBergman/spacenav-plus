@@ -24,6 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <sys/ioctl.h>
 #include <string.h>
 #include <serial/serialmagellan.h>
+#include <serial/serialcommunication.h>
 
 /*
 v  MAGELLAN  Version 6.60  3Dconnexion GmbH 05/11/01
@@ -33,10 +34,6 @@ v  MAGELLAN  Version 6.60  3Dconnexion GmbH 05/11/01
 /*
 v  MAGELLAN  Version 5.79  by LOGITECH INC. 10/10/97
 */									/* magellan spacemouse. after sending vQ\r */
-
-
-#define MAXPACKETSIZE 16
-#define MAXREADSIZE 64		/*version string is longer than packets*/
 
 int file;
 struct InputStruct
@@ -87,31 +84,6 @@ int read_smag(struct dev_input *inp)
 int get_fd_smag()
 {
   return file;
-}
-
-void setup_port()
-{
-  int status;
-  struct termios term;
-  tcgetattr(file, &term);
-  
-  term.c_cflag = CS8 | CSTOPB | CRTSCTS | CREAD | HUPCL | CLOCAL;
-  term.c_iflag |= IGNBRK | IGNPAR;
-  term.c_oflag = 0;
-  term.c_lflag = 0;
-  term.c_cc[VMIN] = 1;
-  term.c_cc[VTIME] = 0;
-  
-  cfsetispeed(&term, 9600);
-  cfsetospeed(&term, 9600);
-  tcsetattr(file, TCSANOW, &term);
- 
-  if (ioctl(file, TIOCMGET, &status) == -1)
-    printf("error TIOCMGET");
-  status |= TIOCM_DTR;
-  status |= TIOCM_RTS;
-  if (ioctl(file, TIOCMSET, &status) == -1)
-    printf("error TIOCMSET");
 }
 
 void get_version_string(char *buffer, int buffersize)

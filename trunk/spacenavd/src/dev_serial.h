@@ -21,10 +21,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "event.h"
 
-#define VERSION_STRING_MAX 256
-#define NAME_MAX 64
 
-enum {BALL_1003, BALL_2003B, BALL_2003C, BALL_3003C, BALL_4000FLX, BALL_5000FLX, MOUSE_CLASSIC, MOUSE_PLUS_XT};
+
+enum {UNKNOWN, BALL_1003, BALL_2003B, BALL_2003C, BALL_3003C, BALL_4000FLX, BALL_5000FLX, MOUSE_CLASSIC, MOUSE_PLUS_XT};
 
 struct Device{
   char name[NAME_MAX];

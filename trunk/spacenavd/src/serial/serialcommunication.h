@@ -15,3 +15,12 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */  
+
+int openFile(const char *devFile);
+int setPortSpaceball(int fileDescriptor);
+int setPortMagellan(int fileDescriptor);
+static int setPortCommon(int fileDescriptor, int flags);
+static void longWait();
+static void shortWait();
+void serialWriteString(char *string, int count);
+int serialRead();
