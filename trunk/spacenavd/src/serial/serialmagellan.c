@@ -23,8 +23,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <string.h>
-#include <serial/serialmagellan.h>
-#include <serial/serialcommunication.h>
+#include "serial/serialconstants.h"
+#include "serial/serialmagellan.h"
+#include "serial/serialcommunication.h"
 
 /*
 v  MAGELLAN  Version 6.60  3Dconnexion GmbH 05/11/01
@@ -60,7 +61,7 @@ int open_smag(const char *devfile)
   file = open(devfile, O_RDWR | O_NOCTTY | O_NONBLOCK);
   if (file < 0)
     return -1;
-  setup_port();
+  setPortMagellan(file);
   initMagellan();
   clearInput();
   return 0;
@@ -68,7 +69,7 @@ int open_smag(const char *devfile)
 
 int close_smag()
 {
-  myWriteString("l000", 4);
+  serialWriteString(file, "l000", 4);
   close(file);
   return 0;
 }
@@ -77,7 +78,7 @@ int read_smag(struct dev_input *inp)
 {
   /*need to return 1 if we fill in inp or 0 if no events*/
   int bytesRead;
-  bytesRead = myRead();
+  bytesRead = serialRead(file, input.readBuf, MAXREADSIZE);
   return 0;
 }
 
@@ -86,70 +87,40 @@ int get_fd_smag()
   return file;
 }
 
-void get_version_string(char *buffer, int buffersize)
+void get_version_string(int fileDescriptor, char *buffer, int buffersize)
 {
-  myWriteString("\r\rm0", 4);
-  myWriteString("", 0);
-  myWriteString("\r\rm0", 4);
-  myWriteString("c03", 3);
-  myWriteString("z", 1);
-  myWriteString("Z", 1);
-  myWriteString("l000", 4);
-  myRead();/*to read any pending port data. device likes to echo back commands.*/
-  myWriteString("vQ", 2);
-  if (myRead() > 0 && buffersize > input.readBufSize){
+  serialWriteString(fileDescriptor, "\r\rm0", 4);
+  serialWriteString(fileDescriptor, "", 0);
+  serialWriteString(fileDescriptor, "\r\rm0", 4);
+  serialWriteString(fileDescriptor, "c03", 3);
+  serialWriteString(fileDescriptor, "z", 1);
+  serialWriteString(fileDescriptor, "Z", 1);
+  serialWriteString(fileDescriptor, "l000", 4);
+  serialRead(fileDescriptor, input.readBuf, input.readBufSize);/*to read any pending port data. device likes to echo back commands.*/
+  clearInput();
+  serialWriteString(fileDescriptor, "vQ", 2);
+  if (serialRead(fileDescriptor, input.readBuf, input.readBufSize) > 0 && buffersize > input.readBufSize){
     strcpy(buffer, input.readBuf);
+  clearInput();
   }
-}
-
-void longWait()
-{
-  usleep(150000);  
-}
-
-void shortWait()
-{
-  usleep(2000);  
-}
-
-void myWriteString(char *string, int count)
-{
-  int index;
-  for (index=0;index<count;++index)
-  {
-    write(file, string + index, 1);
-    shortWait();
-  }
-  write(file, "\r", 1);
-  longWait();
-}
-
-int myRead()
-{
-  int bytesRead;
-  bytesRead = read(file,input.readBuf,MAXREADSIZE-1);
-  if (bytesRead<1)
-    return 0;
-  input.readBuf[bytesRead] = '\0';
-  input.readBufSize = bytesRead;
-  return bytesRead;
 }
 
 void initMagellan()
 {
-  myWriteString("", 0);
-  myWriteString("\r\rm0", 4);
-  myWriteString("pAA", 3);
-  myWriteString("q00", 3);	/*default translation and rotation*/
-  myWriteString("nM", 2);	/*zero radius. 0-15 defaults to 13*/
-  myWriteString("z", 1);	/*zero device*/
-  myWriteString("c33", 3);	/*set translation, rotation on and dominant axis off*/
-  myWriteString("l2\r\0",4);
-  myWriteString("\r\r", 2);
-  myWriteString("l300", 4);
-  myWriteString("b9",2);	/*these are beeps*/
-  myWriteString("b9",2);
-  myRead();/*to read any pending port data*/
+  serialWriteString(file, "", 0);
+  serialWriteString(file, "\r\rm0", 4);
+  serialWriteString(file, "pAA", 3);
+  serialWriteString(file, "q00", 3);	/*default translation and rotation*/
+  serialWriteString(file, "nM", 2);	/*zero radius. 0-15 defaults to 13*/
+  serialWriteString(file, "z", 1);	/*zero device*/
+  serialWriteString(file, "c33", 3);	/*set translation, rotation on and dominant axis off*/
+  serialWriteString(file, "l2\r\0",4);
+  serialWriteString(file, "\r\r", 2);
+  serialWriteString(file, "l300", 4);
+  serialWriteString(file, "b9",2);	/*these are beeps*/
+  serialWriteString(file, "b9",2);
+  serialRead(file, input.readBuf, MAXREADSIZE);/*to read any pending port data*/
+  clearInput();
 }
 
 void clearInput()

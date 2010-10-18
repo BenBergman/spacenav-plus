@@ -36,10 +36,13 @@ int open_dev_serial(const char *devfile)
 	device.read_func = sball_get_input;
 	device.get_fd_func = sball_get_fd;
 
-	if (detectDevice(devfile, &device.version_string, VERSION_STRING_MAX) == -1 || device.open_func == 0){
+	if (detectDevice(devfile, device.version_string, VERSION_STRING_MAX) == -1 || device.open_func == 0){
 		clear_device();
+		printf("detectDevice failed\n");
 		return -1;
 	}
+	
+	printf("Found: %s\n", device.version_string);
 	
 	/*need to setup device based upon device.version_string*/
 	
@@ -78,24 +81,6 @@ void clear_device()
 	device.close_func = 0;
 	device.read_func = 0;
 	device.get_fd_func = 0;
-}
-
-int detect_device(const char *devfile)
-{
-	if (open_file(devfile) < 0)
-		  return -1;
-	printf("setting up port\n");
-	setup_port();
-	printf("getting version string\n");
-	get_version_string(device.version_string, VERSION_STRING_MAX);
-	printf("closing smag\n");
-	close_smag();
-	if (strlen(device.version_string)>0)
-		  printf("%s\n", device.version_string);
-	printf("setting up device\n");
-	setup_device();
-	printf("done setting up device\n");
-	return 0;  
 }
 
 void setup_device()

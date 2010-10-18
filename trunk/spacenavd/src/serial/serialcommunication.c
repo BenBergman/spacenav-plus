@@ -16,24 +16,31 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */  
 
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
+ #include <stdio.h>
+ #include <termios.h>
+ #include <unistd.h>
  #include "serial/serialconstants.h"
+ #include "serial/serialcommunication.h"
  
  int openFile(const char *devFile)
  {
-   return open(devfile, O_RDWR | O_NOCTTY | O_NONBLOCK);
+   return open(devFile, O_RDWR | O_NOCTTY | O_NONBLOCK);
  }
  
  int setPortSpaceball(int fileDescriptor)
  {
-   if (setPortCommon(fileDescriptor, CS8 | CREAD | HUPCL | CLOCAL) == -1
+   if (setPortCommon(fileDescriptor, CS8 | CREAD | HUPCL | CLOCAL) == -1)
      return -1;
+   return 0;
  }
  
  int setPortMagellan(int fileDescriptor)
  {
    int status;
      
-   if (setPortCommon(fileDescriptor, CS8 | CSTOPB | CRTSCTS | CREAD | HUPCL | CLOCAL) == -1
+   if (setPortCommon(fileDescriptor, CS8 | CSTOPB | CRTSCTS | CREAD | HUPCL | CLOCAL) == -1)
      return -1;
    
    if (ioctl(fileDescriptor, TIOCMGET, &status) == -1)
@@ -47,7 +54,6 @@
  
  int setPortCommon(int fileDescriptor, int flags)
  {
-   int status;
    struct termios term;
    if (tcgetattr(fileDescriptor, &term) == -1)
      return -1;
@@ -76,15 +82,15 @@
    usleep(2000);  
  }
  
- void serialWriteString(char *string, int count)
+ void serialWriteString(int fileDescriptor, char *string, int count)
  {
    int index;
    for (index=0;index<count;++index)
    {
-     write(file, string + index, 1);
+     write(fileDescriptor, string + index, 1);
      shortWait();
    }
-   write(file, "\r", 1);
+   write(fileDescriptor, "\r", 1);
    longWait();
  }
  

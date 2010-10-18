@@ -23,7 +23,7 @@ int close_smag();
 int read_smag(struct dev_input *inp);
 int get_fd_smag();
 
-void get_version_string(char *buffer, int buffersize);
+void get_version_string(int fileDescriptor, char *buffer, int buffersize);
 
 void initMagellan();
 void clearInput();

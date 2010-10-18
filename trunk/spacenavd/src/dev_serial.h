@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEV_SERIAL_H_
 
 #include "event.h"
-
+#include "serial/serialconstants.h"
 
 
 enum {UNKNOWN, BALL_1003, BALL_2003B, BALL_2003C, BALL_3003C, BALL_4000FLX, BALL_5000FLX, MOUSE_CLASSIC, MOUSE_PLUS_XT};
@@ -39,7 +39,6 @@ int open_dev_serial(const char *devfile);
 void close_dev_serial(void);
 int read_dev_serial(struct dev_input *inp);
 void clear_device();
-int detect_device(const char *devfile);
 void derive_device_name();
 void setup_device();
 

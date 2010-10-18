@@ -19,4 +19,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MAXPACKETSIZE 16
 #define VERSION_STRING_MAX 256
 #define NAME_MAX 64
-#define MAXREADSIZE
+#define MAXREADSIZE 256
