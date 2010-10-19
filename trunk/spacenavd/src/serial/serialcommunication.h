@@ -16,6 +16,9 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */  
 
+#ifndef SERIAL_COMMUNICATION_H_
+#define SERIAL_COMMUNICATION_H_
+
 int openFile(const char *devFile);
 int setPortSpaceball(int fileDescriptor);
 int setPortMagellan(int fileDescriptor);
@@ -24,3 +27,5 @@ void longWait();
 void shortWait();
 void serialWriteString(int fileDescriptor, char *string, int count);
 int serialRead();
+
+#endif

@@ -37,9 +37,7 @@ int open_dev_serial(const char *devfile)
 	device.get_fd_func = sball_get_fd;
 
 	if (detectDevice(devfile, device.version_string, VERSION_STRING_MAX) == -1 || device.open_func == 0){
-		clear_device();
-		printf("detectDevice failed\n");
-		return -1;
+		printf("detectDevice failed\n");		
 	}
 	
 	printf("Found: %s\n", device.version_string);

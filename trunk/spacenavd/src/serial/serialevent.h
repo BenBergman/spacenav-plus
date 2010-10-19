@@ -16,6 +16,9 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#ifndef SERIAL_MAGELLAN_H_
+#define SERIAL_MAGELLAN_H_
+
 #include "event.h"
 
 struct event {
@@ -25,3 +28,5 @@ struct event {
 
 struct event *alloc_event(void);
 void free_event(struct event *ev);
+
+#endif

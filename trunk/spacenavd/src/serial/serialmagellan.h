@@ -16,6 +16,9 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#ifndef SERIAL_MAGELLAN_H_
+#define SERIAL_MAGELLAN_H_
+
 #include "event.h"
 
 int open_smag(const char *devfile);
@@ -33,3 +36,5 @@ void processButtonCPacket();
 void processButtonNPacket();
 void processButtonQPacket();
 void readCopy();
+
+#endif

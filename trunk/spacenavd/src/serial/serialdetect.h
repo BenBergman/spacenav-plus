@@ -16,7 +16,12 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */ 
 
+#ifndef SERIAL_DETECT_H_
+#define SERIAL_DETECT_H_
+
 int detectDevice(const char *devFile, char *buffer, int bufferSize);
 int openFile(const char *devFile);
 int setPortSpaceball(int fileDescriptor);
 int setPortMagellan(int fileDescriptor);
+
+#endif

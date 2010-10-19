@@ -16,7 +16,12 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */ 
 
+#ifndef SERIAL_CONSTANTS_H_
+#define SERIAL_CONSTANTS_H_
+
 #define MAXPACKETSIZE 16
 #define VERSION_STRING_MAX 256
-#define NAME_MAX 64
+#define DEVICE_NAME_MAX 64
 #define MAXREADSIZE 256
+
+#endif
