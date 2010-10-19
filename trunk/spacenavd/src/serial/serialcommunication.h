@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 int openFile(const char *devFile);
 int setPortSpaceball(int fileDescriptor);
 int setPortMagellan(int fileDescriptor);
-static int setPortCommon(int fileDescriptor, int flags);
+int setPortCommon(int fileDescriptor, int flags);
 void longWait();
 void shortWait();
 void serialWriteString(int fileDescriptor, char *string, int count);

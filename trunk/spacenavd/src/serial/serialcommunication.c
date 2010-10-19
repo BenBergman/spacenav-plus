@@ -32,7 +32,10 @@
  int setPortSpaceball(int fileDescriptor)
  {
    if (setPortCommon(fileDescriptor, CS8 | CREAD | HUPCL | CLOCAL) == -1)
+   {
+     printf("set port common failed\n");
      return -1;
+   }
    return 0;
  }
  
@@ -52,7 +55,7 @@
    return 0;
  }
  
- int setPortCommon(int fileDescriptor, int flags)
+int setPortCommon(int fileDescriptor, int flags)
  {
    struct termios term;
    if (tcgetattr(fileDescriptor, &term) == -1)
@@ -99,7 +102,11 @@
    int bytesRead;
    bytesRead = read(fileDescriptor, buffer, bufferSize-1);
    if (bytesRead<1)
+   {
+     printf("no bytes read\n");
      return 0;
+   }
    buffer[bytesRead] = '\0';
+   printf("%s\n", buffer);
    return bytesRead;
  }

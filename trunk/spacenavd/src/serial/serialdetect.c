@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <string.h>
 #include <unistd.h>
+#include <stdio.h>
 #include "serial/serialconstants.h"
 #include "serial/serialcommunication.h"
 #include "serial/serialmagellan.h"
@@ -31,26 +32,37 @@ int detectDevice(const char *devFile, char *buffer, int bufferSize)
   
   file = openFile(devFile);
   if (file == -1)
+  {
+    printf("couldn't open file in detectDevice\n");
     return -1;
+  }
   if (setPortSpaceball(file) == -1)
+  {
+    printf("couldn't setup port in detectDevice\n");
     return -1;
+  }
   
-  /*first look for spaceball. should have data after open and port setup*/   
+  /*first look for spaceball. should have data after open and port setup*/
+  sleep(3);
+  serialWriteString(file, "@", 1);
+  sleep(3);
   do
   {
-     bytesRead = serialRead(file, tempBuffer[tempPosition], MAXREADSIZE-tempPosition);
-     tempPosition += bytesRead;
      longWait();
+     bytesRead = serialRead(file, tempBuffer[tempPosition], MAXREADSIZE-tempPosition);
+     tempPosition += bytesRead;     
   }while(bytesRead>0);
   if (tempPosition>0)
   {
     if (tempPosition<bufferSize)
     {
+      printf("found spaceball in detectDevice\n");
       strcpy(tempBuffer, buffer);
       close(file);
       return 0;
     }
   }
+  printf("didn't find spaceball in detectDevice\n");
   
   /*now if we are here we don't have a spaceball and now we need to check for a magellan*/
   close(file);
