@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 int detectDevice(const char *devFile, char *buffer, int bufferSize)
 {
-  int file, bytesRead, tempPosition, length;
+  int file, bytesRead, tempPosition, length, index;
   char tempBuffer[MAXREADSIZE];
   tempPosition = 0;
   
@@ -47,21 +47,24 @@ int detectDevice(const char *devFile, char *buffer, int bufferSize)
   sleep(3);
 
   bytesRead = serialRead(file, tempBuffer, MAXREADSIZE);
+  /*swap out /r for /n for string printing*/
+  for (index=0;index<bytesRead;++index)
+  {
+    if (tempBuffer[index] == '\r')
+      tempBuffer[index] = '\n';
+  }
  
   if (bytesRead>0)
   {
     if (bytesRead<bufferSize)
     {
-      printf("found spaceball in detectDevice\n");
       strcpy(buffer, tempBuffer);      
       close(file);
       return 0;
     }
   }
-  printf("didn't find spaceball in detectDevice\n");  
-  printf("done with spaceball\n");
-  close(file);
-  return 0;
+  printf("didn't find spaceball in detectDevice. looking for magellan\n");  
+
   
   /*now if we are here we don't have a spaceball and now we need to check for a magellan*/
   close(file);

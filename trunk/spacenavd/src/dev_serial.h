@@ -28,7 +28,7 @@ enum {UNKNOWN, BALL_1003, BALL_2003B, BALL_2003C, BALL_3003C, BALL_4000FLX, BALL
 struct Device{
   char name[DEVICE_NAME_MAX];
   char version_string[VERSION_STRING_MAX];
-  int device_model;
+  int modelId;
   int (*open_func)(const char *devfile);
   int (*close_func)();
   int (*read_func)(struct dev_input *inp);
@@ -39,7 +39,7 @@ int open_dev_serial(const char *devfile);
 void close_dev_serial(void);
 int read_dev_serial(struct dev_input *inp);
 void clear_device();
-void derive_device_name();
+void derive_device_name_model();
 void setup_device();
 
 #endif	/* DEV_SERIAL_H_ */

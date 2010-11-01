@@ -56,6 +56,7 @@
      return -1;
    }
    
+   
    int status;
    if (ioctl(fileDescriptor, TIOCMGET, &status) == -1)
    {
@@ -69,6 +70,7 @@
      printf("error TIOCMSET: %s\n", strerror(errno));
      return -1;
    }
+   
    
    return 0;
  }
@@ -137,17 +139,8 @@ int setPortCommon(int fileDescriptor, int flags)
    bytesRead = read(fileDescriptor, buffer, bufferSize-1);
    if (bytesRead<1)
    {
-     printf("no bytes read\n");
      return 0;
    }
    buffer[bytesRead] = '\0';
-   
-   for (index=0;index<bytesRead;++index)
-   {
-     if(buffer[index] == '\r')
-       buffer[index] = '\n';
-   }
-   
-   printf("%s\n", buffer);
    return bytesRead;
  }

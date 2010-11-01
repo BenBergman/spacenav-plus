@@ -30,7 +30,9 @@ int open_dev_serial(const char *devfile)
 {
 	clear_device();
 	
-	/*defaulting to libsball functions*/
+	/*defaulting to libsball functions*/	
+	strcpy(device.name, "Unknown");
+	device.modelId = UNKNOWN;	
 	device.open_func = sball_open;
 	device.close_func = sball_close;
 	device.read_func = sball_get_input;
@@ -39,10 +41,12 @@ int open_dev_serial(const char *devfile)
 	if (detectDevice(devfile, device.version_string, VERSION_STRING_MAX) == -1 || device.open_func == 0){
 		printf("detectDevice failed\n");		
 	}
-	
-	printf("Found: %s\n", device.version_string);
-	
-	/*need to setup device based upon device.version_string*/
+	else
+	{
+	  derive_device_name_model();	
+	  printf("Found: %s\n", device.name);
+	  setup_device();
+	}
 	
 	if(device.open_func(devfile)==-1) {
 		clear_device();
@@ -83,29 +87,35 @@ void clear_device()
 
 void setup_device()
 {
-	char *instance;
-	derive_device_name();
-	instance = strstr(device.version_string, "MAGELLAN");
-	if (instance){
-	  device.open_func = open_smag;
-	  device.close_func = close_smag;
-	  device.read_func = read_smag;
-	  device.get_fd_func = get_fd_smag;
-	}
+  if (device.modelId == MOUSE_PLUS_XT || device.modelId == MOUSE_CLASSIC){
+      device.open_func = open_smag;
+      device.close_func = close_smag;
+      device.read_func = read_smag;
+      device.get_fd_func = get_fd_smag;
+    }
 }
 
-void derive_device_name()
+void derive_device_name_model()
 {
 	char *instance;
 	instance = strstr(device.version_string, "MAGELLAN  Version 6.60");
 	if (instance){
 		strcpy(device.name, "Magellan Plus XT");
+		device.modelId = MOUSE_PLUS_XT;
 		return;
 	}
 	
 	instance = strstr(device.version_string, "MAGELLAN  Version 5.79");
 	if (instance){
 		strcpy(device.name, "Magellan Classic");
+		device.modelId = MOUSE_CLASSIC;
 		return;
+	}
+	
+	instance = strstr(device.version_string, "Firmware version 2.42");
+	if (instance){
+	  strcpy(device.name, "Spaceball 4000 flx");
+	  device.modelId = BALL_4000FLX;
+	  return;
 	}
 }
