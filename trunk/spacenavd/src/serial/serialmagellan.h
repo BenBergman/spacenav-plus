@@ -36,5 +36,6 @@ void processButtonCPacket();
 void processButtonNPacket();
 void processButtonQPacket();
 void readCopy();
+void generateDisplacementEvents(int *newValues);
 
 #endif

@@ -43,8 +43,13 @@ int open_dev_serial(const char *devfile)
 	}
 	else
 	{
-	  derive_device_name_model();	
-	  printf("Found: %s\n", device.name);
+	  if (strlen(device.version_string)>0){
+	    derive_device_name_model();
+	    if (strlen(device.name)>0)
+	      printf("Found: %s\n", device.name);
+	    else
+	      printf("unknown device for version string: %s\n", device.version_string);
+	  }
 	  setup_device();
 	}
 	

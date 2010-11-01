@@ -24,8 +24,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <sys/ioctl.h>
 #include <string.h>
 #include "serial/serialconstants.h"
-#include "serial/serialmagellan.h"
+#include "serial/serialevent.h"
 #include "serial/serialcommunication.h"
+#include "serial/serialmagellan.h"
 
 /*
 v  MAGELLAN  Version 6.60  3Dconnexion GmbH 05/11/01
@@ -43,6 +44,8 @@ struct InputStruct
   int readBufSize;
   char packetBuf[MAXPACKETSIZE];
   int packetBufPosition;
+  struct event *eventHead;
+  struct event *eventTail;
 } input;
 
 int firstByteParity[16]={
@@ -55,6 +58,33 @@ int secondByteParity[64]={
   0xC0, 0x80, 0x80, 0x40, 0x80, 0x40, 0x40, 0x80, 0x80, 0x40, 0x40, 0x80, 0x40, 0x80, 0x80, 0x40,
   0x80, 0x40, 0x40, 0x80, 0x40, 0x80, 0x80, 0x40, 0x40, 0x80, 0x80, 0x40, 0x80, 0x40, 0x00, 0x80
 };
+
+void clearInput()
+{
+  memset(input.readBuf, 0x00, MAXREADSIZE);
+  input.readBufSize = 0;
+  memset(input.packetBuf, 0x00, MAXPACKETSIZE);
+  input.packetBufPosition=0;
+}
+
+void initMagellan(int fileDescriptor)
+{
+  serialWriteString(fileDescriptor, "", 0);
+  serialWriteString(fileDescriptor, "\r\rm0", 4);
+  serialWriteString(fileDescriptor, "pAA", 3);
+  serialWriteString(fileDescriptor, "q00", 3);	/*default translation and rotation*/
+  serialWriteString(fileDescriptor, "nM", 2);	/*zero radius. 0-15 defaults to 13*/
+  serialWriteString(fileDescriptor, "z", 1);	/*zero device*/
+  serialWriteString(fileDescriptor, "c33", 3);	/*set translation, rotation on and dominant axis off*/
+  serialWriteString(fileDescriptor, "l2\r\0",4);
+  serialWriteString(fileDescriptor, "\r\r", 2);
+  serialWriteString(fileDescriptor, "l300", 4);
+  serialWriteString(fileDescriptor, "b9",2);	/*these are beeps*/
+  serialWriteString(fileDescriptor, "b9",2);
+  shortWait();
+  tcflush(fileDescriptor, TCIOFLUSH);
+  clearInput();
+}
 
 int open_smag(const char *devfile)
 {
@@ -79,6 +109,16 @@ int read_smag(struct dev_input *inp)
   /*need to return 1 if we fill in inp or 0 if no events*/
   int bytesRead;
   bytesRead = serialRead(file, input.readBuf, MAXREADSIZE);
+  
+  struct event *currentEvent;
+  currentEvent = input.eventHead;
+  if(currentEvent) {
+    input.eventHead = input.eventHead->next;
+    
+    *inp = currentEvent->data;
+    free_event(currentEvent);
+    return 1;
+  }
   return 0;
 }
 
@@ -106,39 +146,64 @@ void get_version_string(int fileDescriptor, char *buffer, int buffersize)
   if (bytesRead> 0 && bytesRead < buffersize)
     strcpy(buffer, tempBuffer);
   clearInput();
-
 }
 
-void initMagellan(int fileDescriptor)
+void generateDisplacementEvents(int *newValues)
 {
-  serialWriteString(fileDescriptor, "", 0);
-  serialWriteString(fileDescriptor, "\r\rm0", 4);
-  serialWriteString(fileDescriptor, "pAA", 3);
-  serialWriteString(fileDescriptor, "q00", 3);	/*default translation and rotation*/
-  serialWriteString(fileDescriptor, "nM", 2);	/*zero radius. 0-15 defaults to 13*/
-  serialWriteString(fileDescriptor, "z", 1);	/*zero device*/
-  serialWriteString(fileDescriptor, "c33", 3);	/*set translation, rotation on and dominant axis off*/
-  serialWriteString(fileDescriptor, "l2\r\0",4);
-  serialWriteString(fileDescriptor, "\r\r", 2);
-  serialWriteString(fileDescriptor, "l300", 4);
-  serialWriteString(fileDescriptor, "b9",2);	/*these are beeps*/
-  serialWriteString(fileDescriptor, "b9",2);
-  shortWait();
-  tcflush(fileDescriptor, TCIOFLUSH);
-  clearInput();
-}
-
-void clearInput()
-{
-  memset(input.readBuf, 0x00, MAXREADSIZE);
-  input.readBufSize = 0;
-  memset(input.packetBuf, 0x00, MAXPACKETSIZE);
-  input.packetBufPosition=0;
+  int index, pending;
+  static int oldValues[6];
+  struct event *newEvent;
+  
+  pending = 0;  
+  for (index=0;index<6;++index)
+  {
+    if (newValues[index] == oldValues[index])
+      continue;
+    oldValues[index] = newValues[index];
+    
+    newEvent = alloc_event();
+    if (newEvent)
+    {
+      newEvent->data.type = INP_MOTION;
+      newEvent->data.idx = index;
+      newEvent->data.val = newValues[index];
+      newEvent->next = 0;
+      
+      if(input.eventHead)
+      {
+	input.eventTail->next = newEvent;
+	input.eventTail = newEvent;
+      }
+      else
+	input.eventHead = input.eventTail = newEvent;
+      pending = 1;    
+    }
+    
+    if(pending)
+    {
+      newEvent = alloc_event();
+      if(newEvent)
+      {
+	newEvent->data.type = INP_FLUSH;
+	newEvent->next = 0;
+      }
+      
+      if(input.eventHead)
+      {
+	input.eventTail->next = newEvent;
+	input.eventTail = newEvent;
+      }
+      else
+      {
+	input.eventHead = input.eventTail = newEvent;
+      }
+    }
+  }
 }
 
 void processDisplacementPacket()
 {
-  int index, lastBytes, offset;
+  int index, lastBytes, offset, values[6];
   short int accumLast, number, accumLastAdjusted;
   accumLast = offset = 0;
   
@@ -178,11 +243,12 @@ void processDisplacementPacket()
     {
       offset += (int) number/64;
     }
-    printf("%8i ", number);
+    /*printf("%8i ", number);*/
+    values[(index+1)/2-1] = number;
   }
  
-  /*last byte of packet is a sum of 6 numbers and a factor of 64. use as a packet check
-  still not sure what the second to last byte is.*/
+  /*last byte of packet is a sum of 6 numbers and a factor of 64. use as a packet check.
+  still not sure what the second to last byte is for.*/
   accumLastAdjusted = accumLast & 0x003F;
   accumLastAdjusted += offset;
   if (accumLastAdjusted < 0)
@@ -193,11 +259,11 @@ void processDisplacementPacket()
   lastBytes = (short int)(input.packetBuf[14] & 0x3F);
 
   if (accumLastAdjusted != lastBytes)
-    printf("   bad");
-  else
-    printf("   good");
-  
-  printf("\n");
+  {
+    printf("   bad packet\n");
+    return;
+  }
+  generateDisplacementEvents(values);
   return;
 }
 
