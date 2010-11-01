@@ -62,7 +62,7 @@ int open_smag(const char *devfile)
   if (file < 0)
     return -1;
   setPortMagellan(file);
-  initMagellan();
+  initMagellan(file);
   clearInput();
   return 0;
 }
@@ -89,6 +89,8 @@ int get_fd_smag()
 
 void get_version_string(int fileDescriptor, char *buffer, int buffersize)
 {
+  int bytesRead;
+  char tempBuffer[MAXREADSIZE];
   serialWriteString(fileDescriptor, "\r\rm0", 4);
   serialWriteString(fileDescriptor, "", 0);
   serialWriteString(fileDescriptor, "\r\rm0", 4);
@@ -96,30 +98,33 @@ void get_version_string(int fileDescriptor, char *buffer, int buffersize)
   serialWriteString(fileDescriptor, "z", 1);
   serialWriteString(fileDescriptor, "Z", 1);
   serialWriteString(fileDescriptor, "l000", 4);
-  serialRead(fileDescriptor, input.readBuf, input.readBufSize);/*to read any pending port data. device likes to echo back commands.*/
+  shortWait();
+  tcflush(fileDescriptor, TCIOFLUSH);
   clearInput();
   serialWriteString(fileDescriptor, "vQ", 2);
-  if (serialRead(fileDescriptor, input.readBuf, input.readBufSize) > 0 && buffersize > input.readBufSize){
-    strcpy(buffer, input.readBuf);
+  bytesRead = serialRead(fileDescriptor, tempBuffer, MAXREADSIZE);
+  if (bytesRead> 0 && bytesRead < buffersize)
+    strcpy(buffer, tempBuffer);
   clearInput();
-  }
+
 }
 
-void initMagellan()
+void initMagellan(int fileDescriptor)
 {
-  serialWriteString(file, "", 0);
-  serialWriteString(file, "\r\rm0", 4);
-  serialWriteString(file, "pAA", 3);
-  serialWriteString(file, "q00", 3);	/*default translation and rotation*/
-  serialWriteString(file, "nM", 2);	/*zero radius. 0-15 defaults to 13*/
-  serialWriteString(file, "z", 1);	/*zero device*/
-  serialWriteString(file, "c33", 3);	/*set translation, rotation on and dominant axis off*/
-  serialWriteString(file, "l2\r\0",4);
-  serialWriteString(file, "\r\r", 2);
-  serialWriteString(file, "l300", 4);
-  serialWriteString(file, "b9",2);	/*these are beeps*/
-  serialWriteString(file, "b9",2);
-  serialRead(file, input.readBuf, MAXREADSIZE);/*to read any pending port data*/
+  serialWriteString(fileDescriptor, "", 0);
+  serialWriteString(fileDescriptor, "\r\rm0", 4);
+  serialWriteString(fileDescriptor, "pAA", 3);
+  serialWriteString(fileDescriptor, "q00", 3);	/*default translation and rotation*/
+  serialWriteString(fileDescriptor, "nM", 2);	/*zero radius. 0-15 defaults to 13*/
+  serialWriteString(fileDescriptor, "z", 1);	/*zero device*/
+  serialWriteString(fileDescriptor, "c33", 3);	/*set translation, rotation on and dominant axis off*/
+  serialWriteString(fileDescriptor, "l2\r\0",4);
+  serialWriteString(fileDescriptor, "\r\r", 2);
+  serialWriteString(fileDescriptor, "l300", 4);
+  serialWriteString(fileDescriptor, "b9",2);	/*these are beeps*/
+  serialWriteString(fileDescriptor, "b9",2);
+  shortWait();
+  tcflush(fileDescriptor, TCIOFLUSH);
   clearInput();
 }
 

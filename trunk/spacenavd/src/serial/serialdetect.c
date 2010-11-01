@@ -44,7 +44,7 @@ int detectDevice(const char *devFile, char *buffer, int bufferSize)
   }
   
   /*first look for spaceball. should have data after open and port setup*/
-  sleep(3);
+  sleep(2);
 
   bytesRead = serialRead(file, tempBuffer, MAXREADSIZE);
   /*swap out /r for /n for string printing*/
@@ -63,8 +63,6 @@ int detectDevice(const char *devFile, char *buffer, int bufferSize)
       return 0;
     }
   }
-  printf("didn't find spaceball in detectDevice. looking for magellan\n");  
-
   
   /*now if we are here we don't have a spaceball and now we need to check for a magellan*/
   close(file);
@@ -74,16 +72,24 @@ int detectDevice(const char *devFile, char *buffer, int bufferSize)
     return -1;
   if (setPortMagellan(file) == -1)
     return -1;
-  get_version_string(file, tempBuffer, VERSION_STRING_MAX);
+  sleep(1);
+  initMagellan(file);
+  get_version_string(file, tempBuffer, MAXREADSIZE);
   length = strlen(tempBuffer);
   if (length < 1)
-    return -1;
-  if(length < MAXREADSIZE)
+    return 0;
+  if(length < bufferSize)
   {
-    strcpy(tempBuffer, buffer);
+    /*swap newlines for carriage returns for printing*/
+    for (index=0;index<length;++index)
+    {
+      if (tempBuffer[index] == '\r')
+	tempBuffer[index] = '\n';
+    } 
+    strcpy(buffer, tempBuffer);
     close(file);
     return 0;
   }
   close(file);
-  return -1;
+  return 0;
 }

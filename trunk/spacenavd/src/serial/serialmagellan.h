@@ -28,7 +28,7 @@ int get_fd_smag();
 
 void get_version_string(int fileDescriptor, char *buffer, int buffersize);
 
-void initMagellan();
+void initMagellan(int fileDescriptor);
 void clearInput();
 void processDisplacementPacket();
 void processButtonKPacket();
