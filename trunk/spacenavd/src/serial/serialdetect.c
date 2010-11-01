@@ -38,31 +38,30 @@ int detectDevice(const char *devFile, char *buffer, int bufferSize)
   }
   if (setPortSpaceball(file) == -1)
   {
+    close(file);
     printf("couldn't setup port in detectDevice\n");
     return -1;
   }
   
   /*first look for spaceball. should have data after open and port setup*/
   sleep(3);
-  serialWriteString(file, "@", 1);
-  sleep(3);
-  do
+
+  bytesRead = serialRead(file, tempBuffer, MAXREADSIZE);
+ 
+  if (bytesRead>0)
   {
-     longWait();
-     bytesRead = serialRead(file, tempBuffer[tempPosition], MAXREADSIZE-tempPosition);
-     tempPosition += bytesRead;     
-  }while(bytesRead>0);
-  if (tempPosition>0)
-  {
-    if (tempPosition<bufferSize)
+    if (bytesRead<bufferSize)
     {
       printf("found spaceball in detectDevice\n");
-      strcpy(tempBuffer, buffer);
+      strcpy(buffer, tempBuffer);      
       close(file);
       return 0;
     }
   }
-  printf("didn't find spaceball in detectDevice\n");
+  printf("didn't find spaceball in detectDevice\n");  
+  printf("done with spaceball\n");
+  close(file);
+  return 0;
   
   /*now if we are here we don't have a spaceball and now we need to check for a magellan*/
   close(file);

@@ -21,21 +21,55 @@
  #include <stdio.h>
  #include <termios.h>
  #include <unistd.h>
+ #include <errno.h>
+ #include <string.h>
  #include "serial/serialconstants.h"
  #include "serial/serialcommunication.h"
  
  int openFile(const char *devFile)
  {
-   return open(devFile, O_RDWR | O_NOCTTY | O_NONBLOCK);
+   return open(devFile, O_RDWR | O_NOCTTY | O_NONBLOCK | O_NDELAY);
  }
  
  int setPortSpaceball(int fileDescriptor)
  {
-   if (setPortCommon(fileDescriptor, CS8 | CREAD | HUPCL | CLOCAL) == -1)
+   struct termios term;
+   if (tcgetattr(fileDescriptor, &term) == -1)
    {
-     printf("set port common failed\n");
+     printf("error tcgetattr: %s\n", strerror(errno));
      return -1;
    }
+
+   term.c_cflag = CREAD | CS8 | CLOCAL | HUPCL;
+   
+   term.c_iflag |= IGNBRK | IGNPAR;
+   term.c_oflag = 0;
+   term.c_lflag = 0;
+   term.c_cc[VMIN] = 1;
+   term.c_cc[VTIME] = 0;
+   
+   cfsetispeed(&term, 9600);
+   cfsetospeed(&term, 9600);
+   if (tcsetattr(fileDescriptor, TCSANOW, &term) == -1)
+   {
+     printf("erro tcsetattr: %s\n", strerror(errno));
+     return -1;
+   }
+   
+   int status;
+   if (ioctl(fileDescriptor, TIOCMGET, &status) == -1)
+   {
+     printf("error TIOCMGET: %s\n", strerror(errno));
+     return -1;
+   }
+   status |= TIOCM_DTR;
+   status |= TIOCM_RTS;
+   if (ioctl(fileDescriptor, TIOCMSET, &status) == -1)
+   {
+     printf("error TIOCMSET: %s\n", strerror(errno));
+     return -1;
+   }
+   
    return 0;
  }
  
@@ -99,7 +133,7 @@ int setPortCommon(int fileDescriptor, int flags)
  
  int serialRead(int fileDescriptor, char *buffer, int bufferSize)
  {
-   int bytesRead;
+   int bytesRead, index;
    bytesRead = read(fileDescriptor, buffer, bufferSize-1);
    if (bytesRead<1)
    {
@@ -107,6 +141,13 @@ int setPortCommon(int fileDescriptor, int flags)
      return 0;
    }
    buffer[bytesRead] = '\0';
+   
+   for (index=0;index<bytesRead;++index)
+   {
+     if(buffer[index] == '\r')
+       buffer[index] = '\n';
+   }
+   
    printf("%s\n", buffer);
    return bytesRead;
  }
