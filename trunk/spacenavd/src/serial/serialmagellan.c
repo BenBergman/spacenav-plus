@@ -86,9 +86,45 @@ void initMagellan(int fileDescriptor)
   clearInput();
 }
 
+void readCopy()
+{
+  int index;
+  for (index=0; index<input.readBufSize; ++index)
+  {
+    if (input.readBuf[index] == '\n' || input.readBuf[index] == '\r')
+    {
+      input.packetBuf[input.packetBufPosition] = '\0';/*terminate string*/
+      
+      if (input.packetBuf[0] == 'd' && input.packetBufPosition == 15)
+	processDisplacementPacket();
+      else if (input.packetBuf[0] == 'k' && input.packetBufPosition == 4)
+	processButtonKPacket();
+      else if (input.packetBuf[0] == 'c' && input.packetBufPosition == 3)
+	processButtonCPacket();
+      else if (input.packetBuf[0] == 'n' && input.packetBufPosition == 2)
+	processButtonNPacket();
+      else if (input.packetBuf[0] == 'q' && input.packetBufPosition == 3)
+	processButtonQPacket();
+      else
+	printf("unknown packet   %s\n",input.packetBuf);
+      input.packetBufPosition=0;
+    }
+    else
+    {
+      input.packetBuf[input.packetBufPosition] = input.readBuf[index];
+      input.packetBufPosition++;
+      if (input.packetBufPosition == MAXPACKETSIZE)
+      {
+	input.packetBufPosition = 0;
+	printf("packet buffer overrun\n");
+      }
+    }
+  }
+}
+
 int open_smag(const char *devfile)
 {
-  file = open(devfile, O_RDWR | O_NOCTTY | O_NONBLOCK);
+  file = openFile(devfile);
   if (file < 0)
     return -1;
   setPortMagellan(file);
@@ -107,9 +143,9 @@ int close_smag()
 int read_smag(struct dev_input *inp)
 {
   /*need to return 1 if we fill in inp or 0 if no events*/
-  int bytesRead;
-  bytesRead = serialRead(file, input.readBuf, MAXREADSIZE);
-  
+  input.readBufSize = serialRead(file, input.readBuf, MAXREADSIZE);  
+  if (input.readBufSize > 0)
+    readCopy();  
   struct event *currentEvent;
   currentEvent = input.eventHead;
   if(currentEvent) {
@@ -342,40 +378,4 @@ void processButtonQPacket()
   rotation = (int)input.packetBuf[1] & 0x07;
   translation = (int)input.packetBuf[2] & 0x07;
   printf("rotation = %i   translation = %i\n",rotation, translation);
-}
-
-void readCopy()
-{
-  int index;
-  for (index=0; index<input.readBufSize; ++index)
-  {
-    if (input.readBuf[index] == '\n')
-    {
-      input.packetBuf[input.packetBufPosition] = '\0';/*terminate string*/
-
-      if (input.packetBuf[0] == 'd' && input.packetBufPosition == 15)
-	processDisplacementPacket();
-      else if (input.packetBuf[0] == 'k' && input.packetBufPosition == 4)
-	processButtonKPacket();
-      else if (input.packetBuf[0] == 'c' && input.packetBufPosition == 3)
-	processButtonCPacket();
-      else if (input.packetBuf[0] == 'n' && input.packetBufPosition == 2)
-	processButtonNPacket();
-      else if (input.packetBuf[0] == 'q' && input.packetBufPosition == 3)
-	processButtonQPacket();
-      else
-	printf("unknown packet   %s\n",input.packetBuf);
-      input.packetBufPosition=0;
-    }
-    else
-    {
-      input.packetBuf[input.packetBufPosition] = input.readBuf[index];
-      input.packetBufPosition++;
-      if (input.packetBufPosition == MAXPACKETSIZE)
-      {
-	input.packetBufPosition = 0;
-	printf("packet buffer overrun\n");
-      }
-    }
-  }
 }

@@ -16,8 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SERIAL_MAGELLAN_H_
-#define SERIAL_MAGELLAN_H_
+
 
 #include "event.h"
 
@@ -37,5 +36,3 @@ void processButtonNPacket();
 void processButtonQPacket();
 void readCopy();
 void generateDisplacementEvents(int *newValues);
-
-#endif
