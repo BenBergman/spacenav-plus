@@ -187,7 +187,7 @@ void get_version_string(int fileDescriptor, char *buffer, int buffersize)
 void generateDisplacementEvents(int *newValues)
 {
   int index, pending;
-  static int oldValues[6];
+  static int oldValues[6] = {0,0,0,0,0,0};
   struct event *newEvent;
   
   pending = 0;  
@@ -303,43 +303,73 @@ void processDisplacementPacket()
   return;
 }
 
+void generateButtonEvent(int button, int newState)
+{
+  struct event *newEvent = alloc_event();
+  if(!newEvent)
+    return;
+  
+  newEvent->data.type = INP_BUTTON;
+  newEvent->data.idx = button;
+  newEvent->data.val = newState;
+  newEvent->next = 0;
+  
+  if(input.eventHead)
+  {
+    input.eventTail->next = newEvent;
+    input.eventTail = newEvent;
+  }
+  else
+  {
+    input.eventHead = input.eventTail = newEvent;
+  }  
+}
+
 void processButtonKPacket()
 {
-  if (strcmp("k000", input.packetBuf) == 0)
+  static char oldState[5] = {0x00, 0x00, 0x00, 0x00};
+  
+  if (input.packetBuf[1] != oldState[1])
   {
-    printf("button released\n");
-    return;
+    if ((input.packetBuf[1] & 0x01) != (oldState[1] & 0x01))
+      generateButtonEvent(1, input.packetBuf[1] & 0x01);
+    if ((input.packetBuf[1] & 0x02) != (oldState[1] & 0x02))
+      generateButtonEvent(2, input.packetBuf[1] & 0x02);
+    if ((input.packetBuf[1] & 0x04) != (oldState[1] & 0x04))
+      generateButtonEvent(3, input.packetBuf[1] & 0x04);
+    if ((input.packetBuf[1] & 0x08) != (oldState[1] & 0x08))
+      generateButtonEvent(4, input.packetBuf[1] & 0x08);
   }
   
-  /*button pressed*/
+  if (input.packetBuf[2] != oldState[2])
+  {  
+    if ((input.packetBuf[2] & 0x01) != (oldState[2] & 0x01))
+      generateButtonEvent(5, input.packetBuf[2] & 0x01);
+    if ((input.packetBuf[2] & 0x02) != (oldState[2] & 0x02))
+      generateButtonEvent(6, input.packetBuf[2] & 0x02);
+    if ((input.packetBuf[2] & 0x04) != (oldState[2] & 0x04))
+      generateButtonEvent(7, input.packetBuf[2] & 0x04);
+    if ((input.packetBuf[2] & 0x08) != (oldState[2] & 0x08))
+      generateButtonEvent(8, input.packetBuf[2] & 0x08);
+  }
   
-  if (input.packetBuf[1] & 0x01)
-    printf("button 1   ");
-  if (input.packetBuf[1] & 0x02)
-    printf("button 2   ");
-  if (input.packetBuf[1] & 0x04)
-    printf("button 3   ");
-  if (input.packetBuf[1] & 0x08)
-    printf("button 4   ");
+  /*skipping asterisk button. asterisk function come in through other packets.*/
+  /*magellan plus has left and right (10, 11) buttons not magellan classic */
+  /*not sure if we need to filter out lower button events for magellan classic*/
   
-  if (input.packetBuf[2] & 0x01)
-    printf("button 5   ");
-  if (input.packetBuf[2] & 0x02)
-    printf("button 6   ");
-  if (input.packetBuf[2] & 0x04)
-    printf("button 7   ");
-  if (input.packetBuf[2] & 0x08)
-    printf("button 8   ");
-  
-  if (input.packetBuf[3] & 0x01)
-    printf("button asterisk   ");
-  if (input.packetBuf[3] & 0x02)
-    printf("button left   ");
-  if (input.packetBuf[3] & 0x04)
-    printf("button right   ");
-  
-  /*printf("\n");*/
-  printf("      %s\n", input.packetBuf);
+  if (input.packetBuf[3] != oldState[3])
+  {
+    /*
+    if (input.packetBuf[3] & 0x01)
+      printf("button asterisk   ");
+    */
+    if ((input.packetBuf[3] & 0x02) != (oldState[3] & 0x02))
+      generateButtonEvent(10, input.packetBuf[3] & 0x02);/*left button*/
+    if ((input.packetBuf[3] & 0x04) != (oldState[3] & 0x04))
+      generateButtonEvent(11, input.packetBuf[3] & 0x04);/*right button*/
+  }
+
+  strcpy(oldState, input.packetBuf);
 }
 
 void processButtonCPacket()
