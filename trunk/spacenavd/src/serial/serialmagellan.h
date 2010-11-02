@@ -36,3 +36,4 @@ void processButtonNPacket();
 void processButtonQPacket();
 void readCopy();
 void generateDisplacementEvents(int *newValues);
+void generateButtonEvent(int button, int newState);

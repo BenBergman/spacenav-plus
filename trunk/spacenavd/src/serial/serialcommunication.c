@@ -111,26 +111,6 @@
     return 0;
  }
  
-int setPortCommon(int fileDescriptor, int flags)
- {
-   struct termios term;
-   if (tcgetattr(fileDescriptor, &term) == -1)
-     return -1;
-   
-   term.c_cflag = flags;
-   term.c_iflag |= IGNBRK | IGNPAR;
-   term.c_oflag = 0;
-   term.c_lflag = 0;
-   term.c_cc[VMIN] = 1;
-   term.c_cc[VTIME] = 0;
-   
-   cfsetispeed(&term, 9600);
-   cfsetospeed(&term, 9600);
-   if (tcsetattr(fileDescriptor, TCSANOW, &term) == -1)
-     return -1;
-   return 0;
- }
- 
  void longWait()
  {
    usleep(150000);  
