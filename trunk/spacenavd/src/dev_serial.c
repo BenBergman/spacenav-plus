@@ -92,7 +92,7 @@ void clear_device()
 
 void setup_device()
 {
-  if (device.modelId == MOUSE_PLUS_XT || device.modelId == MOUSE_CLASSIC){
+  if (device.modelId == MOUSE_PLUS_XT || device.modelId == MOUSE_CLASSIC || device.modelId == MOUSE_PLUS){
       device.open_func = open_smag;
       device.close_func = close_smag;
       device.read_func = read_smag;
@@ -109,7 +109,14 @@ void derive_device_name_model()
 		device.modelId = MOUSE_PLUS_XT;
 		return;
 	}
-	
+
+        instance = strstr(device.version_string, "MAGELLAN  Version 6.70");
+        if (instance){
+                strcpy(device.name, "Magellan Plus");
+                device.modelId = MOUSE_PLUS;
+                return;
+        }
+
 	instance = strstr(device.version_string, "MAGELLAN  Version 5.79");
 	if (instance){
 		strcpy(device.name, "Magellan Classic");
