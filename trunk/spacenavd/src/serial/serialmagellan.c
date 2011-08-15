@@ -143,10 +143,10 @@ int close_smag()
 int read_smag(struct dev_input *inp)
 {
   /*need to return 1 if we fill in inp or 0 if no events*/
+  struct event *currentEvent;
   input.readBufSize = serialRead(file, input.readBuf, MAXREADSIZE);  
   if (input.readBufSize > 0)
     readCopy();  
-  struct event *currentEvent;
   currentEvent = input.eventHead;
   if(currentEvent) {
     input.eventHead = input.eventHead->next;
