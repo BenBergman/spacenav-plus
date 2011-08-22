@@ -28,66 +28,65 @@ struct Device device;
 
 int open_dev_serial(const char *devfile)
 {
-	clear_device();
-	
-	/*defaulting to libsball functions*/	
-	strcpy(device.name, "Unknown");
-	device.modelId = UNKNOWN;	
-	device.open_func = sball_open;
-	device.close_func = sball_close;
-	device.read_func = sball_get_input;
-	device.get_fd_func = sball_get_fd;
+        clear_device();
 
-	if (detectDevice(devfile, device.version_string, VERSION_STRING_MAX) == -1 || device.open_func == 0){
-		printf("detectDevice failed\n");		
-	}
-	else
-	{
-	  if (strlen(device.version_string)>0){
-	    derive_device_name_model();
-            if (device.modelId != UNKNOWN)
-	      printf("Found: %s\n", device.name);
-	    else
-	      printf("unknown device for version string: %s\n", device.version_string);
-	  }
-	  setup_device();
-	}
-	
-	if(device.open_func(devfile)==-1) {
-		clear_device();
-		return -1;
-	}
-	if (device.get_fd_func)
-	  return device.get_fd_func();
-	else
-	  return -1;
+        /*defaulting to libsball functions*/
+        strcpy(device.name, "Unknown");
+        device.modelId = UNKNOWN;
+        device.open_func = sball_open;
+        device.close_func = sball_close;
+        device.read_func = sball_get_input;
+        device.get_fd_func = sball_get_fd;
+
+        if (detectDevice(devfile, device.version_string, VERSION_STRING_MAX) == -1 || device.open_func == 0){
+            printf("detectDevice failed\n");
+        }
+        else{
+            if (strlen(device.version_string)>0){
+                derive_device_name_model();
+                if (device.modelId != UNKNOWN)
+                    printf("Found: %s\n", device.name);
+                else
+                    printf("unknown device for version string: %s\n", device.version_string);
+            }
+            setup_device();
+        }
+
+        if(device.open_func(devfile)==-1) {
+            clear_device();
+            return -1;
+        }
+        if (device.get_fd_func)
+            return device.get_fd_func();
+        else
+            return -1;
 }
 
 void close_dev_serial()
 {
-	if (device.close_func != 0)
-		device.close_func();
-	clear_device();
+        if (device.close_func != 0)
+              device.close_func();
+        clear_device();
 }
 
 int read_dev_serial(struct dev_input *inp)
 {
-	if (device.read_func == 0)
-		return -1;
-	if(!device.read_func(inp)) {
-		return -1;
-	}
-	return 0;
+        if (device.read_func == 0)
+            return -1;
+        if(!device.read_func(inp)) {
+            return -1;
+        }
+        return 0;
 }
 
 void clear_device()
 {
-	device.name[0]='\0';
-	device.version_string[0]='\0';
-	device.open_func = 0;
-	device.close_func = 0;
-	device.read_func = 0;
-	device.get_fd_func = 0;
+        device.name[0]='\0';
+        device.version_string[0]='\0';
+        device.open_func = 0;
+        device.close_func = 0;
+        device.read_func = 0;
+        device.get_fd_func = 0;
 }
 
 void setup_device()
@@ -102,13 +101,13 @@ void setup_device()
 
 void derive_device_name_model()
 {
-	char *instance;
-	instance = strstr(device.version_string, "MAGELLAN  Version 6.60");
-	if (instance){
-		strcpy(device.name, "Magellan Plus XT");
-		device.modelId = MOUSE_PLUS_XT;
-		return;
-	}
+        char *instance;
+        instance = strstr(device.version_string, "MAGELLAN  Version 6.60");
+        if (instance){
+                strcpy(device.name, "Magellan Plus XT");
+                device.modelId = MOUSE_PLUS_XT;
+                return;
+        }
 
         instance = strstr(device.version_string, "MAGELLAN  Version 6.70");
         if (instance){
@@ -117,17 +116,17 @@ void derive_device_name_model()
                 return;
         }
 
-	instance = strstr(device.version_string, "MAGELLAN  Version 5.79");
-	if (instance){
-		strcpy(device.name, "Magellan Classic");
-		device.modelId = MOUSE_CLASSIC;
-		return;
-	}
-	
-	instance = strstr(device.version_string, "Firmware version 2.42");
-	if (instance){
-	  strcpy(device.name, "Spaceball 4000 flx");
-	  device.modelId = BALL_4000FLX;
-	  return;
-	}
+        instance = strstr(device.version_string, "MAGELLAN  Version 5.79");
+        if (instance){
+                strcpy(device.name, "Magellan Classic");
+                device.modelId = MOUSE_CLASSIC;
+                return;
+        }
+
+        instance = strstr(device.version_string, "Firmware version 2.42");
+        if (instance){
+                strcpy(device.name, "Spaceball 4000 flx");
+                device.modelId = BALL_4000FLX;
+                return;
+        }
 }
