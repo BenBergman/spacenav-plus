@@ -129,4 +129,11 @@ void derive_device_name_model()
                 device.modelId = BALL_4000FLX;
                 return;
         }
+
+        instance = strstr(device.version_string, "Firmware version 2.62");
+        if (instance){
+                strcpy(device.name, "Spaceball 3003C ");
+                device.modelId = BALL_3003C;
+                return;
+        }
 }
