@@ -137,3 +137,8 @@ void derive_device_name_model()
                 return;
         }
 }
+
+int get_device_id()
+{
+  return device.modelId;
+}

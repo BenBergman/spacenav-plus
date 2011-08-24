@@ -41,5 +41,5 @@ int read_dev_serial(struct dev_input *inp);
 void clear_device();
 void derive_device_name_model();
 void setup_device();
-
+int get_device_id();
 #endif	/* DEV_SERIAL_H_ */

@@ -358,7 +358,10 @@ static int sball_update()
 				/* modified by John Tsiombikas for spacenavd integration */
 				{
 					int newstate;
-
+                                        
+                                        int device;
+                                        device = get_device_id();
+                                        
 					/* Spaceball 2003A, 2003B, 2003 FLX, 3003 FLX, 4000 FLX       */
 					/* button packet. (4000 only for backwards compatibility)     */
 					/* The lowest 5 bits of the first byte are buttons 5-9        */
