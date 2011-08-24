@@ -54,6 +54,7 @@ permission notice:
 #include "sball.h"
 #include "sballserial.h"
 #include "serialevent.h"
+#include "dev_serial.h"
 
 
 typedef struct{
