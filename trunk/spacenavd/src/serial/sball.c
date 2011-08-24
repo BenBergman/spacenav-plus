@@ -362,28 +362,33 @@ static int sball_update()
                                         int device;
                                         device = get_device_id();
                                         
-					/* Spaceball 2003A, 2003B, 2003 FLX, 3003 FLX, 4000 FLX       */
-					/* button packet. (4000 only for backwards compatibility)     */
-					/* The lowest 5 bits of the first byte are buttons 5-9        */
-					/* Button '8' on a Spaceball 2003 is the rezero button        */
-					/* The lowest 4 bits of the second byte are buttons 1-4       */
-					/* For Spaceball 2003, we'll map the buttons 1-7 normally     */
-					/* skip 8, as its a hardware "rezero button" on that device   */
-					/* and call the "pick" button "8".                            */
-					/* On the Spaceball 3003, the "right" button also triggers    */
-					/* the "pick" bit.  We OR the 2003/3003 rezero bits together  */
+                                        if (device == BALL_3003C){
+                                          newstate = handle->buf[2] >> 4 & 0x03; 
+                                        }
+                                        else{
+                                            /* Spaceball 2003A, 2003B, 2003 FLX, 3003 FLX, 4000 FLX       */
+                                            /* button packet. (4000 only for backwards compatibility)     */
+                                            /* The lowest 5 bits of the first byte are buttons 5-9        */
+                                            /* Button '8' on a Spaceball 2003 is the rezero button        */
+                                            /* The lowest 4 bits of the second byte are buttons 1-4       */
+                                            /* For Spaceball 2003, we'll map the buttons 1-7 normally     */
+                                            /* skip 8, as its a hardware "rezero button" on that device   */
+                                            /* and call the "pick" button "8".                            */
+                                            /* On the Spaceball 3003, the "right" button also triggers    */
+                                            /* the "pick" bit.  We OR the 2003/3003 rezero bits together  */
 
-					/* if we have found a Spaceball 4000, then we ignore the 'K'  */
-					/* packets entirely, and only use the '.' packets.            */
-					if(handle->spaceball4000)
-						break;
+                                            /* if we have found a Spaceball 4000, then we ignore the 'K'  */
+                                            /* packets entirely, and only use the '.' packets.            */
+                                            if(handle->spaceball4000)
+                                                    break;
 
-					newstate = ((handle->buf[1] & 0x10) << 3) |	/* 2003 pick button is "8" */
-						((handle->buf[1] & 0x20) << 9) |	/* 3003 rezero button      */
-						((handle->buf[1] & 0x08) << 11) |	/* 2003 rezero button      */
-						((handle->buf[1] & 0x07) << 4) |	/* 5,6,7    (2003/4000)    */
-						((handle->buf[2] & 0x30) << 8) |	/* 3003 Left/Right buttons */
-						((handle->buf[2] & 0x0F));	/* 1,2,3,4  (2003/4000)    */
+                                            newstate = ((handle->buf[1] & 0x10) << 3) |	/* 2003 pick button is "8" */
+                                                    ((handle->buf[1] & 0x20) << 9) |	/* 3003 rezero button      */
+                                                    ((handle->buf[1] & 0x08) << 11) |	/* 2003 rezero button      */
+                                                    ((handle->buf[1] & 0x07) << 4) |	/* 5,6,7    (2003/4000)    */
+                                                    ((handle->buf[2] & 0x30) << 8) |	/* 3003 Left/Right buttons */
+                                                    ((handle->buf[2] & 0x0F));	/* 1,2,3,4  (2003/4000)    */
+                                        }
 
 					generate_button_events(handle->buttons, newstate);
 					handle->buttons = newstate;
