@@ -25,6 +25,6 @@ int setPortMagellan(int fileDescriptor);
 void longWait();
 void shortWait();
 void serialWriteString(int fileDescriptor, char *string, int count);
-int serialRead();
+int serialRead(int fileDescriptor, char *buffer, int bufferSize);
 
 #endif
