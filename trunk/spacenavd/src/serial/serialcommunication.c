@@ -144,3 +144,19 @@
    buffer[bytesRead] = '\0';
    return bytesRead;
  }
+ 
+ int serialWaitRead(int fileDescriptor, char *buffer, int bufferSize, int waitSeconds)
+ {
+   fd_set set;
+   struct timeval time;
+   
+   FD_ZERO(&set);
+   FD_SET(fileDescriptor, &set);
+   
+   time.tv_sec = waitSeconds;
+   time.tv_usec = 0;
+   
+   if (!select(fileDescriptor + 1, &set, NULL, NULL, &time))
+     return -1;/*timed out or error*/
+   return serialRead(fileDescriptor, buffer, bufferSize);
+ }

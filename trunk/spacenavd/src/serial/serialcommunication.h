@@ -26,5 +26,6 @@ void longWait();
 void shortWait();
 void serialWriteString(int fileDescriptor, char *string, int count);
 int serialRead(int fileDescriptor, char *buffer, int bufferSize);
+int serialWaitRead(int fileDescriptor, char *buffer, int bufferSize, int waitSeconds);
 
 #endif
