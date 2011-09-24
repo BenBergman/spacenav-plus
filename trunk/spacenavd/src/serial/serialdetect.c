@@ -62,11 +62,16 @@ int detectDevice(const char *devFile, char *buffer, int bufferSize)
   if (bytesRead > 0)
   {
     makePrintable(tempBuffer);
-    if (bytesRead<bufferSize)
+    if (bytesRead < bufferSize)
     {
       strcpy(buffer, tempBuffer);      
       close(file);
       return 0;
+    }
+    else
+    {
+      printf("buffer overrun in detectDevice\n");
+      return -1;
     }
   }
   
