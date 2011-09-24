@@ -24,9 +24,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "serial/serialmagellan.h"
 #include "serial/serialdetect.h"
 
+/*swap out /r for /n for string printing*/
+static void makePrintable(char *buffer)
+{
+  int size, index;
+  size = strlen(buffer);
+  for (index = 0; index < size; ++index)
+  {
+    if (buffer[index] == '\r')
+        buffer[index] = '\n';
+  }
+}
+
 int detectDevice(const char *devFile, char *buffer, int bufferSize)
 {
-  int file, bytesRead, tempPosition, length, index;
+  int file, bytesRead, tempPosition, length;
   char tempBuffer[MAXREADSIZE];
   tempPosition = 0;
   
@@ -47,15 +59,9 @@ int detectDevice(const char *devFile, char *buffer, int bufferSize)
   sleep(2);
 
   bytesRead = serialRead(file, tempBuffer, MAXREADSIZE);
-  /*swap out /r for /n for string printing*/
-  for (index=0;index<bytesRead;++index)
+  if (bytesRead > 0)
   {
-    if (tempBuffer[index] == '\r')
-      tempBuffer[index] = '\n';
-  }
- 
-  if (bytesRead>0)
-  {
+    makePrintable(tempBuffer);
     if (bytesRead<bufferSize)
     {
       strcpy(buffer, tempBuffer);      
@@ -80,12 +86,7 @@ int detectDevice(const char *devFile, char *buffer, int bufferSize)
     return 0;
   if(length < bufferSize)
   {
-    /*swap newlines for carriage returns for printing*/
-    for (index=0;index<length;++index)
-    {
-      if (tempBuffer[index] == '\r')
-	tempBuffer[index] = '\n';
-    } 
+    makePrintable(tempBuffer);
     strcpy(buffer, tempBuffer);
     close(file);
     return 0;
