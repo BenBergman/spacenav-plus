@@ -40,7 +40,6 @@ int detectDevice(const char *devFile, char *buffer, int bufferSize)
 {
   int file, bytesRead, tempPosition, length;
   char tempBuffer[MAXREADSIZE];
-  tempPosition = 0;
   
   file = openFile(devFile);
   if (file == -1)
@@ -55,13 +54,36 @@ int detectDevice(const char *devFile, char *buffer, int bufferSize)
     return -1;
   }
   
-  /*first look for spaceball. should have data after open and port setup*/
-  sleep(2);
+  /*first look for spaceball. should have data after open and port setup.
+    I was hoping that using the select inside serialWaitRead would allow me
+    to get rid of the following sleep. Removing the sleep causes port to freeze.*/
 
-  bytesRead = serialRead(file, tempBuffer, MAXREADSIZE);
+  sleep(1);
+
+  bytesRead = 0;
+  tempPosition = 0;
+
+  while((tempPosition = serialWaitRead(file, &tempBuffer[bytesRead], MAXREADSIZE - bytesRead, 1)) > 0)
+  {
+    bytesRead += tempPosition;
+  }
   if (bytesRead > 0)
   {
+    serialWriteString(file, "hm", 2);
+    while((tempPosition = serialWaitRead(file, &tempBuffer[bytesRead], MAXREADSIZE - bytesRead, 1)) > 0)
+    {
+      bytesRead += tempPosition;
+    }
+    
+    serialWriteString(file, "\"", 1);
+    while((tempPosition = serialWaitRead(file, &tempBuffer[bytesRead], MAXREADSIZE - bytesRead, 1)) > 0)
+    {
+      bytesRead += tempPosition;    
+    }
+    
+    
     makePrintable(tempBuffer);
+    printf("%s\n", tempBuffer);
     if (bytesRead < bufferSize)
     {
       strcpy(buffer, tempBuffer);      
