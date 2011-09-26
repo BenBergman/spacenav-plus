@@ -79,11 +79,9 @@ int detectDevice(const char *devFile, char *buffer, int bufferSize)
     while((tempPosition = serialWaitRead(file, &tempBuffer[bytesRead], MAXREADSIZE - bytesRead, 1)) > 0)
     {
       bytesRead += tempPosition;    
-    }
-    
+    }    
     
     makePrintable(tempBuffer);
-    printf("%s\n", tempBuffer);
     if (bytesRead < bufferSize)
     {
       strcpy(buffer, tempBuffer);      
