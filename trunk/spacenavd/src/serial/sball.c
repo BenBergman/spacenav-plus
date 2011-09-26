@@ -362,6 +362,11 @@ static int sball_update()
                                         int device;
                                         device = get_device_id();
                                         
+                                        if (device == BALL_2003C){
+                                          /*clear the zero bit*/
+                                          handle->buf[1] = handle->buf[1] & ~0x20;
+                                        }
+                                        
                                         if (device == BALL_3003C){
                                           newstate = handle->buf[2] >> 4 & 0x03;
                                           temp_one = newstate >> 1 & 0x01;
