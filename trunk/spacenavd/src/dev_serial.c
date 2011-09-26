@@ -101,7 +101,7 @@ void setup_device()
 
 void derive_device_name_model()
 {
-        char *instance;
+        char *instance;        
         instance = strstr(device.version_string, "MAGELLAN  Version 6.60");
         if (instance){
                 strcpy(device.name, "Magellan Plus XT");
@@ -122,18 +122,25 @@ void derive_device_name_model()
                 device.modelId = MOUSE_CLASSIC;
                 return;
         }
-
-        instance = strstr(device.version_string, "Firmware version 2.42");
+        
+        instance = strstr(device.version_string, "Hm2003C");
         if (instance){
-                strcpy(device.name, "Spaceball 4000 flx");
-                device.modelId = BALL_4000FLX;
+                strcpy(device.name, "Spaceball 2003C");
+                device.modelId = BALL_2003C;
                 return;
         }
-
-        instance = strstr(device.version_string, "Firmware version 2.62");
+        
+        instance = strstr(device.version_string, "Hm3003C");
         if (instance){
-                strcpy(device.name, "Spaceball 3003C ");
+                strcpy(device.name, "Spaceball 3003C");
                 device.modelId = BALL_3003C;
+                return;
+        }        
+
+        instance = strstr(device.version_string, "Spaceball 4000 FLX");
+        if (instance){
+                strcpy(device.name, "Spaceball 4000 FLX");
+                device.modelId = BALL_4000FLX;
                 return;
         }
 }
