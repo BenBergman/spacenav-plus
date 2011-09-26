@@ -20,8 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SERIAL_CONSTANTS_H_
 
 #define MAXPACKETSIZE 16
-#define VERSION_STRING_MAX 256
+#define VERSION_STRING_MAX 512
 #define DEVICE_NAME_MAX 64
-#define MAXREADSIZE 256
+#define MAXREADSIZE 512
 
 #endif
