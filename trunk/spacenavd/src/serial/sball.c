@@ -357,13 +357,16 @@ static int sball_update()
 			case 'K':	/* button press event */
 				/* modified by John Tsiombikas for spacenavd integration */
 				{
-					int newstate;
+					int newstate, temp_one, temp_two;
                                         
                                         int device;
                                         device = get_device_id();
                                         
                                         if (device == BALL_3003C){
-                                          newstate = handle->buf[2] >> 4 & 0x03; 
+                                          newstate = handle->buf[2] >> 4 & 0x03;
+                                          temp_one = newstate >> 1 & 0x01;
+                                          temp_two = newstate << 1 & 0x02;
+                                          newstate = temp_one | temp_two;
                                         }
                                         else{
                                             /* Spaceball 2003A, 2003B, 2003 FLX, 3003 FLX, 4000 FLX       */
