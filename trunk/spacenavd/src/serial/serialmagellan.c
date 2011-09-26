@@ -332,25 +332,25 @@ void processButtonKPacket()
   if (input.packetBuf[1] != oldState[1])
   {
     if ((input.packetBuf[1] & 0x01) != (oldState[1] & 0x01))
-      generateButtonEvent(1, input.packetBuf[1] & 0x01);
+      generateButtonEvent(0, input.packetBuf[1] & 0x01);
     if ((input.packetBuf[1] & 0x02) != (oldState[1] & 0x02))
-      generateButtonEvent(2, input.packetBuf[1] & 0x02);
+      generateButtonEvent(1, input.packetBuf[1] & 0x02);
     if ((input.packetBuf[1] & 0x04) != (oldState[1] & 0x04))
-      generateButtonEvent(3, input.packetBuf[1] & 0x04);
+      generateButtonEvent(2, input.packetBuf[1] & 0x04);
     if ((input.packetBuf[1] & 0x08) != (oldState[1] & 0x08))
-      generateButtonEvent(4, input.packetBuf[1] & 0x08);
+      generateButtonEvent(3, input.packetBuf[1] & 0x08);
   }
   
   if (input.packetBuf[2] != oldState[2])
   {  
     if ((input.packetBuf[2] & 0x01) != (oldState[2] & 0x01))
-      generateButtonEvent(5, input.packetBuf[2] & 0x01);
+      generateButtonEvent(4, input.packetBuf[2] & 0x01);
     if ((input.packetBuf[2] & 0x02) != (oldState[2] & 0x02))
-      generateButtonEvent(6, input.packetBuf[2] & 0x02);
+      generateButtonEvent(5, input.packetBuf[2] & 0x02);
     if ((input.packetBuf[2] & 0x04) != (oldState[2] & 0x04))
-      generateButtonEvent(7, input.packetBuf[2] & 0x04);
+      generateButtonEvent(6, input.packetBuf[2] & 0x04);
     if ((input.packetBuf[2] & 0x08) != (oldState[2] & 0x08))
-      generateButtonEvent(8, input.packetBuf[2] & 0x08);
+      generateButtonEvent(7, input.packetBuf[2] & 0x08);
   }
   
   /*skipping asterisk button. asterisk function come in through other packets.*/
