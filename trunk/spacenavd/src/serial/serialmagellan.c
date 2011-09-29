@@ -364,9 +364,9 @@ void processButtonKPacket()
       printf("button asterisk   ");
     */
     if ((input.packetBuf[3] & 0x02) != (oldState[3] & 0x02))
-      generateButtonEvent(10, input.packetBuf[3] & 0x02);/*left button*/
+      generateButtonEvent(8, input.packetBuf[3] & 0x02);/*left button*/
     if ((input.packetBuf[3] & 0x04) != (oldState[3] & 0x04))
-      generateButtonEvent(11, input.packetBuf[3] & 0x04);/*right button*/
+      generateButtonEvent(9, input.packetBuf[3] & 0x04);/*right button*/
   }
 
   strcpy(oldState, input.packetBuf);
