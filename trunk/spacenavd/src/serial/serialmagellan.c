@@ -214,27 +214,27 @@ void generateDisplacementEvents(int *newValues)
 	input.eventHead = input.eventTail = newEvent;
       pending = 1;    
     }
-    
-    if(pending)
-    {
-      newEvent = alloc_event();
-      if(newEvent)
-      {
-	newEvent->data.type = INP_FLUSH;
-	newEvent->next = 0;
-      }
-      
-      if(input.eventHead)
-      {
-	input.eventTail->next = newEvent;
-	input.eventTail = newEvent;
-      }
-      else
-      {
-	input.eventHead = input.eventTail = newEvent;
-      }
-    }
   }
+    
+  if(pending)
+  {
+    newEvent = alloc_event();
+    if(newEvent)
+    {
+      newEvent->data.type = INP_FLUSH;
+      newEvent->next = 0;
+    }
+    
+    if(input.eventHead)
+    {
+      input.eventTail->next = newEvent;
+      input.eventTail = newEvent;
+    }
+    else
+    {
+      input.eventHead = input.eventTail = newEvent;
+    }
+  }  
 }
 
 void processDisplacementPacket()
