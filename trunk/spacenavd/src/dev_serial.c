@@ -123,6 +123,13 @@ void derive_device_name_model()
                 return;
         }
         
+        instance = strstr(device.version_string, "MAGELLAN Version 5.49");
+        if (instance){
+                strcpy(device.name, "Magellan Classic");
+                device.modelId = MOUSE_CLASSIC;
+                return;
+        }
+
         instance = strstr(device.version_string, "Hm2003C");
         if (instance){
                 strcpy(device.name, "Spaceball 2003C");
