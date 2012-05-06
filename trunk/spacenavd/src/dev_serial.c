@@ -91,7 +91,8 @@ void clear_device()
 
 void setup_device()
 {
-  if (device.modelId == MOUSE_PLUS_XT || device.modelId == MOUSE_CLASSIC || device.modelId == MOUSE_PLUS){
+  if (device.modelId == MOUSE_PLUS_XT || device.modelId == MOUSE_CLASSIC || device.modelId == MOUSE_PLUS
+    || device.modelId == BALL_5000FLX){
       device.open_func = open_smag;
       device.close_func = close_smag;
       device.read_func = read_smag;
@@ -101,7 +102,15 @@ void setup_device()
 
 void derive_device_name_model()
 {
-        char *instance;        
+        char *instance;
+ 
+	instance = strstr(device.version_string, "SPACEBALL Version 8.20");
+        if (instance){
+                strcpy(device.name, "Spaceball 5000 FLX");
+                device.modelId = BALL_5000FLX;
+                return;
+        }
+ 
         instance = strstr(device.version_string, "MAGELLAN  Version 6.60");
         if (instance){
                 strcpy(device.name, "Magellan Plus XT");
