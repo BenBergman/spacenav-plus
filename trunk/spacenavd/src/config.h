@@ -7,4 +7,6 @@
 
 #define VERSION "svn-r"
 
+#define HAVE_ALLOCA_H
+
 #endif	/* CONFIG_H_ */
